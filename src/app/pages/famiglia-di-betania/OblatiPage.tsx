@@ -1,12 +1,15 @@
+import { PageHero } from '../../components/PageHero'
 import oblatiImg from '../../../assets/famiglia-di-betania/oblati-ffb-1.png'
 
 export function OblatiPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-8 text-center">Oblati</h1>
-
-      <img src={oblatiImg} alt="Oblati FFB" className="w-full max-h-80 object-cover rounded-2xl mb-8" />
-
+    <>
+      <PageHero
+        image={oblatiImg}
+        title="Oblati"
+        subtitle="Laici che vivono il carisma della Fraternità nella loro vita quotidiana."
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">Chi sono e cosa fanno</h2>
       <p className="text-gray-600 leading-relaxed mb-4">
         Gli oblati sono cristiani laici di età adulta, che partecipano ed esprimono il carisma della Fraternità nel
@@ -41,6 +44,7 @@ export function OblatiPage() {
         Anche i sacerdoti diocesani legati spiritualmente alla Fraternità possono diventare oblati, vivendo lo stesso
         carisma nel loro contesto di vita.
       </p>
-    </section>
+      </section>
+    </>
   )
 }

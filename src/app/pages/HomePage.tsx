@@ -1,7 +1,7 @@
 import { Hero } from '../components/home/Hero'
-import { NumberStats } from '../components/home/NumberStats'
 import { ChiSiamoIntro } from '../components/home/ChiSiamoIntro'
-import { SiteIndex } from '../components/home/SiteIndex'
+import { NumberStats } from '../components/home/NumberStats'
+import { ComeAiutiamo } from '../components/home/ComeAiutiamo'
 import { BrasileSpotlight } from '../components/home/BrasileSpotlight'
 import { RiconoscimentiIstituzionali } from '../components/home/RiconoscimentiIstituzionali'
 import { NewsPreview } from '../components/home/NewsPreview'
@@ -11,9 +11,9 @@ export function HomePage() {
   return (
     <>
       <Hero />
-      <NumberStats />
       <ChiSiamoIntro />
-      <SiteIndex />
+      <NumberStats />
+      <ComeAiutiamo />
       <BrasileSpotlight />
       <RiconoscimentiIstituzionali />
       <NewsPreview />

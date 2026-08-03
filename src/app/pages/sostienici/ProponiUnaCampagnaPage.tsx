@@ -23,10 +23,18 @@ const passi: Passo[] = [
   },
 ]
 
+import { PageHero } from '../../components/PageHero'
+import sostegnoFamiglie from '../../../assets/cosa-facciamo/sostegno-alle-famiglie.jpg'
+
 export function ProponiUnaCampagnaPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-4">Proponi la tua campagna</h1>
+    <>
+      <PageHero
+        image={sostegnoFamiglie}
+        title="Proponi la tua campagna"
+        subtitle="Fatti portavoce dei nostri progetti e crea la tua raccolta fondi personale."
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
       <p className="text-lg text-gray-600 leading-relaxed mb-12 max-w-2xl mx-auto">
         Vuoi farti portavoce dei nostri progetti? Attivati in prima persona e crea la tua personale campagna di
         raccolta fondi. Coinvolgi familiari, amici e colleghi e invitali a partecipare alla tua iniziativa a sostegno
@@ -44,6 +52,7 @@ export function ProponiUnaCampagnaPage() {
           </div>
         ))}
       </div>
-    </section>
+      </section>
+    </>
   )
 }

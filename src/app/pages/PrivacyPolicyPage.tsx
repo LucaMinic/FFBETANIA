@@ -1,11 +1,16 @@
+import { PageHero } from '../components/PageHero'
+import famigliari from '../../assets/famiglia-di-betania/famigliari.jpg'
+
 export function PrivacyPolicyPage() {
   return (
-    <section className="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-4 text-center">Privacy Policy</h1>
-      <p className="text-sm text-gray-400 text-center mb-12">
-        Informativa sul trattamento dei dati personali ai sensi del Regolamento generale UE sulla protezione dei dati
-        (GDPR) 679/2016. Aggiornata a gennaio 2022.
-      </p>
+    <>
+      <PageHero
+        image={famigliari}
+        title="Privacy Policy"
+        subtitle="Informativa sul trattamento dei dati personali (GDPR 679/2016)."
+      />
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <p className="text-sm text-gray-400 text-center mb-12">Aggiornata a gennaio 2022.</p>
 
       <p className="text-gray-600 leading-relaxed mb-12">
         La presente informativa descrive le modalità di trattamento dei dati personali degli utenti che accedono al
@@ -131,6 +136,7 @@ export function PrivacyPolicyPage() {
           <p className="text-sm text-gray-500">CF 93346130722 · fondazione@ffbetania.net</p>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   )
 }

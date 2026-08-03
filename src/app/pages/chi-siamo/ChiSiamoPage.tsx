@@ -1,19 +1,19 @@
 import { Link } from 'react-router'
+import { PageHero } from '../../components/PageHero'
 import fondatore from '../../../assets/chi-siamo/il-nostro-fondatore.jpg'
 import iconMariana from '../../../assets/chi-siamo/ico-mariana.svg'
 import iconTau from '../../../assets/chi-siamo/ico-tau.svg'
 
 export function ChiSiamoPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-6 text-center">Chi siamo</h1>
-
-      <img
-        src={fondatore}
-        alt="Il nostro fondatore"
-        className="w-full max-h-80 object-cover rounded-2xl mb-8"
+    <>
+      <PageHero
+        image={fondatore}
+        title="Chi siamo"
+        subtitle="Un Istituto di Vita Consacrata nato dalla preghiera e vissuto nell'accoglienza."
+        imageAlt="Il nostro fondatore"
       />
-
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <p className="text-lg text-gray-600 leading-relaxed mb-4">
         <strong>Fraternità Francescana di Betania</strong> è un Istituto di Vita Consacrata di diritto diocesano
         composto da fratelli, sia chierici che laici, e da sorelle che si consacrano a Dio mediante i voti pubblici
@@ -76,6 +76,7 @@ export function ChiSiamoPage() {
           <p className="text-sm text-gray-500">Cronologia e governo generale.</p>
         </Link>
       </div>
-    </section>
+      </section>
+    </>
   )
 }

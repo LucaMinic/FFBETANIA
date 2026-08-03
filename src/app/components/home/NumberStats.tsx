@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatedSection } from '../AnimatedSection'
+import { WaveDivider } from '../WaveDivider'
 
 interface StatProps {
   target: number
@@ -50,17 +51,28 @@ function Stat({ target, suffix, label }: StatProps) {
 
 export function NumberStats() {
   return (
-    <section className="py-12 sm:py-20 bg-[var(--beige)]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <AnimatedSection>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-8 sm:gap-8">
-            <Stat target={40} suffix="+" label="Anni di storia" />
-            <Stat target={12} suffix="" label="Case e Missioni" />
-            <Stat target={18} suffix="" label="Gruppi di preghiera" />
-            <Stat target={120} suffix="+" label="Bambini nell'Asilo in Brasile" />
-          </div>
-        </AnimatedSection>
-      </div>
-    </section>
+    <>
+      <section className="py-12 sm:py-20 bg-[var(--beige)]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <AnimatedSection>
+            <p className="text-sm font-semibold text-[var(--warm-orange)] uppercase tracking-wide text-center mb-2">
+              Non solo numeri
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--deep-blue)] text-center max-w-2xl mx-auto mb-10">
+              Sono storie di persone, famiglie e bambini che accompagniamo ogni giorno
+            </h2>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-8 sm:gap-8">
+              <Stat target={40} suffix="+" label="Anni di storia" />
+              <Stat target={12} suffix="" label="Case e Missioni" />
+              <Stat target={18} suffix="" label="Gruppi di preghiera" />
+              <Stat target={120} suffix="+" label="Bambini nell'Asilo in Brasile" />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      <WaveDivider fill="var(--beige)" flip />
+    </>
   )
 }

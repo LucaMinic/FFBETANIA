@@ -1,3 +1,4 @@
+import { PageHero } from '../../components/PageHero'
 import portrait from '../../../assets/padre-pancrazio/pancrazio-ffb.jpg'
 import piccoloNicola from '../../../assets/padre-pancrazio/01-pancrazio-piccolo-nicola.jpg'
 import convento1 from '../../../assets/padre-pancrazio/02-il-convento-1.jpg'
@@ -11,11 +12,9 @@ import pentecoste from '../../../assets/padre-pancrazio/pentecoste-1982-inaugura
 
 export function PadrePancrazioPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-8 text-center">Padre Pancrazio</h1>
-
-      <img src={portrait} alt="Padre Pancrazio" className="w-full max-h-96 object-cover rounded-2xl mb-10" />
-
+    <>
+      <PageHero image={portrait} title="Padre Pancrazio" subtitle="La storia del fondatore della Fraternità Francescana di Betania." />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">Il piccolo Nicola</h2>
       <p className="text-gray-600 leading-relaxed mb-4">
         Nicola Gaudioso nacque a Bari il 15 novembre 1926 in via Durazzo, sesto e ultimo figlio di Domenico Gaudioso e
@@ -147,6 +146,7 @@ export function PadrePancrazioPage() {
         Il funerale è stato celebrato nella cappella esterna della Casa di Terlizzi il 5 gennaio 2016, alla presenza
         di più di duemila persone.
       </p>
-    </section>
+      </section>
+    </>
   )
 }

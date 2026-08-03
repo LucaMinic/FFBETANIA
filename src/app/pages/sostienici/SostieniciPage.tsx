@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import { PageHero } from '../../components/PageHero'
 import heroImg from '../../../assets/sostienici/spiritualita-hero.jpg'
 
 interface Voce {
@@ -35,14 +36,16 @@ const voci: Voce[] = [
 
 export function SostieniciPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-6 text-center">Sostienici</h1>
-
-      <img src={heroImg} alt="Fraternità Francescana di Betania" className="w-full max-h-72 object-cover rounded-2xl mb-8" />
-
+    <>
+      <PageHero
+        image={heroImg}
+        title="Sostienici"
+        subtitle="Insieme, con l'aiuto di Dio, possiamo fare molto per chi ha bisogno."
+        imageAlt="Fraternità Francescana di Betania"
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <p className="text-lg text-gray-600 leading-relaxed text-center mb-12">
-        "Insieme, con l'aiuto di Dio, possiamo fare molto per chi ha bisogno." Ci sono molti modi per stare al nostro
-        fianco: scegli quello più adatto a te.
+        Ci sono molti modi per stare al nostro fianco: scegli quello più adatto a te.
       </p>
 
       <div className="grid sm:grid-cols-2 gap-4">
@@ -57,6 +60,7 @@ export function SostieniciPage() {
           </Link>
         ))}
       </div>
-    </section>
+      </section>
+    </>
   )
 }

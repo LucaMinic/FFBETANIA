@@ -1,8 +1,15 @@
+import { PageHero } from '../../components/PageHero'
+import convegnoGiubilare from '../../../assets/famiglia-di-betania/convegno-giubilare-1794.jpg'
+
 export function GiovaniDiBetaniaPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-8 text-center">Giovani di Betania</h1>
-
+    <>
+      <PageHero
+        image={convegnoGiubilare}
+        title="Giovani di Betania"
+        subtitle="Un cammino di fede tra preghiera, amicizia e missione, dagli 11 ai 26 anni."
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <blockquote className="border-l-4 border-[var(--warm-orange)] pl-4 italic text-gray-600 mb-6">
         "Io spero e auguro che facciate quello che non ho fatto io! Avrei voluto fare di più. Sempre di più. Sempre di
         più e sempre meglio." — Padre Pancrazio ai GdB
@@ -50,6 +57,7 @@ export function GiovaniDiBetaniaPage() {
           gdb@ffbetania.net
         </a>
       </p>
-    </section>
+      </section>
+    </>
   )
 }

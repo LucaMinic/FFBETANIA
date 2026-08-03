@@ -1,18 +1,18 @@
 import convegnoGiubilare from '../../../assets/chi-siamo/convegno-giubilare-3167.jpg'
 import vitaFraterna from '../../../assets/chi-siamo/vita-fraterna-2026.png'
 import { YouTubeEmbed } from '../../components/YouTubeEmbed'
+import { PageHero } from '../../components/PageHero'
 
 export function CarismaPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-8 text-center">Carisma</h1>
-
-      <img
-        src={convegnoGiubilare}
-        alt="Fraternità Francescana di Betania - Convegno Giubilare"
-        className="w-full max-h-80 object-cover rounded-2xl mb-10"
+    <>
+      <PageHero
+        image={convegnoGiubilare}
+        title="Carisma"
+        subtitle="Preghiera, accoglienza e vita fraterna: i tre pilastri della nostra spiritualità."
+        imageAlt="Fraternità Francescana di Betania - Convegno Giubilare"
       />
-
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">Preghiera</h2>
       <p className="text-gray-600 leading-relaxed mb-4">
         Le parole del nostro fondatore ci indicano che nell'intimo rapporto con Dio viviamo la nostra consacrazione e
@@ -96,6 +96,7 @@ export function CarismaPage() {
         <YouTubeEmbed videoId="axdMMA_Id1Q" title="Il nostro carisma - testimonianza 2" />
         <YouTubeEmbed videoId="svWFTDWQ1Xs" title="Il nostro carisma - testimonianza 3" />
       </div>
-    </section>
+      </section>
+    </>
   )
 }

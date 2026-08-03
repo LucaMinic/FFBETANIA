@@ -1,12 +1,15 @@
+import { PageHero } from '../../components/PageHero'
 import donaBeni from '../../../assets/sostienici/dona-beni-servizi.jpg'
 
 export function DonaBeniOServiziPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-6 text-center">Dona beni o servizi</h1>
-
-      <img src={donaBeni} alt="Dona beni e servizi" className="w-full max-h-80 object-cover rounded-2xl mb-8" />
-
+    <>
+      <PageHero
+        image={donaBeni}
+        title="Dona beni o servizi"
+        subtitle="Aziende e professionisti possono sostenerci donando prodotti o competenze."
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <p className="text-gray-600 leading-relaxed mb-4">
         Sei un'azienda o un professionista? Scegli di sostenere il nostro servizio di solidarietà anche donando i
         tuoi prodotti o offrendo beni e servizi.
@@ -28,6 +31,7 @@ export function DonaBeniOServiziPage() {
           fondazione@ffbetania.net
         </a>
       </p>
-    </section>
+      </section>
+    </>
   )
 }

@@ -1,3 +1,6 @@
+import { PageHero } from '../../components/PageHero'
+import pentecoste from '../../../assets/padre-pancrazio/pentecoste-1982-inaugurazione.jpg'
+
 interface Milestone {
   date: string
   text: string
@@ -48,9 +51,14 @@ const milestones: Milestone[] = [
 
 export function StoriaPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-8 text-center">La nostra storia</h1>
-
+    <>
+      <PageHero
+        image={pentecoste}
+        title="La nostra storia"
+        subtitle="Dalla prima comunità del 1982 a oggi: le tappe della Fraternità."
+        imageAlt="Pentecoste 30.05.82 - Inaugurazione ufficiale FFB"
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <ol className="relative border-l-2 border-[var(--beige-dark)] pl-6 space-y-8 mb-16">
         {milestones.map((m) => (
           <li key={m.date}>
@@ -73,6 +81,7 @@ export function StoriaPage() {
         <li>fra Antonio Surano — consigliere generale</li>
         <li>sor. Maria Francesca Gavirati — consigliera generale</li>
       </ul>
-    </section>
+      </section>
+    </>
   )
 }

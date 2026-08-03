@@ -1,4 +1,6 @@
 import { YouTubeEmbed } from '../components/YouTubeEmbed'
+import { PageHero } from '../components/PageHero'
+import convegnoGiubilare from '../../assets/chi-siamo/convegno-giubilare-3167.jpg'
 
 const videoIds = [
   'GV-O28mk_BA',
@@ -50,9 +52,13 @@ const comunicatiStampa: Pubblicazione[] = [
 
 export function MediaPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-10 text-center">Media</h1>
-
+    <>
+      <PageHero
+        image={convegnoGiubilare}
+        title="Media"
+        subtitle="Video, pubblicazioni e racconti della vita della Fraternità."
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-6">Video</h2>
       <div className="grid sm:grid-cols-3 gap-4 mb-16">
         {videoIds.map((id, i) => (
@@ -90,6 +96,7 @@ export function MediaPage() {
           </a>
         ))}
       </div>
-    </section>
+      </section>
+    </>
   )
 }

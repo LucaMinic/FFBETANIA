@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { YouTubeEmbed } from '../components/YouTubeEmbed'
+import { PageHero } from '../components/PageHero'
 import asilo from '../../assets/progetto-brasile/asilo.jpg'
 import cimg from '../../assets/progetto-brasile/cimg93731.jpeg'
 import progettoScuola from '../../assets/progetto-brasile/progetto-scuola.jpg'
@@ -20,11 +21,13 @@ const tappe: Tappa[] = [
 
 export function ProgettoBrasilePage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-6 text-center">Progetto Brasile</h1>
-
-      <img src={asilo} alt="Asilo Nossa Senhora Aparecida" className="w-full max-h-96 object-cover rounded-2xl mb-8" />
-
+    <>
+      <PageHero
+        image={asilo}
+        title="Progetto Brasile"
+        subtitle="Un centro di accoglienza per l'infanzia a Salvador de Bahia."
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <p className="text-gray-600 leading-relaxed mb-12">
         L'iniziativa nasce dal proposito del fondatore padre Pancrazio di creare "un centro di accoglienza e
         ospitalità per i giovani che vivono in favelas", affrontando situazioni di disagio attraverso una formazione
@@ -96,6 +99,7 @@ export function ProgettoBrasilePage() {
           Scopri come
         </Link>
       </div>
-    </section>
+      </section>
+    </>
   )
 }

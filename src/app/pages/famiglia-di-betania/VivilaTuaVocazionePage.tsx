@@ -1,10 +1,16 @@
 import { PlaceholderForm } from '../../components/PlaceholderForm'
+import { PageHero } from '../../components/PageHero'
+import vitaFraterna from '../../../assets/chi-siamo/vita-fraterna-2026.png'
 
 export function VivilaTuaVocazionePage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-8">Vivi la tua vocazione</h1>
-
+    <>
+      <PageHero
+        image={vitaFraterna}
+        title="Vivi la tua vocazione"
+        subtitle="Lasciati interpellare dalla chiamata di Dio: scrivici per il tuo cammino di discernimento."
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
       <blockquote className="border-l-4 border-[var(--warm-orange)] pl-4 italic text-gray-600 mb-4 text-left max-w-md mx-auto">
         «Abbi la certezza che, se riconosci una chiamata di Dio e la segui, ciò sarà la cosa che darà pienezza alla
         tua vita.» — Papa Francesco
@@ -21,6 +27,7 @@ export function VivilaTuaVocazionePage() {
       </p>
 
       <PlaceholderForm submitLabel="Invia" contactEmail="info@ffbetania.net" />
-    </section>
+      </section>
+    </>
   )
 }

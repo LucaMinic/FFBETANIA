@@ -1,3 +1,4 @@
+import { PageHero } from '../../components/PageHero'
 import logoGad from '../../../assets/famiglia-di-betania/logo-gad.jpeg'
 import convegnoGiubilare from '../../../assets/famiglia-di-betania/convegno-giubilare-1794.jpg'
 
@@ -31,16 +32,16 @@ const gruppi: Gruppo[] = [
 
 export function GruppoAncillaDominiPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-8 text-center">Gruppi Ancilla Domini</h1>
-
+    <>
+      <PageHero
+        image={convegnoGiubilare}
+        title="Gruppi Ancilla Domini"
+        subtitle="18 gruppi di preghiera del Rinnovamento Carismatico Cattolico in tutta Italia."
+        imageAlt="Fraternità Francescana di Betania - Convegno Giubilare"
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <div className="flex items-center justify-center gap-6 mb-8">
         <img src={logoGad} alt="Logo GAD FFB" className="w-24 h-24 object-contain rounded-2xl" />
-        <img
-          src={convegnoGiubilare}
-          alt="Fraternità Francescana di Betania - Convegno Giubilare"
-          className="flex-1 max-h-40 object-cover rounded-2xl"
-        />
       </div>
 
       <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">Chi sono</h2>
@@ -86,6 +87,7 @@ export function GruppoAncillaDominiPage() {
           </tbody>
         </table>
       </div>
-    </section>
+      </section>
+    </>
   )
 }

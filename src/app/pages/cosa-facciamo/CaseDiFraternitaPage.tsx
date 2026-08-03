@@ -1,3 +1,4 @@
+import { PageHero } from '../../components/PageHero'
 import heroImg from '../../../assets/cosa-facciamo/case-di-fraternita-hero.jpg'
 
 interface Casa {
@@ -34,11 +35,14 @@ const case_: Casa[] = [
 
 export function CaseDiFraternitaPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-6 text-center">Dove siamo</h1>
-
-      <img src={heroImg} alt="Casa Madre di Terlizzi" className="w-full max-h-80 object-cover rounded-2xl mb-8" />
-
+    <>
+      <PageHero
+        image={heroImg}
+        title="Dove siamo"
+        subtitle="Le nostre Case: oasi spirituali aperte a tutti, in Italia e nel mondo."
+        imageAlt="Casa Madre di Terlizzi"
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <p className="text-gray-600 leading-relaxed mb-4">
         Le nostre Case sono chiamate ad essere delle "oasi spirituali" dove gli uomini e le donne di oggi possano
         ritrovare un sincero rapporto con Dio e con i fratelli. Chi viene a Betania non rimane spettatore perché la
@@ -64,6 +68,7 @@ export function CaseDiFraternitaPage() {
           </div>
         ))}
       </div>
-    </section>
+      </section>
+    </>
   )
 }

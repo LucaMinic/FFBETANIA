@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import { PageHero } from '../components/PageHero'
 import progettoBrasile from '../../assets/fondazione/progetto-brasile-2.jpg'
 import fondazioneItalia from '../../assets/fondazione/fondazione-italia.jpg'
 import statutoPdf from '../../assets/fondazione/statuto.pdf'
@@ -22,9 +23,13 @@ const consiglio: Consigliere[] = [
 
 export function FondazionePage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-6 text-center">Fondazione</h1>
-
+    <>
+      <PageHero
+        image={progettoBrasile}
+        title="Fondazione Betania ETS"
+        subtitle="Un'istituzione senza fini di lucro al servizio dei più deboli, in Italia e nel mondo."
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <p className="text-gray-600 leading-relaxed mb-4">
         La Fondazione Betania ETS è nata nel 2007 per un'iniziativa del fondatore del nostro Istituto, padre Pancrazio
         Nicola Gaudioso. Il suo desiderio era quello di costituire un'istituzione senza fini di lucro che potesse
@@ -137,6 +142,7 @@ export function FondazionePage() {
           </div>
         ))}
       </div>
-    </section>
+      </section>
+    </>
   )
 }

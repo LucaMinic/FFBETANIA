@@ -10,6 +10,7 @@ import logo from '../../assets/logo/ffbetania-logo.svg'
 export function Header() {
   const { pathname } = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null)
 
   const isActive = (to: string) => pathname === to || pathname.startsWith(`${to}/`)
 
@@ -71,7 +72,13 @@ export function Header() {
 
           <LanguageSwitcher />
 
-          <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+          <Sheet
+            open={mobileOpen}
+            onOpenChange={(open) => {
+              setMobileOpen(open)
+              if (!open) setOpenMobileSubmenu(null)
+            }}
+          >
             <SheetTrigger asChild>
               <button
                 type="button"
@@ -86,31 +93,57 @@ export function Header() {
                 <SheetTitle className="text-[var(--deep-blue)]">FFBetania</SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col p-4 gap-1">
-                {navItems.map((item) => (
-                  <div key={item.to} className="mb-2">
-                    <Link
-                      to={item.to}
-                      onClick={() => setMobileOpen(false)}
-                      className="block px-2 py-2 text-sm font-semibold text-[var(--deep-blue)] rounded-lg hover:bg-gray-50"
-                    >
-                      {item.label}
-                    </Link>
-                    {item.children && (
-                      <div className="ml-3 border-l border-gray-100 pl-3">
-                        {item.children.map((child) => (
+                {navItems.map((item) =>
+                  item.children ? (
+                    <div key={item.to} className="mb-1">
+                      <button
+                        type="button"
+                        onClick={() => setOpenMobileSubmenu((prev) => (prev === item.to ? null : item.to))}
+                        aria-expanded={openMobileSubmenu === item.to}
+                        className={`w-full flex items-center justify-between px-2 py-2 text-sm font-semibold rounded-lg hover:bg-gray-50 ${
+                          isActive(item.to) ? 'text-[var(--warm-orange)]' : 'text-[var(--deep-blue)]'
+                        }`}
+                      >
+                        {item.label}
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform ${openMobileSubmenu === item.to ? 'rotate-180' : ''}`}
+                        />
+                      </button>
+                      {openMobileSubmenu === item.to && (
+                        <div className="ml-3 border-l border-gray-100 pl-3 mt-1">
                           <Link
-                            key={child.to}
-                            to={child.to}
+                            to={item.to}
                             onClick={() => setMobileOpen(false)}
                             className="block px-2 py-1.5 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-[var(--deep-blue)]"
                           >
-                            {child.label}
+                            {item.label} (panoramica)
                           </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.to}
+                              to={child.to}
+                              onClick={() => setMobileOpen(false)}
+                              className="block px-2 py-1.5 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-[var(--deep-blue)]"
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      onClick={() => setMobileOpen(false)}
+                      className={`block px-2 py-2 text-sm font-semibold rounded-lg hover:bg-gray-50 mb-1 ${
+                        isActive(item.to) ? 'text-[var(--warm-orange)]' : 'text-[var(--deep-blue)]'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ),
+                )}
               </nav>
             </SheetContent>
           </Sheet>

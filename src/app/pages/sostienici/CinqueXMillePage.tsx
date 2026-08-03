@@ -1,14 +1,18 @@
+import { PageHero } from '../../components/PageHero'
 import banner from '../../../assets/sostienici/5x1000-banner.png'
 import plasticoScuola from '../../../assets/sostienici/5x1000-plastico-scuola.png'
 import locandinaPdf from '../../../assets/sostienici/locandina-5x1000-2026.pdf'
 
 export function CinqueXMillePage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-6">5x1000</h1>
-
-      <img src={banner} alt="5x1000 Fondazione Betania ETS" className="w-full max-h-72 object-cover rounded-2xl mb-8" />
-
+    <>
+      <PageHero
+        image={banner}
+        title="5x1000"
+        subtitle="Non ti costa nulla, ma per noi fa una grande differenza."
+        imageAlt="5x1000 Fondazione Betania ETS"
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
       <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
         Destina il tuo 5x1000 alla Fondazione Betania Onlus/ETS: non ti costa nulla, ma per noi fa una grande
         differenza. Basta indicare il nostro codice fiscale nella tua dichiarazione dei redditi.
@@ -38,6 +42,7 @@ export function CinqueXMillePage() {
       >
         Scarica la locandina 5x1000
       </a>
-    </section>
+      </section>
+    </>
   )
 }

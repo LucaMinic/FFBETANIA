@@ -1,9 +1,16 @@
 import { Link } from 'react-router'
+import { PageHero } from '../../components/PageHero'
+import progettoScuola from '../../../assets/progetto-brasile/progetto-scuola.jpg'
 
 export function ProgettiPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-4">I nostri progetti</h1>
+    <>
+      <PageHero
+        image={progettoScuola}
+        title="I nostri progetti"
+        subtitle="Le campagne di raccolta fondi della Fraternità Francescana di Betania."
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
       <p className="text-lg text-gray-500 mb-4">
         Le campagne di raccolta fondi attive saranno presto disponibili qui, gestite tramite il nostro nuovo sistema
         di raccolta fondi.
@@ -15,6 +22,7 @@ export function ProgettiPage() {
         </Link>{' '}
         o contattarci per conoscere le iniziative in corso.
       </p>
-    </section>
+      </section>
+    </>
   )
 }

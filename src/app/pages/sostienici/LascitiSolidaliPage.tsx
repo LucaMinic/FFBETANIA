@@ -1,8 +1,15 @@
+import { PageHero } from '../../components/PageHero'
+import spiritualita from '../../../assets/sostienici/spiritualita-hero.jpg'
+
 export function LascitiSolidaliPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-8">Lasciti solidali</h1>
-
+    <>
+      <PageHero
+        image={spiritualita}
+        title="Lasciti solidali"
+        subtitle="Un gesto che dura nel tempo e cambia in meglio la vita di tante persone."
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
       <p className="text-gray-600 leading-relaxed mb-4 max-w-2xl mx-auto">
         Inserire un lascito solidale nel proprio testamento è un atto di grande consapevolezza con cui scegli di
         tramandare i tuoi valori e gli ideali in cui credi, per dare valore al futuro e cambiare in meglio la vita di
@@ -25,6 +32,7 @@ export function LascitiSolidaliPage() {
           fondazione@ffbetania.net
         </a>
       </p>
-    </section>
+      </section>
+    </>
   )
 }

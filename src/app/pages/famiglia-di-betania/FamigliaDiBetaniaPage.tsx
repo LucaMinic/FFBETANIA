@@ -1,13 +1,16 @@
 import { Link } from 'react-router'
+import { PageHero } from '../../components/PageHero'
 import famigliari from '../../../assets/famiglia-di-betania/famigliari.jpg'
 
 export function FamigliaDiBetaniaPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-6 text-center">Famiglia di Betania</h1>
-
-      <img src={famigliari} alt="Famiglia di Betania" className="w-full max-h-72 object-cover rounded-2xl mb-8" />
-
+    <>
+      <PageHero
+        image={famigliari}
+        title="Famiglia di Betania"
+        subtitle="Una grande famiglia spirituale che vive il nostro carisma nel mondo."
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <blockquote className="border-l-4 border-[var(--warm-orange)] pl-4 italic text-gray-600 mb-6">
         "Portatori di pace, unità, gioia e speranza, secondo lo stile della Fraternità, nella società e nella Chiesa
         dove sono chiamati a fiorire." — dallo Statuto dei Familiari
@@ -77,6 +80,7 @@ export function FamigliaDiBetaniaPage() {
           Vivi la tua vocazione
         </Link>
       </div>
-    </section>
+      </section>
+    </>
   )
 }

@@ -73,6 +73,25 @@ export const router = createBrowserRouter(
           lazy: () =>
             import('./pages/cosa-facciamo/CaseDiFraternitaPage').then((m) => ({ Component: m.CaseDiFraternitaPage })),
         },
+        {
+          path: 'cosa-facciamo/mensa-dei-poveri',
+          lazy: () =>
+            import('./pages/cosa-facciamo/MensaDeiPoveriPage').then((m) => ({ Component: m.MensaDeiPoveriPage })),
+        },
+        {
+          path: 'cosa-facciamo/sostegno-alle-famiglie',
+          lazy: () =>
+            import('./pages/cosa-facciamo/SostegnoAlleFamigliePage').then((m) => ({
+              Component: m.SostegnoAlleFamigliePage,
+            })),
+        },
+        {
+          path: 'cosa-facciamo/raccolta-smistamento-distribuzione',
+          lazy: () =>
+            import('./pages/cosa-facciamo/RaccoltaSmistamentoDistribuzionePage').then((m) => ({
+              Component: m.RaccoltaSmistamentoDistribuzionePage,
+            })),
+        },
 
         // Progetto Brasile
         {

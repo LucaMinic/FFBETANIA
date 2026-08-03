@@ -21,9 +21,14 @@ export const navItems: NavItem[] = [
     ],
   },
   {
-    label: 'Cosa facciamo',
+    label: 'Attività di solidarietà',
     to: '/cosa-facciamo',
-    children: [{ label: 'Progetto Brasile', to: '/progetto-brasile' }],
+    children: [
+      { label: 'Mensa dei poveri', to: '/cosa-facciamo/mensa-dei-poveri' },
+      { label: 'Sostegno alle famiglie', to: '/cosa-facciamo/sostegno-alle-famiglie' },
+      { label: 'Raccolta, smistamento e distribuzione', to: '/cosa-facciamo/raccolta-smistamento-distribuzione' },
+      { label: 'Progetto Brasile', to: '/progetto-brasile' },
+    ],
   },
   {
     label: 'Sostienici',
@@ -42,9 +47,7 @@ export const navItems: NavItem[] = [
   {
     label: 'Fondazione',
     to: '/fondazione',
-    children: [
-      { label: 'Media', to: '/media' },
-      { label: 'Contatti', to: '/contatti' },
-    ],
+    children: [{ label: 'Media', to: '/media' }],
   },
+  { label: 'Contatti', to: '/contatti' },
 ]

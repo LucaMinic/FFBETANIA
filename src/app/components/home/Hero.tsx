@@ -38,7 +38,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full aspect-[4/3] md:aspect-auto md:h-[85vh] md:min-h-[600px] overflow-hidden bg-[var(--deep-blue)]"
+      className="relative w-full aspect-[4/3] min-h-[520px] md:aspect-auto md:h-[85vh] md:min-h-[600px] overflow-hidden bg-[var(--deep-blue)]"
     >
       <AnimatePresence mode="sync">
         <motion.img
@@ -80,15 +80,15 @@ export function Hero() {
             <button
               type="button"
               onClick={scrollToNext}
-              className="px-8 py-3 rounded-2xl bg-gradient-to-br from-[#f5b942] via-[#f7c968] to-[#f5b942] text-white font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+              className="px-8 py-3 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/40 text-white font-medium hover:bg-white/20 transition-all"
             >
               Scopri di più
             </button>
             <Link
-              to="/sostienici"
-              className="px-8 py-3 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/40 text-white font-medium hover:bg-white/20 transition-all"
+              to="/sostienici/dona-ora"
+              className="px-8 py-3 rounded-2xl bg-gradient-to-br from-[#f5b942] via-[#f7c968] to-[#f5b942] text-white font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
             >
-              Sostienici
+              Dona ora
             </Link>
           </div>
         </AnimatedSection>

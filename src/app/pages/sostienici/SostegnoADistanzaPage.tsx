@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { Copy, Check } from 'lucide-react'
+import { PageHero } from '../../components/PageHero'
 import asilo from '../../../assets/progetto-brasile/asilo.jpg'
 import flagBrasil from '../../../assets/sostienici/flag-brasil.png'
 import flagItalia from '../../../assets/sostienici/flag-italia.png'
@@ -29,11 +30,14 @@ export function SostegnoADistanzaPage() {
   }
 
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-6 text-center">Sostegno a distanza</h1>
-
-      <img src={asilo} alt="Asilo Nossa Senhora Aparecida" className="w-full max-h-80 object-cover rounded-2xl mb-8" />
-
+    <>
+      <PageHero
+        image={asilo}
+        title="Sostegno a distanza"
+        subtitle="Aiuta un bambino del Progetto Brasile a crescere, studiare e sognare un futuro migliore."
+        imageAlt="Asilo Nossa Senhora Aparecida"
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <p className="text-lg text-gray-600 leading-relaxed text-center mb-12">
         Con il sostegno a distanza puoi aiutare un bambino a ricevere un'istruzione adeguata, sostenendo le spese vive
         per le sue attività formative presso il{' '}
@@ -181,6 +185,7 @@ export function SostegnoADistanzaPage() {
         "Il sostegno a distanza rappresenta un piccolo gesto che dona speranza in un futuro migliore sia al bambino
         che alla sua comunità."
       </p>
-    </section>
+      </section>
+    </>
   )
 }

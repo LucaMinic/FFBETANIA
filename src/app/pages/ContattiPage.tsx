@@ -1,10 +1,16 @@
 import { PlaceholderForm } from '../components/PlaceholderForm'
+import { PageHero } from '../components/PageHero'
+import heroImg from '../../assets/cosa-facciamo/case-di-fraternita-hero.jpg'
 
 export function ContattiPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-10 text-center">Contatti</h1>
-
+    <>
+      <PageHero
+        image={heroImg}
+        title="Contatti"
+        subtitle="Scrivici, vieni a trovarci o seguici sui social: siamo felici di ascoltarti."
+      />
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-4 text-center">
         Lasciaci un messaggio o la tua richiesta di preghiera
       </h2>
@@ -78,6 +84,7 @@ export function ContattiPage() {
           YouTube
         </a>
       </div>
-    </section>
+      </section>
+    </>
   )
 }

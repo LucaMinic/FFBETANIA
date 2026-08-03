@@ -32,7 +32,7 @@ export function Footer() {
             {t({ it: 'Chi siamo', en: 'About us' })}
           </Link>
           <Link to="/cosa-facciamo" className="text-sm font-semibold text-white/90 hover:text-[var(--warm-orange-light)] transition-colors">
-            {t({ it: 'Cosa facciamo', en: 'What we do' })}
+            {t({ it: 'Attività di solidarietà', en: 'What we do' })}
           </Link>
           <Link to="/sostienici" className="text-sm font-semibold text-white/90 hover:text-[var(--warm-orange-light)] transition-colors">
             {t({ it: 'Sostienici', en: 'Support us' })}

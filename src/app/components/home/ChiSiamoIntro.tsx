@@ -18,11 +18,17 @@ export function ChiSiamoIntro() {
               />
             </AnimatedImage>
             <AnimatedSection direction="right" delay={0.15}>
+              <p className="text-sm font-semibold text-[var(--warm-orange)] uppercase tracking-wide mb-2">
+                Da oltre 40 anni al fianco di chi ha bisogno
+              </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-5">Chi siamo</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Prima di tutto, siamo una famiglia: una fraternità che vive di preghiera e di accoglienza, e che ogni
+                giorno apre le porte a chi cerca conforto, ascolto o un pasto caldo.
+              </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Siamo un Istituto di Vita Consacrata nato dal carisma di Padre Pancrazio Gaudioso: preghiera e
-                accoglienza, vissute in un profondo contesto di vita fraterna tipico dell'esperienza Francescana,
-                ispirate alla Betania evangelica.
+                Siamo un Istituto di Vita Consacrata nato dal carisma di Padre Pancrazio Gaudioso, ispirato alla
+                Betania evangelica e vissuto nello stile di san Francesco d'Assisi.
               </p>
               <Link
                 to="/chi-siamo"
@@ -34,7 +40,6 @@ export function ChiSiamoIntro() {
           </div>
         </div>
       </section>
-      <WaveDivider fill="var(--beige)" flip />
     </>
   )
 }
