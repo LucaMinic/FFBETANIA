@@ -1,0 +1,71 @@
+import { Link } from 'react-router'
+import { Facebook, Instagram, Youtube } from 'lucide-react'
+import { useT } from '../context/LanguageContext'
+
+export function Footer() {
+  const t = useT()
+
+  return (
+    <footer className="bg-[var(--deep-blue)] text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
+        <div>
+          <p className="font-bold mb-2">Fraternità Francescana di Betania</p>
+          <p className="text-sm text-white/70">Via Pasquale Fiore 143 – 70038 Terlizzi (BA)</p>
+          <p className="text-sm text-white/70">CF 93017320727</p>
+          <p className="text-sm text-white/70">
+            <a href="mailto:info@ffbetania.net" className="hover:text-[var(--warm-orange-light)]">
+              info@ffbetania.net
+            </a>
+            {' · '}
+            <a href="tel:+390803517712" className="hover:text-[var(--warm-orange-light)]">
+              080 351 77 12
+            </a>
+          </p>
+          <p className="text-sm text-white/70 mt-3">Fraternità Francescana di Betania Fondazione ETS</p>
+          <p className="text-sm text-white/70">CF 93346130722</p>
+        </div>
+
+        <nav className="flex flex-col gap-2">
+          <Link to="/chi-siamo" className="text-sm font-semibold text-white/90 hover:text-[var(--warm-orange-light)] transition-colors">
+            {t({ it: 'Chi siamo', en: 'About us' })}
+          </Link>
+          <Link to="/cosa-facciamo" className="text-sm font-semibold text-white/90 hover:text-[var(--warm-orange-light)] transition-colors">
+            {t({ it: 'Cosa facciamo', en: 'What we do' })}
+          </Link>
+          <Link to="/sostienici" className="text-sm font-semibold text-white/90 hover:text-[var(--warm-orange-light)] transition-colors">
+            {t({ it: 'Sostienici', en: 'Support us' })}
+          </Link>
+          <Link to="/sostienici/5x1000" className="text-sm font-semibold text-white/90 hover:text-[var(--warm-orange-light)] transition-colors">
+            5x1000
+          </Link>
+          <Link to="/contatti" className="text-sm font-semibold text-white/90 hover:text-[var(--warm-orange-light)] transition-colors">
+            {t({ it: 'Contatti', en: 'Contact' })}
+          </Link>
+        </nav>
+
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center gap-3">
+            <a href="https://www.facebook.com/ffbetania/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-[var(--warm-orange-light)]">
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a href="https://www.instagram.com/ffbetania/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-[var(--warm-orange-light)]">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href="https://www.youtube.com/channel/UC8bXgMxN36jQXagDdPpOwRA" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-[var(--warm-orange-light)]">
+              <Youtube className="w-5 h-5" />
+            </a>
+          </div>
+          <Link to="/privacy-policy" className="text-sm text-white/70 hover:text-[var(--warm-orange-light)] transition-colors">
+            Privacy Policy
+          </Link>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <p className="max-w-6xl mx-auto px-4 sm:px-6 py-4 text-xs text-white/60">
+          &copy; {new Date().getFullYear()} FFBetania — {t({ it: 'Tutti i diritti riservati.', en: 'All rights reserved.' })}
+        </p>
+      </div>
+    </footer>
+  )
+}

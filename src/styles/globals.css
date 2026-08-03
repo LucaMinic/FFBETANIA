@@ -1,0 +1,13 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Evita che un componente leggermente più largo del viewport (es. slider,
+   carousel) trascini l'intera pagina in scroll orizzontale. */
+html, body {
+  overflow-x: hidden;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}

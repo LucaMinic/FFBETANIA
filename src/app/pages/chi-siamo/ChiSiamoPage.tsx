@@ -1,0 +1,60 @@
+import { Link } from 'react-router'
+
+export function ChiSiamoPage() {
+  return (
+    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-6 text-center">Chi siamo</h1>
+
+      <p className="text-lg text-gray-600 leading-relaxed mb-4">
+        <strong>Fraternità Francescana di Betania</strong> è un Istituto di Vita Consacrata di diritto diocesano
+        composto da fratelli, sia chierici che laici, e da sorelle che si consacrano a Dio mediante i voti pubblici
+        di castità, povertà ed obbedienza.
+      </p>
+      <p className="text-lg text-gray-600 leading-relaxed mb-4">
+        Questa nostra consacrazione si realizza attraverso il carisma della Fraternità Francescana di Betania, che si
+        esprime nella preghiera e nell'accoglienza, elementi caratteristici della Betania evangelica (cfr. Lc
+        10,38-42), vissuti in un profondo contesto di vita fraterna tipico dell'esperienza Francescana.
+      </p>
+
+      <blockquote className="border-l-4 border-[var(--warm-orange)] pl-4 italic text-gray-600 my-8">
+        "Non sii talmente dedito all'attività di Marta da dimenticare il silenzio di Maria; la Vergine Madre che sì
+        ben concilia l'uno e l'altro ufficio ti sia di dolce modello e di ispirazione." — San Pio a Padre Pancrazio
+      </blockquote>
+
+      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">Spiritualità mariana-francescana</h2>
+      <p className="text-gray-600 leading-relaxed mb-4">
+        L'icona evangelica di Betania ci guida nel vivere quotidianamente il Vangelo, guidati dalla luce della Beata
+        Vergine Maria e dalla semplicità di san Francesco d'Assisi.
+      </p>
+      <p className="text-gray-600 leading-relaxed mb-8">
+        <strong>Mariana</strong> — La Vergine Maria che accolse nel cuore e nel corpo il Verbo di Dio è per noi
+        l'icona principale della vera accoglienza. <strong>Francescana</strong> — Per apprendere lo stile di vita del
+        vero discepolo di Cristo imitiamo il serafico padre san Francesco d'Assisi.
+      </p>
+
+      <div className="grid sm:grid-cols-3 gap-4">
+        <Link
+          to="/chi-siamo/carisma"
+          className="rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all"
+        >
+          <h3 className="font-bold text-[var(--deep-blue)] mb-1">Il nostro carisma</h3>
+          <p className="text-sm text-gray-500">Preghiera, Accoglienza, Vita Fraterna.</p>
+        </Link>
+        <Link
+          to="/chi-siamo/padre-pancrazio"
+          className="rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all"
+        >
+          <h3 className="font-bold text-[var(--deep-blue)] mb-1">Padre Pancrazio</h3>
+          <p className="text-sm text-gray-500">La storia del nostro fondatore.</p>
+        </Link>
+        <Link
+          to="/chi-siamo/storia"
+          className="rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all"
+        >
+          <h3 className="font-bold text-[var(--deep-blue)] mb-1">La nostra storia</h3>
+          <p className="text-sm text-gray-500">Cronologia e governo generale.</p>
+        </Link>
+      </div>
+    </section>
+  )
+}
