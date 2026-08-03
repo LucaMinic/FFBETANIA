@@ -1,7 +1,17 @@
+import convegnoGiubilare from '../../../assets/chi-siamo/convegno-giubilare-3167.jpg'
+import vitaFraterna from '../../../assets/chi-siamo/vita-fraterna-2026.png'
+import { YouTubeEmbed } from '../../components/YouTubeEmbed'
+
 export function CarismaPage() {
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-8 text-center">Carisma</h1>
+
+      <img
+        src={convegnoGiubilare}
+        alt="Fraternità Francescana di Betania - Convegno Giubilare"
+        className="w-full max-h-80 object-cover rounded-2xl mb-10"
+      />
 
       <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">Preghiera</h2>
       <p className="text-gray-600 leading-relaxed mb-4">
@@ -72,11 +82,20 @@ export function CarismaPage() {
         presenza di Gesù di Nazareth e della sua amicizia vissuta in un clima di famiglia. La nostra Betania è la casa
         di fratelli e sorelle che condividono la stessa vita invocando ogni giorno la presenza di Cristo.
       </p>
-      <blockquote className="border-l-4 border-[var(--warm-orange)] pl-4 italic text-gray-600">
+      <blockquote className="border-l-4 border-[var(--warm-orange)] pl-4 italic text-gray-600 mb-8">
         "È meglio avere la sensazione di camminare poco insieme che l'illusione di camminare di più da soli, perché a
         quell'«insieme» c'è Lui, Gesù, che ha garantito la sua presenza, senza la quale non possiamo fare nulla di
         buono." — Padre Pancrazio Gaudioso
       </blockquote>
+
+      <img src={vitaFraterna} alt="Vita fraterna FFB" className="w-full max-h-80 object-cover rounded-2xl mb-16" />
+
+      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-6">Testimonianze</h2>
+      <div className="grid sm:grid-cols-3 gap-4">
+        <YouTubeEmbed videoId="FiqkY8PEkKk" title="Il nostro carisma - testimonianza 1" />
+        <YouTubeEmbed videoId="axdMMA_Id1Q" title="Il nostro carisma - testimonianza 2" />
+        <YouTubeEmbed videoId="svWFTDWQ1Xs" title="Il nostro carisma - testimonianza 3" />
+      </div>
     </section>
   )
 }

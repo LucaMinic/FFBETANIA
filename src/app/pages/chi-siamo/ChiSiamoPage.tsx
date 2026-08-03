@@ -1,9 +1,18 @@
 import { Link } from 'react-router'
+import fondatore from '../../../assets/chi-siamo/il-nostro-fondatore.jpg'
+import iconMariana from '../../../assets/chi-siamo/ico-mariana.svg'
+import iconTau from '../../../assets/chi-siamo/ico-tau.svg'
 
 export function ChiSiamoPage() {
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <h1 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-6 text-center">Chi siamo</h1>
+
+      <img
+        src={fondatore}
+        alt="Il nostro fondatore"
+        className="w-full max-h-80 object-cover rounded-2xl mb-8"
+      />
 
       <p className="text-lg text-gray-600 leading-relaxed mb-4">
         <strong>Fraternità Francescana di Betania</strong> è un Istituto di Vita Consacrata di diritto diocesano
@@ -26,11 +35,23 @@ export function ChiSiamoPage() {
         L'icona evangelica di Betania ci guida nel vivere quotidianamente il Vangelo, guidati dalla luce della Beata
         Vergine Maria e dalla semplicità di san Francesco d'Assisi.
       </p>
-      <p className="text-gray-600 leading-relaxed mb-8">
-        <strong>Mariana</strong> — La Vergine Maria che accolse nel cuore e nel corpo il Verbo di Dio è per noi
-        l'icona principale della vera accoglienza. <strong>Francescana</strong> — Per apprendere lo stile di vita del
-        vero discepolo di Cristo imitiamo il serafico padre san Francesco d'Assisi.
-      </p>
+
+      <div className="grid sm:grid-cols-2 gap-6 mb-8">
+        <div className="flex gap-3 items-start">
+          <img src={iconMariana} alt="" className="w-10 h-10 shrink-0" />
+          <p className="text-gray-600 leading-relaxed">
+            <strong>Mariana</strong> — La Vergine Maria che accolse nel cuore e nel corpo il Verbo di Dio è per noi
+            l'icona principale della vera accoglienza.
+          </p>
+        </div>
+        <div className="flex gap-3 items-start">
+          <img src={iconTau} alt="" className="w-10 h-10 shrink-0" />
+          <p className="text-gray-600 leading-relaxed">
+            <strong>Francescana</strong> — Per apprendere lo stile di vita del vero discepolo di Cristo imitiamo il
+            serafico padre san Francesco d'Assisi.
+          </p>
+        </div>
+      </div>
 
       <div className="grid sm:grid-cols-3 gap-4">
         <Link

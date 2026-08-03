@@ -1,26 +1,66 @@
-import { useLanguage } from '../context/LanguageContext'
+import { ChevronDown } from 'lucide-react'
+import { useLanguage, type Lang } from '../context/LanguageContext'
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from './ui/dropdown-menu'
+
+const FLAG_STYLE = { width: '1.25rem', height: '0.9rem' }
+
+function FlagIT({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 90 60" style={FLAG_STYLE} className={className} role="img" aria-label="Italiano">
+      <rect width="30" height="60" x="0" fill="#009246" />
+      <rect width="30" height="60" x="30" fill="#FFFFFF" />
+      <rect width="30" height="60" x="60" fill="#CE2B37" />
+    </svg>
+  )
+}
+
+function FlagGB({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 90 60" style={FLAG_STYLE} className={className} role="img" aria-label="English" preserveAspectRatio="xMidYMid slice">
+      <rect width="90" height="60" fill="#00247D" />
+      <path d="M0,0 L90,60 M90,0 L0,60" stroke="#FFFFFF" strokeWidth="12" />
+      <path d="M0,0 L90,60 M90,0 L0,60" stroke="#CF142B" strokeWidth="4" />
+      <path d="M45,0 V60 M0,30 H90" stroke="#FFFFFF" strokeWidth="20" />
+      <path d="M45,0 V60 M0,30 H90" stroke="#CF142B" strokeWidth="12" />
+    </svg>
+  )
+}
+
+interface LangOption {
+  code: Lang
+  label: string
+  Flag: typeof FlagIT
+}
+
+const options: LangOption[] = [
+  { code: 'it', label: 'Italiano', Flag: FlagIT },
+  { code: 'en', label: 'English', Flag: FlagGB },
+]
 
 export function LanguageSwitcher() {
   const { lang, setLang } = useLanguage()
+  const current = options.find((o) => o.code === lang) ?? options[0]
 
   return (
-    <div className="flex items-center gap-1.5">
-      <button
-        type="button"
-        onClick={() => setLang('it')}
-        disabled={lang === 'it'}
-        className="px-2.5 py-1 text-sm font-semibold rounded-lg border border-gray-200 text-[var(--deep-blue)] transition-colors hover:border-gray-300 hover:bg-gray-50 disabled:border-[var(--warm-orange)] disabled:bg-[var(--warm-orange)] disabled:text-white disabled:cursor-default"
-      >
-        IT
-      </button>
-      <button
-        type="button"
-        onClick={() => setLang('en')}
-        disabled={lang === 'en'}
-        className="px-2.5 py-1 text-sm font-semibold rounded-lg border border-gray-200 text-[var(--deep-blue)] transition-colors hover:border-gray-300 hover:bg-gray-50 disabled:border-[var(--warm-orange)] disabled:bg-[var(--warm-orange)] disabled:text-white disabled:cursor-default"
-      >
-        EN
-      </button>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button
+          type="button"
+          aria-label="Seleziona lingua"
+          className="flex items-center gap-1.5 pl-2 pr-1.5 py-1.5 rounded-lg border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-colors"
+        >
+          <current.Flag className="rounded-xs" />
+          <ChevronDown className="w-3.5 h-3.5 text-gray-400" />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        {options.map((o) => (
+          <DropdownMenuItem key={o.code} onSelect={() => setLang(o.code)}>
+            <o.Flag className="rounded-xs mr-2" />
+            {o.label}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   )
 }

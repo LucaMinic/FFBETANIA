@@ -1,7 +1,6 @@
 import { createBrowserRouter } from 'react-router'
 import { RootLayout } from './layouts/RootLayout'
 import { HomePage } from './pages/HomePage'
-import { ComingSoon } from './components/ComingSoon'
 
 export const router = createBrowserRouter(
   [
@@ -31,43 +30,111 @@ export const router = createBrowserRouter(
         },
 
         // Famiglia di Betania
-        { path: 'famiglia-di-betania', element: <ComingSoon title="Famiglia di Betania" /> },
+        {
+          path: 'famiglia-di-betania',
+          lazy: () =>
+            import('./pages/famiglia-di-betania/FamigliaDiBetaniaPage').then((m) => ({
+              Component: m.FamigliaDiBetaniaPage,
+            })),
+        },
         {
           path: 'famiglia-di-betania/giovani-di-betania',
-          element: <ComingSoon title="Giovani di Betania" />,
+          lazy: () =>
+            import('./pages/famiglia-di-betania/GiovaniDiBetaniaPage').then((m) => ({
+              Component: m.GiovaniDiBetaniaPage,
+            })),
         },
         {
           path: 'famiglia-di-betania/gruppo-ancilla-domini',
-          element: <ComingSoon title="Gruppi Ancilla Domini" />,
+          lazy: () =>
+            import('./pages/famiglia-di-betania/GruppoAncillaDominiPage').then((m) => ({
+              Component: m.GruppoAncillaDominiPage,
+            })),
         },
-        { path: 'famiglia-di-betania/oblati', element: <ComingSoon title="Oblati" /> },
+        {
+          path: 'famiglia-di-betania/oblati',
+          lazy: () => import('./pages/famiglia-di-betania/OblatiPage').then((m) => ({ Component: m.OblatiPage })),
+        },
         {
           path: 'famiglia-di-betania/vivi-la-tua-vocazione',
-          element: <ComingSoon title="Vivi la tua vocazione" />,
+          lazy: () =>
+            import('./pages/famiglia-di-betania/VivilaTuaVocazionePage').then((m) => ({
+              Component: m.VivilaTuaVocazionePage,
+            })),
         },
 
         // Cosa facciamo
-        { path: 'cosa-facciamo', element: <ComingSoon title="Cosa facciamo" /> },
-        { path: 'cosa-facciamo/case-di-fraternita', element: <ComingSoon title="Dove siamo" /> },
+        {
+          path: 'cosa-facciamo',
+          lazy: () => import('./pages/cosa-facciamo/CosaFacciamoPage').then((m) => ({ Component: m.CosaFacciamoPage })),
+        },
+        {
+          path: 'cosa-facciamo/case-di-fraternita',
+          lazy: () =>
+            import('./pages/cosa-facciamo/CaseDiFraternitaPage').then((m) => ({ Component: m.CaseDiFraternitaPage })),
+        },
 
         // Progetto Brasile
-        { path: 'progetto-brasile', element: <ComingSoon title="Progetto Brasile" /> },
+        {
+          path: 'progetto-brasile',
+          lazy: () => import('./pages/ProgettoBrasilePage').then((m) => ({ Component: m.ProgettoBrasilePage })),
+        },
 
         // Sostienici
-        { path: 'sostienici', element: <ComingSoon title="Sostienici" /> },
-        { path: 'sostienici/dona-ora', element: <ComingSoon title="Dona ora" /> },
-        { path: 'sostienici/5x1000', element: <ComingSoon title="5x1000" /> },
-        { path: 'sostienici/progetti', element: <ComingSoon title="I nostri progetti" /> },
-        { path: 'sostienici/sostegno-a-distanza', element: <ComingSoon title="Sostegno a distanza" /> },
-        { path: 'sostienici/dona-beni-o-servizi', element: <ComingSoon title="Dona beni o servizi" /> },
-        { path: 'sostienici/lasciti-solidali', element: <ComingSoon title="Lasciti solidali" /> },
-        { path: 'sostienici/proponi-una-campagna', element: <ComingSoon title="Proponi la tua campagna" /> },
+        {
+          path: 'sostienici',
+          lazy: () => import('./pages/sostienici/SostieniciPage').then((m) => ({ Component: m.SostieniciPage })),
+        },
+        {
+          path: 'sostienici/dona-ora',
+          lazy: () => import('./pages/sostienici/DonaOraPage').then((m) => ({ Component: m.DonaOraPage })),
+        },
+        {
+          path: 'sostienici/5x1000',
+          lazy: () => import('./pages/sostienici/CinqueXMillePage').then((m) => ({ Component: m.CinqueXMillePage })),
+        },
+        {
+          path: 'sostienici/progetti',
+          lazy: () => import('./pages/sostienici/ProgettiPage').then((m) => ({ Component: m.ProgettiPage })),
+        },
+        {
+          path: 'sostienici/sostegno-a-distanza',
+          lazy: () =>
+            import('./pages/sostienici/SostegnoADistanzaPage').then((m) => ({ Component: m.SostegnoADistanzaPage })),
+        },
+        {
+          path: 'sostienici/dona-beni-o-servizi',
+          lazy: () =>
+            import('./pages/sostienici/DonaBeniOServiziPage').then((m) => ({ Component: m.DonaBeniOServiziPage })),
+        },
+        {
+          path: 'sostienici/lasciti-solidali',
+          lazy: () =>
+            import('./pages/sostienici/LascitiSolidaliPage').then((m) => ({ Component: m.LascitiSolidaliPage })),
+        },
+        {
+          path: 'sostienici/proponi-una-campagna',
+          lazy: () =>
+            import('./pages/sostienici/ProponiUnaCampagnaPage').then((m) => ({ Component: m.ProponiUnaCampagnaPage })),
+        },
 
         // Media / Fondazione / Contatti
-        { path: 'media', element: <ComingSoon title="Media" /> },
-        { path: 'fondazione', element: <ComingSoon title="Fondazione" /> },
-        { path: 'contatti', element: <ComingSoon title="Contatti" /> },
-        { path: 'privacy-policy', element: <ComingSoon title="Privacy Policy" /> },
+        {
+          path: 'media',
+          lazy: () => import('./pages/MediaPage').then((m) => ({ Component: m.MediaPage })),
+        },
+        {
+          path: 'fondazione',
+          lazy: () => import('./pages/FondazionePage').then((m) => ({ Component: m.FondazionePage })),
+        },
+        {
+          path: 'contatti',
+          lazy: () => import('./pages/ContattiPage').then((m) => ({ Component: m.ContattiPage })),
+        },
+        {
+          path: 'privacy-policy',
+          lazy: () => import('./pages/PrivacyPolicyPage').then((m) => ({ Component: m.PrivacyPolicyPage })),
+        },
       ],
     },
   ],

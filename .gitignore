@@ -34,3 +34,7 @@ Thumbs.db
 
 content-inventory
 .claude
+
+# Documenti scaricati dal sito storico (PDF pesanti, restano solo in locale)
+public/documenti/
+IA-PROPOSTA.md

@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import { Facebook, Instagram, Youtube } from 'lucide-react'
 import { useT } from '../context/LanguageContext'
+import logoDark from '../../assets/logo/ffbetania-logo-dark.svg'
 
 export function Footer() {
   const t = useT()
@@ -9,6 +10,7 @@ export function Footer() {
     <footer className="bg-[var(--deep-blue)] text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
         <div>
+          <img src={logoDark} alt="FFBetania" className="h-10 w-auto mb-3" />
           <p className="font-bold mb-2">Fraternità Francescana di Betania</p>
           <p className="text-sm text-white/70">Via Pasquale Fiore 143 – 70038 Terlizzi (BA)</p>
           <p className="text-sm text-white/70">CF 93017320727</p>

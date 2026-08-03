@@ -17,24 +17,14 @@ export const navItems: NavItem[] = [
       { label: 'Il nostro carisma', to: '/chi-siamo/carisma' },
       { label: 'Padre Pancrazio', to: '/chi-siamo/padre-pancrazio' },
       { label: 'La nostra storia', to: '/chi-siamo/storia' },
-    ],
-  },
-  {
-    label: 'Famiglia di Betania',
-    to: '/famiglia-di-betania',
-    children: [
-      { label: 'Giovani di Betania', to: '/famiglia-di-betania/giovani-di-betania' },
-      { label: 'Gruppi Ancilla Domini', to: '/famiglia-di-betania/gruppo-ancilla-domini' },
-      { label: 'Oblati', to: '/famiglia-di-betania/oblati' },
-      { label: 'Vivi la tua vocazione', to: '/famiglia-di-betania/vivi-la-tua-vocazione' },
+      { label: 'Famiglia di Betania', to: '/famiglia-di-betania' },
     ],
   },
   {
     label: 'Cosa facciamo',
     to: '/cosa-facciamo',
-    children: [{ label: 'Dove siamo (Case di Fraternità)', to: '/cosa-facciamo/case-di-fraternita' }],
+    children: [{ label: 'Progetto Brasile', to: '/progetto-brasile' }],
   },
-  { label: 'Progetto Brasile', to: '/progetto-brasile' },
   {
     label: 'Sostienici',
     to: '/sostienici',
@@ -48,7 +38,13 @@ export const navItems: NavItem[] = [
       { label: 'Proponi la tua campagna', to: '/sostienici/proponi-una-campagna' },
     ],
   },
-  { label: 'Media', to: '/media' },
-  { label: 'Fondazione', to: '/fondazione' },
-  { label: 'Contatti', to: '/contatti' },
+  { label: 'Case di Fraternità', to: '/cosa-facciamo/case-di-fraternita' },
+  {
+    label: 'Fondazione',
+    to: '/fondazione',
+    children: [
+      { label: 'Media', to: '/media' },
+      { label: 'Contatti', to: '/contatti' },
+    ],
+  },
 ]

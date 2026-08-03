@@ -31,9 +31,8 @@ Home
 │   └── Vivi la tua vocazione      (discernimento — PLACEHOLDER form)
 ├── Cosa facciamo                  (ex "Attività di solidarietà", senza più sovrapporsi a "Sostienici")
 │   ├── Mensa dei poveri / Sostegno alle famiglie / Raccolta e distribuzione
-│   └── Dove siamo (Case di Fraternità)   (PLACEHOLDER mappa/elenco, contenuto storico come testo di supporto)
-├── Progetto Brasile               (VOCE DI MENU A SÉ — non annidata, per il suo peso e la sua visibilità)
-│   └── Asilo N.S. Aparecida, Scuola in costruzione, cronologia lavori — foto/video incorporati qui
+│   ├── Dove siamo (Case di Fraternità)   (PLACEHOLDER mappa/elenco, contenuto storico come testo di supporto)
+│   └── Progetto Brasile           (Asilo N.S. Aparecida, Scuola in costruzione, cronologia lavori — foto/video incorporati qui)
 ├── Sostienici                     (hub UNICO per ogni forma di aiuto)
 │   ├── Dona ora                   (PLACEHOLDER modulo)
 │   ├── 5x1000
@@ -42,18 +41,19 @@ Home
 │   ├── Dona beni o servizi
 │   ├── Lasciti solidali
 │   └── Proponi la tua campagna di raccolta fondi
-├── Media
-│   └── Video + Pubblicazioni       (bollettino Ancilla Domini, 18 PDF)
-├── Fondazione                     (invariata: entità legale/ETS, trasparenza, bilanci, statuto)
-└── Contatti                       (recapiti + PLACEHOLDER form + mappa sede)
+└── Fondazione                     (entità legale/ETS, trasparenza, bilanci, statuto)
+    ├── Media                      (video + Pubblicazioni: bollettino Ancilla Domini, 18 PDF)
+    └── Contatti                   (recapiti + PLACEHOLDER form + mappa sede)
 
 Footer (tutte le pagine): dati legali Fraternità + Fondazione, Privacy Policy, social, selettore lingua, link rapidi 5x1000/Dona ora
 ```
 
+**Nav di primo livello: 5 voci** (Chi siamo, Famiglia di Betania, Cosa facciamo, Sostienici, Fondazione) — consolidata da un impianto iniziale di 8, spostando Media e Contatti come sottovoci di Fondazione (le 3 sono le pagine più "istituzionali/di servizio") e Progetto Brasile come sottovoce di Cosa facciamo (dopo una fase in cui era stato promosso a voce singola, poi riportato sotto per snellire ulteriormente la nav).
+
 **Decisioni applicate (vedi §4 per il dettaglio):**
-- **Archivio Notizie**: NON migrato ora. Verrà gestito in futuro con un CMS dedicato. Nessuna pagina/route "news" in questa fase.
-- **Gallerie fotografiche**: NON consolidate in un'unica pagina Media. Le foto restano distribuite nelle pagine di contesto (es. le foto dei campi GdB dentro "Giovani di Betania", le foto del cantiere dentro "Progetto Brasile"). Le gallerie di eventi istituzionali generici senza una pagina di contesto ovvia (convegni, professioni, ordinazioni) restano fuori scope per ora, insieme all'archivio news.
-- **Progetto Brasile**: voce di menu di primo livello, non annidata sotto "Cosa facciamo".
+- **Archivio Notizie**: NON migrato ora come pagine dedicate. Un piccolo teaser con 3 notizie reali è comunque presente in home ("Ultime notizie"), senza link a singole pagine articolo — l'archivio completo resta per il futuro CMS.
+- **Gallerie fotografiche**: NON consolidate in un'unica pagina. Le foto restano distribuite nelle pagine di contesto (es. le foto dei campi GdB dentro "Giovani di Betania", le foto del cantiere dentro "Progetto Brasile"). Le gallerie di eventi istituzionali generici senza una pagina di contesto ovvia (convegni, professioni, ordinazioni) restano fuori scope per ora, insieme all'archivio news.
+- **Progetto Brasile**: sottovoce di "Cosa facciamo" (nav consolidata a 5 voci).
 - **"Il Segreto del Frate"**: diventerà un futuro articolo/news (quando ci sarà il CMS) — non costruito ora.
 
 ---
@@ -97,10 +97,11 @@ Footer (tutte le pagine): dati legali Fraternità + Fondazione, Privacy Policy, 
 
 ## 4. Decisioni (prese)
 
-1. **Archivio Notizie (~171 articoli)**: fuori scope, gestito in futuro con un CMS dedicato. Nessuna pagina news costruita ora.
+1. **Archivio Notizie (~171 articoli)**: fuori scope, gestito in futuro con un CMS dedicato. Teaser con 3 notizie reali in home, senza pagine di dettaglio.
 2. **Gallerie fotografiche (~55-60 eventi)**: non consolidate in un'unica pagina. Foto distribuite nelle pagine di contesto pertinenti.
-3. **Progetto Brasile**: voce di menu di primo livello.
+3. **Progetto Brasile**: sottovoce di "Cosa facciamo" (nav consolidata a 5 voci di primo livello).
 4. **"Il Segreto del Frate"**: diventerà un futuro articolo/news, tralasciato per ora.
+5. **Media e Contatti**: sottovoci di "Fondazione", per ridurre le voci di primo livello da 8 a 5.
 
 ---
 
