@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/convegno-giubilare-3167-6LAS_sYP.jpg`;export{e as t};

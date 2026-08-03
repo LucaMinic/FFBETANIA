@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/convegno-giubilare-1794-Ccq7WNix.jpg`;export{e as t};
