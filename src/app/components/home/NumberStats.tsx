@@ -58,9 +58,13 @@ export function NumberStats() {
             <p className="text-sm font-semibold text-[var(--warm-orange)] uppercase tracking-wide text-center mb-2">
               Non solo numeri
             </p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--deep-blue)] text-center max-w-2xl mx-auto mb-10">
-              Sono storie di persone, famiglie e bambini che accompagniamo ogni giorno
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--deep-blue)] text-center max-w-2xl mx-auto mb-3">
+              Una famiglia cresciuta casa dopo casa, in oltre 40 anni
             </h2>
+            <p className="text-gray-500 text-center max-w-xl mx-auto mb-10">
+              Dietro ogni numero c'è un volto: una persona accolta, una famiglia sostenuta, un bambino che oggi ha un
+              futuro in più.
+            </p>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-8 sm:gap-8">

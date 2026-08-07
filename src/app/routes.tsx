@@ -74,6 +74,74 @@ export const router = createBrowserRouter(
             import('./pages/cosa-facciamo/CaseDiFraternitaPage').then((m) => ({ Component: m.CaseDiFraternitaPage })),
         },
         {
+          path: 'cosa-facciamo/case-di-fraternita/terlizzi',
+          lazy: () =>
+            import('./pages/cosa-facciamo/case-di-fraternita/TerlizziPage').then((m) => ({ Component: m.TerlizziPage })),
+        },
+        {
+          path: 'cosa-facciamo/case-di-fraternita/san-quirino',
+          lazy: () =>
+            import('./pages/cosa-facciamo/case-di-fraternita/SanQuirinoPage').then((m) => ({ Component: m.SanQuirinoPage })),
+        },
+        {
+          path: 'cosa-facciamo/case-di-fraternita/rovio',
+          lazy: () =>
+            import('./pages/cosa-facciamo/case-di-fraternita/RovioPage').then((m) => ({ Component: m.RovioPage })),
+        },
+        {
+          path: 'cosa-facciamo/case-di-fraternita/loreto',
+          lazy: () =>
+            import('./pages/cosa-facciamo/case-di-fraternita/LoretoPage').then((m) => ({ Component: m.LoretoPage })),
+        },
+        {
+          path: 'cosa-facciamo/case-di-fraternita/cella-di-noceto',
+          lazy: () =>
+            import('./pages/cosa-facciamo/case-di-fraternita/CellaDiNocetoPage').then((m) => ({
+              Component: m.CellaDiNocetoPage,
+            })),
+        },
+        {
+          path: 'cosa-facciamo/case-di-fraternita/roma',
+          lazy: () =>
+            import('./pages/cosa-facciamo/case-di-fraternita/RomaPage').then((m) => ({ Component: m.RomaPage })),
+        },
+        {
+          path: 'cosa-facciamo/case-di-fraternita/partanna',
+          lazy: () =>
+            import('./pages/cosa-facciamo/case-di-fraternita/PartannaPage').then((m) => ({ Component: m.PartannaPage })),
+        },
+        {
+          path: 'cosa-facciamo/case-di-fraternita/monte-san-savino',
+          lazy: () =>
+            import('./pages/cosa-facciamo/case-di-fraternita/MonteSanSavinoPage').then((m) => ({
+              Component: m.MonteSanSavinoPage,
+            })),
+        },
+        {
+          path: 'cosa-facciamo/case-di-fraternita/aschaffenburg',
+          lazy: () =>
+            import('./pages/cosa-facciamo/case-di-fraternita/AschaffenburgPage').then((m) => ({
+              Component: m.AschaffenburgPage,
+            })),
+        },
+        {
+          path: 'cosa-facciamo/case-di-fraternita/salvador-de-bahia',
+          lazy: () =>
+            import('./pages/cosa-facciamo/case-di-fraternita/SalvadorDeBahiaPage').then((m) => ({
+              Component: m.SalvadorDeBahiaPage,
+            })),
+        },
+        {
+          path: 'cosa-facciamo/case-di-fraternita/verona',
+          lazy: () =>
+            import('./pages/cosa-facciamo/case-di-fraternita/VeronaPage').then((m) => ({ Component: m.VeronaPage })),
+        },
+        {
+          path: 'cosa-facciamo/case-di-fraternita/leggiuno',
+          lazy: () =>
+            import('./pages/cosa-facciamo/case-di-fraternita/LeggiunoPage').then((m) => ({ Component: m.LeggiunoPage })),
+        },
+        {
           path: 'cosa-facciamo/mensa-dei-poveri',
           lazy: () =>
             import('./pages/cosa-facciamo/MensaDeiPoveriPage').then((m) => ({ Component: m.MensaDeiPoveriPage })),

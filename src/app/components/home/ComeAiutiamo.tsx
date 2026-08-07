@@ -37,9 +37,13 @@ export function ComeAiutiamo() {
     <section className="py-16 sm:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <AnimatedSection>
+          <p className="text-sm font-semibold text-[var(--warm-orange)] uppercase tracking-wide text-center mb-2">
+            Ogni giorno, accanto a chi ha bisogno
+          </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] text-center mb-3">Come aiutiamo</h2>
           <p className="text-gray-500 text-center max-w-xl mx-auto mb-12">
-            Il nostro servizio quotidiano rivolto a chi vive povertà materiali e spirituali.
+            Non lasciamo mai nessuno solo: apriamo le porte a chi cerca un pasto, un ascolto, una mano tesa — senza
+            fare domande.
           </p>
         </AnimatedSection>
 

@@ -11,3 +11,8 @@ html, body {
 section[id] {
   scroll-margin-top: 5rem;
 }
+
+.casa-map-marker {
+  background: transparent;
+  border: none;
+}

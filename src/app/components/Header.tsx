@@ -5,7 +5,7 @@ import { LanguageSwitcher } from './LanguageSwitcher'
 import { navItems } from './nav-items'
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from './ui/dropdown-menu'
 import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle } from './ui/sheet'
-import logo from '../../assets/logo/ffbetania-logo.svg'
+import logo from '../../assets/logo/logo-ffbetania-dark.svg'
 
 export function Header() {
   const { pathname } = useLocation()
@@ -16,10 +16,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 px-4 sm:px-6 py-3">
+      <div className="relative max-w-6xl mx-auto flex items-center justify-between gap-4 px-4 sm:px-6 py-3">
         <Link to="/" className="flex items-center gap-2 whitespace-nowrap">
-          <img src={logo} alt="FFBetania" className="h-8 w-auto" />
-          <span className="text-lg font-bold text-[var(--deep-blue)]">FFBetania</span>
+          <img src={logo} alt="FFBetania" className="h-11 lg:h-12 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -62,10 +61,17 @@ export function Header() {
           )}
         </nav>
 
+        <Link
+          to="/sostienici/dona-ora"
+          className="lg:hidden absolute left-1/2 -translate-x-1/2 whitespace-nowrap px-4 py-2 rounded-xl bg-gradient-to-br from-[#f5b942] via-[#f7c968] to-[#f5b942] text-white text-sm font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+        >
+          Dona ora
+        </Link>
+
         <div className="flex items-center gap-2 sm:gap-3">
           <Link
             to="/sostienici/dona-ora"
-            className="whitespace-nowrap px-4 sm:px-5 py-2 rounded-xl bg-gradient-to-br from-[#f5b942] via-[#f7c968] to-[#f5b942] text-white text-sm font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            className="hidden lg:inline-flex whitespace-nowrap px-4 sm:px-5 py-2 rounded-xl bg-gradient-to-br from-[#f5b942] via-[#f7c968] to-[#f5b942] text-white text-sm font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
           >
             Dona ora
           </Link>

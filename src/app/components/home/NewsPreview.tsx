@@ -39,9 +39,9 @@ export function NewsPreview() {
     <section className="py-16 sm:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <AnimatedSection>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] text-center mb-3">Ultime notizie</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] text-center mb-3">La nostra vita, giorno per giorno</h2>
           <p className="text-gray-500 text-center max-w-xl mx-auto mb-12">
-            Uno sguardo sulla vita quotidiana della Fraternità.
+            Piccole e grandi storie di una famiglia numerosa, sparsa per il mondo ma sempre unita.
           </p>
         </AnimatedSection>
 

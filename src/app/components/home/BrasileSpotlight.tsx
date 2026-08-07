@@ -12,12 +12,17 @@ export function BrasileSpotlight() {
           <div className="grid sm:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <p className="text-sm font-semibold text-[var(--warm-orange)] uppercase tracking-wide mb-2">
-                Il nostro progetto più grande
+                Il sogno più grande del nostro fondatore
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] mb-5">Progetto Brasile</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Padre Pancrazio sognava "un centro di accoglienza e ospitalità per i giovani che vivono in favelas".
+                Oggi quel sogno ha il volto di 120 bambini che ogni giorno ricevono cura, pasti caldi e
+                un'educazione, in un asilo nato dal nulla a Salvador de Bahia — e presto anche una scuola.
+              </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                A Salvador de Bahia stiamo costruendo un centro di accoglienza per bambini e giovani delle favelas:
-                un asilo già attivo per 120 bambini, e una scuola in costruzione fino alle superiori.
+                È il progetto più grande della nostra missione, ma è fatto di gesti piccoli: un abbraccio, un pasto,
+                un futuro reso possibile.
               </p>
               <Link
                 to="/progetto-brasile"
