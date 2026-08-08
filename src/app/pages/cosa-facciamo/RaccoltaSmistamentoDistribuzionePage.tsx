@@ -1,4 +1,5 @@
 import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
 import pasti from '../../../assets/cosa-facciamo/pasti.jpg'
 
 export function RaccoltaSmistamentoDistribuzionePage() {
@@ -28,6 +29,15 @@ export function RaccoltaSmistamentoDistribuzionePage() {
       <blockquote className="border-l-4 border-[var(--warm-orange)] pl-4 italic text-gray-600">
         "Il Signore è fedele alle sue promesse; a noi è solo richiesto di rispondere con generosità ai suoi inviti."
       </blockquote>
+
+      <PageCta
+        title="Fai parte di questa catena di generosità"
+        text="Aziende, mercati e benefattori privati rendono possibile questo lavoro quotidiano: anche tu puoi farne parte."
+        primaryLabel="Dona beni o servizi"
+        primaryTo="/sostienici/dona-beni-o-servizi"
+        secondaryLabel="Scopri come aiutare"
+        secondaryTo="/sostienici"
+      />
       </section>
     </>
   )

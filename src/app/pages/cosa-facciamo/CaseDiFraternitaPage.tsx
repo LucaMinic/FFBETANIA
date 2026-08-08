@@ -2,6 +2,7 @@ import { Link } from 'react-router'
 import { ArrowRight, MapPin, Mail, Phone } from 'lucide-react'
 import { PageHero } from '../../components/PageHero'
 import { CaseMap } from '../../components/CaseMap'
+import { PageCta } from '../../components/PageCta'
 import heroImg from '../../../assets/cosa-facciamo/case-di-fraternita-hero.jpg'
 
 interface Casa {
@@ -194,6 +195,15 @@ export function CaseDiFraternitaPage() {
             </div>
           ))}
         </div>
+
+        <PageCta
+          title="Vieni a trovarci"
+          text="Ogni Casa di Fraternità è un'oasi spirituale aperta a tutti: scrivici per organizzare una visita o per saperne di più."
+          primaryLabel="Contattaci"
+          primaryTo="/contatti"
+          secondaryLabel="Progetto Brasile"
+          secondaryTo="/progetto-brasile"
+        />
       </section>
     </>
   )

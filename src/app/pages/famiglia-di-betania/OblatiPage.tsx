@@ -1,4 +1,5 @@
 import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
 import oblatiImg from '../../../assets/famiglia-di-betania/oblati-ffb-1.png'
 
 export function OblatiPage() {
@@ -44,6 +45,15 @@ export function OblatiPage() {
         Anche i sacerdoti diocesani legati spiritualmente alla Fraternità possono diventare oblati, vivendo lo stesso
         carisma nel loro contesto di vita.
       </p>
+
+      <PageCta
+        title="Senti una chiamata più grande?"
+        text="Scopri il percorso di discernimento vocazionale nel nostro Istituto, o esplora le altre realtà della Famiglia di Betania."
+        primaryLabel="Vivi la tua vocazione"
+        primaryTo="/famiglia-di-betania/vivi-la-tua-vocazione"
+        secondaryLabel="Famiglia di Betania"
+        secondaryTo="/famiglia-di-betania"
+      />
       </section>
     </>
   )

@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import { YouTubeEmbed } from '../../components/YouTubeEmbed'
 import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
 import mensaPoveri from '../../../assets/cosa-facciamo/mensa-poveri.jpg'
 import sostegnoFamiglie from '../../../assets/cosa-facciamo/sostegno-alle-famiglie.jpg'
 import pasti from '../../../assets/cosa-facciamo/pasti.jpg'
@@ -100,6 +101,15 @@ export function CosaFacciamoPage() {
           <p className="text-sm text-gray-500">Le nostre Case di Fraternità.</p>
         </Link>
       </div>
+
+      <PageCta
+        title="Sostieni queste attività"
+        text="Ogni pasto, ogni pacco alimentare, ogni parola di conforto è possibile grazie a chi sceglie di sostenerci."
+        primaryLabel="Dona ora"
+        primaryTo="/sostienici/dona-ora"
+        secondaryLabel="Scopri come aiutare"
+        secondaryTo="/sostienici"
+      />
       </section>
     </>
   )

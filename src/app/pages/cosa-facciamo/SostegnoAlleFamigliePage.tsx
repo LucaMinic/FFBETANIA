@@ -1,4 +1,5 @@
 import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
 import sostegnoFamiglie from '../../../assets/cosa-facciamo/sostegno-alle-famiglie.jpg'
 
 export function SostegnoAlleFamigliePage() {
@@ -31,6 +32,15 @@ export function SostegnoAlleFamigliePage() {
         "Condividere ciò che la Provvidenza ci fa pervenire è per noi motivo di grande gioia, un dono nel quale
         vediamo la mano buona di Dio all'opera."
       </blockquote>
+
+      <PageCta
+        title="Aiutaci a sostenere le famiglie in difficoltà"
+        text="Un pacco alimentare, un vestito, un gesto di generosità: ogni contributo entra a far parte di questa rete di solidarietà."
+        primaryLabel="Dona ora"
+        primaryTo="/sostienici/dona-ora"
+        secondaryLabel="Sostegno a distanza"
+        secondaryTo="/sostienici/sostegno-a-distanza"
+      />
       </section>
     </>
   )

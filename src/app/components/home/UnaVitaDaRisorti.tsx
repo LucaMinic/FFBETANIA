@@ -3,8 +3,8 @@ import { HandHeart, DoorOpen, Users } from 'lucide-react'
 import { AnimatedImage, AnimatedSection } from '../AnimatedSection'
 import { YouTubeEmbed } from '../YouTubeEmbed'
 import preghiera from '../../../assets/case-di-fraternita/salvador-de-bahia/momento-preghiera-salvador.jpg'
-import accoglienza from '../../../assets/cosa-facciamo/mensa-poveri.jpg'
-import vitaFraterna from '../../../assets/chi-siamo/vita-fraterna-2026.png'
+import accoglienza from '../../../assets/cosa-facciamo/servizio-cucina-mensa.png'
+import vitaFraterna from '../../../assets/case-di-fraternita/partanna/comunita-settembre-2024.png'
 
 const pilastri = [
   {

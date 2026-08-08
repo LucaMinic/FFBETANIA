@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
 import progettoScuola from '../../../assets/progetto-brasile/progetto-scuola.jpg'
 
 export function ProgettiPage() {
@@ -22,6 +23,15 @@ export function ProgettiPage() {
         </Link>{' '}
         o contattarci per conoscere le iniziative in corso.
       </p>
+
+      <PageCta
+        title="Non aspettare, il bisogno è oggi"
+        text="Anche senza una campagna attiva, ogni donazione sostiene subito il nostro servizio quotidiano di solidarietà."
+        primaryLabel="Dona ora"
+        primaryTo="/sostienici/dona-ora"
+        secondaryLabel="Progetto Brasile"
+        secondaryTo="/progetto-brasile"
+      />
       </section>
     </>
   )

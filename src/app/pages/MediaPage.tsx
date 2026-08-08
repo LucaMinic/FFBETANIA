@@ -1,5 +1,6 @@
 import { YouTubeEmbed } from '../components/YouTubeEmbed'
 import { PageHero } from '../components/PageHero'
+import { PageCta } from '../components/PageCta'
 import convegnoGiubilare from '../../assets/chi-siamo/convegno-giubilare-3167.jpg'
 
 const videoIds = [
@@ -96,6 +97,15 @@ export function MediaPage() {
           </a>
         ))}
       </div>
+
+      <PageCta
+        title="Vuoi conoscere di persona la nostra vita?"
+        text="Dietro ogni video e ogni pubblicazione c'è una famiglia che vive di preghiera e accoglienza ogni giorno."
+        primaryLabel="Scopri le nostre attività"
+        primaryTo="/cosa-facciamo"
+        secondaryLabel="Contattaci"
+        secondaryTo="/contatti"
+      />
       </section>
     </>
   )

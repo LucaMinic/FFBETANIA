@@ -2,6 +2,7 @@ import convegnoGiubilare from '../../../assets/chi-siamo/convegno-giubilare-3167
 import vitaFraterna from '../../../assets/chi-siamo/vita-fraterna-2026.png'
 import { YouTubeEmbed } from '../../components/YouTubeEmbed'
 import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
 
 export function CarismaPage() {
   return (
@@ -96,6 +97,15 @@ export function CarismaPage() {
         <YouTubeEmbed videoId="axdMMA_Id1Q" title="Il nostro carisma - testimonianza 2" />
         <YouTubeEmbed videoId="svWFTDWQ1Xs" title="Il nostro carisma - testimonianza 3" />
       </div>
+
+      <PageCta
+        title="Vivi la nostra spiritualità"
+        text="Attorno alla Fraternità è fiorita una grande famiglia spirituale: laici, giovani e coppie che condividono questo stesso carisma."
+        primaryLabel="Scopri la Famiglia di Betania"
+        primaryTo="/famiglia-di-betania"
+        secondaryLabel="Vivi la tua vocazione"
+        secondaryTo="/famiglia-di-betania/vivi-la-tua-vocazione"
+      />
       </section>
     </>
   )

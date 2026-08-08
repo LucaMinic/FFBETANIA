@@ -2,6 +2,7 @@ import { PageHero } from '../../components/PageHero'
 import mensaPoveri from '../../../assets/cosa-facciamo/mensa-poveri.jpg'
 import servizioCucina from '../../../assets/cosa-facciamo/servizio-cucina-mensa.png'
 import { YouTubeEmbed } from '../../components/YouTubeEmbed'
+import { PageCta } from '../../components/PageCta'
 
 export function MensaDeiPoveriPage() {
   return (
@@ -35,6 +36,15 @@ export function MensaDeiPoveriPage() {
       />
 
       <YouTubeEmbed videoId="GXxjvapi5bE" title="La mensa dei poveri FFB" />
+
+      <PageCta
+        title="Aiutaci a preparare ogni pasto"
+        text="Puoi sostenere la mensa dei poveri donando beni, servizi o un contributo economico."
+        primaryLabel="Dona beni o servizi"
+        primaryTo="/sostienici/dona-beni-o-servizi"
+        secondaryLabel="Dona ora"
+        secondaryTo="/sostienici/dona-ora"
+      />
       </section>
     </>
   )

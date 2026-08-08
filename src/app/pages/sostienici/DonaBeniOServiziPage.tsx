@@ -1,4 +1,5 @@
 import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
 import donaBeni from '../../../assets/sostienici/dona-beni-servizi.jpg'
 
 export function DonaBeniOServiziPage() {
@@ -31,6 +32,15 @@ export function DonaBeniOServiziPage() {
           fondazione@ffbetania.net
         </a>
       </p>
+
+      <PageCta
+        title="Preferisci un contributo economico?"
+        text="Scopri gli altri modi per sostenerci: dalla donazione diretta al 5x1000, fino ai lasciti solidali."
+        primaryLabel="Dona ora"
+        primaryTo="/sostienici/dona-ora"
+        secondaryLabel="Tutti i modi per aiutare"
+        secondaryTo="/sostienici"
+      />
       </section>
     </>
   )

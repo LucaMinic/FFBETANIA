@@ -1,4 +1,5 @@
 import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
 import logoGad from '../../../assets/famiglia-di-betania/logo-gad.jpeg'
 import convegnoGiubilare from '../../../assets/famiglia-di-betania/convegno-giubilare-1794.jpg'
 
@@ -48,7 +49,9 @@ export function GruppoAncillaDominiPage() {
       <p className="text-gray-600 leading-relaxed mb-4">
         I GAD fanno parte del Rinnovamento Carismatico Cattolico (RCC) e sono innestati nella grande famiglia
         spirituale della Fraternità Francescana di Betania (FFB). Padre Pancrazio aggiunse il santo Rosario alla
-        preghiera di lode carismatica tipica dei gruppi RCC, recitato all'inizio degli incontri.
+        preghiera di lode carismatica tipica dei gruppi RCC, recitato all'inizio degli incontri. Viene data
+        attenzione speciale all'Eucaristia, anche attraverso quella modalità di adorazione che è chiamata Roveto
+        Ardente.
       </p>
       <p className="text-gray-600 leading-relaxed mb-4">
         L'origine risale all'esperienza del Battesimo nello Spirito Santo durante il primo ritiro estivo a Camaldoli
@@ -58,10 +61,16 @@ export function GruppoAncillaDominiPage() {
       <p className="text-gray-600 leading-relaxed mb-4">
         Nel 2007, al convegno dei Familiari della FFB a Loreto, i Gruppi Ancilla Domini sono stati riconosciuti parte
         integrante della Fraternità Francescana di Betania e inseriti nello Statuto dei Familiari della FFB.
+        L'accompagnamento spirituale è affidato a fratelli e sorelle delegati dal Consiglio Generale della FFB.
       </p>
-      <p className="text-gray-600 leading-relaxed mb-12">
-        Dal 2022, i Gruppi Ancilla Domini sono registrati a CHARIS, l'Ufficio creato nel 2019 da Papa Francesco a
-        servizio del RCC mondiale.
+      <p className="text-gray-600 leading-relaxed mb-4">
+        La cura pastorale e l'assistenza spirituale dei GAD è affidata all'Équipe Generale GAD, formata sia da
+        consacrati della FFB che da laici. Dal 2022, i Gruppi Ancilla Domini sono registrati a CHARIS, l'Ufficio
+        creato nel 2019 da Papa Francesco a servizio del RCC mondiale.
+      </p>
+      <p className="text-gray-500 text-sm mb-12">
+        Documenti di riferimento: Statuto dei Familiari FFB (2007) e Istruzione sulla vita dei GAD (revisionata nel
+        2025).
       </p>
 
       <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-4">Dove siamo — i nostri gruppi territoriali</h2>
@@ -87,6 +96,15 @@ export function GruppoAncillaDominiPage() {
           </tbody>
         </table>
       </div>
+
+      <PageCta
+        title="Trova il tuo gruppo di preghiera"
+        text="Se non trovi un gruppo vicino a te, o vuoi saperne di più sulla Famiglia di Betania, siamo felici di aiutarti."
+        primaryLabel="Contattaci"
+        primaryTo="/contatti"
+        secondaryLabel="Famiglia di Betania"
+        secondaryTo="/famiglia-di-betania"
+      />
       </section>
     </>
   )

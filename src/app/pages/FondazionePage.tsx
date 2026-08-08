@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { PageHero } from '../components/PageHero'
+import { PageCta } from '../components/PageCta'
 import progettoBrasile from '../../assets/fondazione/progetto-brasile-2.jpg'
 import fondazioneItalia from '../../assets/fondazione/fondazione-italia.jpg'
 import statutoPdf from '../../assets/fondazione/statuto.pdf'
@@ -142,6 +143,15 @@ export function FondazionePage() {
           </div>
         ))}
       </div>
+
+      <PageCta
+        title="Sostieni i progetti della Fondazione"
+        text="Con una donazione o il tuo 5x1000 contribuisci direttamente ai progetti in Brasile e in Italia."
+        primaryLabel="Dona ora"
+        primaryTo="/sostienici/dona-ora"
+        secondaryLabel="Destina il 5x1000"
+        secondaryTo="/sostienici/5x1000"
+      />
       </section>
     </>
   )

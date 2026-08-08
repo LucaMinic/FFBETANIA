@@ -1,4 +1,5 @@
 import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
 import portrait from '../../../assets/padre-pancrazio/pancrazio-ffb.jpg'
 import piccoloNicola from '../../../assets/padre-pancrazio/01-pancrazio-piccolo-nicola.jpg'
 import convento1 from '../../../assets/padre-pancrazio/02-il-convento-1.jpg'
@@ -146,6 +147,15 @@ export function PadrePancrazioPage() {
         Il funerale è stato celebrato nella cappella esterna della Casa di Terlizzi il 5 gennaio 2016, alla presenza
         di più di duemila persone.
       </p>
+
+      <PageCta
+        title="Continua a scoprire la Fraternità"
+        text="Il programma di vita ricevuto da San Pio è diventato il carisma che viviamo ogni giorno: preghiera, accoglienza e vita fraterna."
+        primaryLabel="Il nostro carisma"
+        primaryTo="/chi-siamo/carisma"
+        secondaryLabel="La nostra storia"
+        secondaryTo="/chi-siamo/storia"
+      />
       </section>
     </>
   )

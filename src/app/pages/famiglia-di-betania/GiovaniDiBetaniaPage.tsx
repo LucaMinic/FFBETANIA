@@ -1,4 +1,5 @@
 import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
 import convegnoGiubilare from '../../../assets/famiglia-di-betania/convegno-giubilare-1794.jpg'
 
 export function GiovaniDiBetaniaPage() {
@@ -57,6 +58,15 @@ export function GiovaniDiBetaniaPage() {
           gdb@ffbetania.net
         </a>
       </p>
+
+      <PageCta
+        title="Scopri tutta la Famiglia di Betania"
+        text="I Giovani di Betania sono solo una delle realtà che condividono il nostro carisma: scopri anche le altre."
+        primaryLabel="Famiglia di Betania"
+        primaryTo="/famiglia-di-betania"
+        secondaryLabel="Vivi la tua vocazione"
+        secondaryTo="/famiglia-di-betania/vivi-la-tua-vocazione"
+      />
       </section>
     </>
   )

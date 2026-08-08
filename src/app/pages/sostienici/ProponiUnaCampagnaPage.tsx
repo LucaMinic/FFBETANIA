@@ -24,6 +24,7 @@ const passi: Passo[] = [
 ]
 
 import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
 import sostegnoFamiglie from '../../../assets/cosa-facciamo/sostegno-alle-famiglie.jpg'
 
 export function ProponiUnaCampagnaPage() {
@@ -52,6 +53,15 @@ export function ProponiUnaCampagnaPage() {
           </div>
         ))}
       </div>
+
+      <PageCta
+        title="Pronto a iniziare?"
+        text="Nel frattempo puoi già dare il tuo contributo diretto o scoprire i progetti che stiamo portando avanti."
+        primaryLabel="Dona ora"
+        primaryTo="/sostienici/dona-ora"
+        secondaryLabel="I nostri progetti"
+        secondaryTo="/sostienici/progetti"
+      />
       </section>
     </>
   )

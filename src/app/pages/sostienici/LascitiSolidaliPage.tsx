@@ -1,4 +1,5 @@
 import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
 import spiritualita from '../../../assets/sostienici/spiritualita-hero.jpg'
 
 export function LascitiSolidaliPage() {
@@ -32,6 +33,15 @@ export function LascitiSolidaliPage() {
           fondazione@ffbetania.net
         </a>
       </p>
+
+      <PageCta
+        title="Ogni forma di generosità ha valore"
+        text="Se preferisci un gesto immediato, puoi sostenerci anche con una donazione diretta o destinandoci il tuo 5x1000."
+        primaryLabel="Tutti i modi per aiutare"
+        primaryTo="/sostienici"
+        secondaryLabel="Contattaci"
+        secondaryTo="/contatti"
+      />
       </section>
     </>
   )
