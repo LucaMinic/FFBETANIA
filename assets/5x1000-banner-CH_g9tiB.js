@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/5x1000-banner-C0soI-Uk.png`;export{e as t};

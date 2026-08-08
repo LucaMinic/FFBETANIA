@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/asilo-DJ6Zut6O.jpg`;export{e as t};

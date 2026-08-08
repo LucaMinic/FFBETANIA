@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/eremo-santa-caterina-del-sasso-1-ATblmQzk.jpg`;export{e as t};

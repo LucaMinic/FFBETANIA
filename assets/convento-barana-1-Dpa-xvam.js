@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/convento-barana-1-CM_3q2A7.jpg`;export{e as t};

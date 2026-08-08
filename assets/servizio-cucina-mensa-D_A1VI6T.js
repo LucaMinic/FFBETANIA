@@ -1,1 +1,0 @@
-var e=`/FFBETANIA/assets/servizio-cucina-mensa-ChNabBLV.png`;export{e as t};

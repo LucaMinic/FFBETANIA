@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/dona-beni-servizi-CpHSSPGe.jpg`;export{e as t};

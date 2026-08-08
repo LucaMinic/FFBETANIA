@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/case-di-fraternita-hero-Ca24medV.jpg`;export{e as t};

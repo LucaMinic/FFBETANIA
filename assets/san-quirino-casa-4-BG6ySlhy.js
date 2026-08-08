@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/san-quirino-casa-4-D7100N86.jpg`;export{e as t};

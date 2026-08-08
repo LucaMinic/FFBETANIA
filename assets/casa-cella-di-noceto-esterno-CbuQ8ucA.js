@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/casa-cella-di-noceto-esterno-CiT_96ps.jpeg`;export{e as t};
