@@ -2,6 +2,7 @@ import { Outlet } from 'react-router'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { ScrollToTop } from '../components/ScrollToTop'
+import { BackToTopButton } from '../components/BackToTopButton'
 import { LanguageProvider } from '../context/LanguageContext'
 
 export function RootLayout() {
@@ -14,6 +15,7 @@ export function RootLayout() {
           <Outlet />
         </main>
         <Footer />
+        <BackToTopButton />
       </div>
     </LanguageProvider>
   )

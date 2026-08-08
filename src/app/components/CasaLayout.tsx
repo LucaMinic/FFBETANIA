@@ -3,6 +3,7 @@ import { ArrowLeft, MapPin, Calendar, Mail, Phone, Clock, Facebook, Instagram, Y
 import { PageHero } from './PageHero'
 import { AnimatedImage, AnimatedSection } from './AnimatedSection'
 import { CasaLocationMap } from './CasaLocationMap'
+import { GallerySlideshow } from './GallerySlideshow'
 
 interface GalleriaImg {
   src: string
@@ -49,8 +50,6 @@ export function CasaLayout({
   const capitoli = paragrafi.map((testo, i) => ({ testo, img: galleria[i] }))
   const altreImmagini = galleria.slice(paragrafi.length)
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`
-  const altreImmaginiCols =
-    altreImmagini.length >= 3 ? 'sm:grid-cols-3' : altreImmagini.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-1'
 
   return (
     <>
@@ -122,10 +121,8 @@ export function CasaLayout({
         {altreImmagini.length > 0 && (
           <AnimatedSection>
             <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-6">Altri momenti di vita della Casa</h2>
-            <div className={`grid ${altreImmaginiCols} gap-4 mb-16 sm:mb-20`}>
-              {altreImmagini.map((img) => (
-                <img key={img.src} src={img.src} alt={img.alt} className="w-full h-56 object-cover rounded-2xl" />
-              ))}
+            <div className="mb-16 sm:mb-20">
+              <GallerySlideshow immagini={altreImmagini} />
             </div>
           </AnimatedSection>
         )}

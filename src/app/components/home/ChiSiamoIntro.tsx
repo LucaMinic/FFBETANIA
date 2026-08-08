@@ -48,6 +48,7 @@ export function ChiSiamoIntro() {
           </div>
         </div>
       </section>
+      <WaveDivider fill="var(--beige)" flip />
     </>
   )
 }
