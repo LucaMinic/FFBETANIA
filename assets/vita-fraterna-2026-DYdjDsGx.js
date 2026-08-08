@@ -1,1 +1,0 @@
-var e=`/FFBETANIA/assets/vita-fraterna-2026-DhWyvySY.png`;export{e as t};
