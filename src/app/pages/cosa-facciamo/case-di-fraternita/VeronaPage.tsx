@@ -1,4 +1,5 @@
 import { CasaLayout } from '../../../components/CasaLayout'
+import { useT } from '../../../context/LanguageContext'
 import hero from '../../../../assets/case-di-fraternita/verona/convento-barana-1.jpg'
 import barana2 from '../../../../assets/case-di-fraternita/verona/convento-barana-2.jpg'
 import barana3 from '../../../../assets/case-di-fraternita/verona/convento-barana-3.jpg'
@@ -8,12 +9,13 @@ import comunitaGesuBambino from '../../../../assets/case-di-fraternita/verona/co
 import esternoChiesa from '../../../../assets/case-di-fraternita/verona/esterno-chiesa-convento-barana.png'
 
 export function VeronaPage() {
+  const t = useT()
   return (
     <CasaLayout
       nome="Verona"
-      luogo="Verona, Italia"
+      luogo={t({ it: 'Verona, Italia', en: 'Verona, Italy', de: 'Verona, Italien', pt: 'Verona, Itália' })}
       anno="2013"
-      note="Convento del Barana"
+      note={t({ it: 'Convento del Barana', en: 'Convento del Barana', de: 'Kloster del Barana', pt: 'Convento del Barana' })}
       indirizzo="Via Colonnello Fincato 35, 37131 Verona"
       email="verona@ffbetania.net"
       telefono="045 525374"
@@ -22,8 +24,18 @@ export function VeronaPage() {
       heroImage={hero}
       heroAlt="Convento del Barana, Fraternità Francescana di Betania, Verona"
       paragrafi={[
-        'La Fraternità Francescana di Betania si è insediata a Verona nel 2013; il convento è conosciuto in città anche come "Convento del Barana" ed era stato custodito per oltre un secolo dai Frati Cappuccini prima del suo arrivo. La comunità si trova in una zona strategica della città, a pochi chilometri dal centro storico e nei pressi della Valpantena.',
-        'Una delle caratteristiche peculiari della Fraternità di Verona è il servizio ai bisognosi: gestisce la mensa del povero più importante della città, aperta tutti i giorni dell\'anno, con servizio docce, distribuzione di vestiario e di pacchi alimentari alle famiglie povere e un mercatino dell\'usato — tutto reso possibile dall\'Associazione Betania Francescana, che riunisce centinaia di volontari attivi 365 giorni l\'anno. Il convento è da sempre chiamato anche "il confessionale di Verona", per la costante disponibilità dei frati al Sacramento della Riconciliazione; la Fraternità offre inoltre percorsi spirituali attraverso i gruppi Ancilla Domini, il cammino degli Oblati, i Giovani di Betania e il Gruppo Nazareth.',
+        t({
+          it: 'La Fraternità Francescana di Betania si è insediata a Verona nel 2013; il convento è conosciuto in città anche come "Convento del Barana" ed era stato custodito per oltre un secolo dai Frati Cappuccini prima del suo arrivo. La comunità si trova in una zona strategica della città, a pochi chilometri dal centro storico e nei pressi della Valpantena.',
+          en: 'The Fraternità Francescana di Betania settled in Verona in 2013; the convent is also known in the city as "Convento del Barana" and had been cared for over a century by the Capuchin Friars before its arrival. The community is located in a strategic area of the city, a few kilometers from the historic center and near the Valpantena.',
+          de: 'Die Fraternità Francescana di Betania ließ sich 2013 in Verona nieder; das Kloster ist in der Stadt auch als „Convento del Barana“ bekannt und wurde vor ihrer Ankunft über ein Jahrhundert lang von den Kapuzinerbrüdern betreut. Die Gemeinschaft befindet sich in einer strategischen Lage der Stadt, wenige Kilometer vom historischen Zentrum entfernt und in der Nähe der Valpantena.',
+          pt: 'A Fraternità Francescana di Betania instalou-se em Verona em 2013; o convento é conhecido na cidade também como "Convento del Barana" e havia sido cuidado por mais de um século pelos Frades Capuchinhos antes de sua chegada. A comunidade situa-se numa zona estratégica da cidade, a poucos quilômetros do centro histórico e perto da Valpantena.',
+        }),
+        t({
+          it: "Una delle caratteristiche peculiari della Fraternità di Verona è il servizio ai bisognosi: gestisce la mensa del povero più importante della città, aperta tutti i giorni dell'anno, con servizio docce, distribuzione di vestiario e di pacchi alimentari alle famiglie povere e un mercatino dell'usato — tutto reso possibile dall'Associazione Betania Francescana, che riunisce centinaia di volontari attivi 365 giorni l'anno. Il convento è da sempre chiamato anche \"il confessionale di Verona\", per la costante disponibilità dei frati al Sacramento della Riconciliazione; la Fraternità offre inoltre percorsi spirituali attraverso i gruppi Ancilla Domini, il cammino degli Oblati, i Giovani di Betania e il Gruppo Nazareth.",
+          en: 'One of the distinctive features of the Fraternity of Verona is its service to those in need: it runs the city\'s largest soup kitchen for the poor, open every day of the year, with shower facilities, distribution of clothing and food parcels to poor families, and a second-hand market — all made possible by the Associazione Betania Francescana, which brings together hundreds of volunteers active 365 days a year. The convent has always also been called "the confessional of Verona", for the friars\' constant availability for the Sacrament of Reconciliation; the Fraternity also offers spiritual paths through the Ancilla Domini groups, the Oblates\' path, the Youth of Betania and the Nazareth Group.',
+          de: 'Ein besonderes Merkmal der Fraternität von Verona ist der Dienst an den Bedürftigen: Sie betreibt die größte Armenküche der Stadt, die an jedem Tag des Jahres geöffnet ist, mit Duschangebot, Verteilung von Kleidung und Lebensmittelpaketen an arme Familien sowie einem Second-Hand-Markt — all dies wird durch die Associazione Betania Francescana ermöglicht, die Hunderte von Freiwilligen vereint, die 365 Tage im Jahr aktiv sind. Das Kloster wird seit jeher auch „der Beichtstuhl von Verona“ genannt, wegen der ständigen Bereitschaft der Brüder zum Sakrament der Versöhnung; die Fraternität bietet zudem geistliche Wege durch die Ancilla-Domini-Gruppen, den Weg der Oblaten, die Jugend von Betania und die Gruppe Nazareth an.',
+          pt: 'Uma das características peculiares da Fraternidade de Verona é o serviço aos necessitados: gere o refeitório dos pobres mais importante da cidade, aberto todos os dias do ano, com serviço de duches, distribuição de roupas e cestas básicas às famílias pobres e um brechó — tudo tornado possível pela Associazione Betania Francescana, que reúne centenas de voluntários ativos 365 dias por ano. O convento é desde sempre chamado também de "o confessionário de Verona", pela constante disponibilidade dos frades para o Sacramento da Reconciliação; a Fraternidade oferece ainda percursos espirituais através dos grupos Ancilla Domini, o caminho dos Oblatos, os Jovens de Betânia e o Grupo Nazaré.',
+        }),
       ]}
       galleria={[
         { src: barana2, alt: 'Vita della fraternità di Verona' },
@@ -34,9 +46,24 @@ export function VeronaPage() {
         { src: esternoChiesa, alt: 'Veduta esterna della chiesa del Convento del Barana' },
       ]}
       orari={[
-        'Mensa dei poveri — aperta tutti i giorni dell\'anno',
-        'Distribuzione pacchi alimentari — due venerdì al mese',
-        '"Vangelo in pillole" — rubrica quotidiana di commento al Vangelo su YouTube',
+        t({
+          it: "Mensa dei poveri — aperta tutti i giorni dell'anno",
+          en: 'Soup kitchen for the poor — open every day of the year',
+          de: 'Armenküche — an jedem Tag des Jahres geöffnet',
+          pt: 'Refeitório dos pobres — aberto todos os dias do ano',
+        }),
+        t({
+          it: 'Distribuzione pacchi alimentari — due venerdì al mese',
+          en: 'Food parcel distribution — two Fridays a month',
+          de: 'Verteilung von Lebensmittelpaketen — zweimal im Monat freitags',
+          pt: 'Distribuição de cestas básicas — duas sextas-feiras por mês',
+        }),
+        t({
+          it: '"Vangelo in pillole" — rubrica quotidiana di commento al Vangelo su YouTube',
+          en: '"Vangelo in pillole" (Gospel in a nutshell) — daily Gospel commentary series on YouTube',
+          de: '„Vangelo in pillole“ (Evangelium in Kürze) — tägliche Evangeliumsauslegung auf YouTube',
+          pt: '"Vangelo in pillole" (Evangelho em pílulas) — série diária de comentário ao Evangelho no YouTube',
+        }),
       ]}
     />
   )

@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import { PageHero } from '../components/PageHero'
 import { PageCta } from '../components/PageCta'
+import { useT } from '../context/LanguageContext'
 import progettoBrasile from '../../assets/fondazione/progetto-brasile-2.jpg'
 import fondazioneItalia from '../../assets/fondazione/fondazione-italia.jpg'
 import statutoPdf from '../../assets/fondazione/statuto.pdf'
@@ -9,57 +10,123 @@ import rendiconto2021 from '../../assets/fondazione/rendiconto-5x1000-2021.pdf'
 import rendiconto2022 from '../../assets/fondazione/rendiconto-5x1000-2022.pdf'
 import rendiconto2023 from '../../assets/fondazione/rendiconto-5x1000-2023.pdf'
 
+interface LocalizedString {
+  it: string
+  en: string
+  de: string
+  pt: string
+}
+
 interface Consigliere {
-  ruolo: string
+  ruolo: LocalizedString
   nome: string
 }
 
 const consiglio: Consigliere[] = [
-  { ruolo: 'Presidente', nome: 'fra Gregorio Merendino' },
-  { ruolo: 'Vice presidente', nome: 'Benedetta Gori' },
-  { ruolo: 'Consigliere', nome: 'Rodolfo Maestrello' },
-  { ruolo: 'Consigliera', nome: 'sor. Mariagrazia Gianolli' },
-  { ruolo: 'Consigliera', nome: 'sor. Maria Pia Fazzi' },
+  { ruolo: { it: 'Presidente', en: 'President', de: 'Präsident', pt: 'Presidente' }, nome: 'fra Gregorio Merendino' },
+  { ruolo: { it: 'Vice presidente', en: 'Vice President', de: 'Vizepräsidentin', pt: 'Vice-presidente' }, nome: 'Benedetta Gori' },
+  { ruolo: { it: 'Consigliere', en: 'Councillor', de: 'Rat', pt: 'Conselheiro' }, nome: 'Rodolfo Maestrello' },
+  { ruolo: { it: 'Consigliera', en: 'Councillor', de: 'Rätin', pt: 'Conselheira' }, nome: 'sor. Mariagrazia Gianolli' },
+  { ruolo: { it: 'Consigliera', en: 'Councillor', de: 'Rätin', pt: 'Conselheira' }, nome: 'sor. Maria Pia Fazzi' },
 ]
 
 export function FondazionePage() {
+  const t = useT()
   return (
     <>
       <PageHero
         image={progettoBrasile}
         title="Fondazione Betania ETS"
-        subtitle="Un'istituzione senza fini di lucro al servizio dei più deboli, in Italia e nel mondo."
+        subtitle={t({
+          it: "Un'istituzione senza fini di lucro al servizio dei più deboli, in Italia e nel mondo.",
+          en: 'A non-profit institution serving the most vulnerable, in Italy and around the world.',
+          de: 'Eine gemeinnützige Einrichtung im Dienst der Schwächsten, in Italien und weltweit.',
+          pt: 'Uma instituição sem fins lucrativos ao serviço dos mais fracos, na Itália e no mundo.',
+        })}
       />
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <p className="text-gray-600 leading-relaxed mb-4">
-        La Fondazione Betania ETS è nata nel 2007 per un'iniziativa del fondatore del nostro Istituto, padre Pancrazio
-        Nicola Gaudioso. Il suo desiderio era quello di costituire un'istituzione senza fini di lucro che potesse
-        operare in tutto il mondo per dare sostegno alla parte più debole e bisognosa della società.
+        {t({
+          it: "La Fondazione Betania ETS è nata nel 2007 per un'iniziativa del fondatore del nostro Istituto, padre Pancrazio Nicola Gaudioso. Il suo desiderio era quello di costituire un'istituzione senza fini di lucro che potesse operare in tutto il mondo per dare sostegno alla parte più debole e bisognosa della società.",
+          en: 'Fondazione Betania ETS was founded in 2007 on the initiative of the founder of our Institute, Father Pancrazio Nicola Gaudioso. His wish was to set up a non-profit institution that could operate throughout the world to support the weakest and most needy part of society.',
+          de: 'Die Fondazione Betania ETS wurde 2007 auf Initiative des Gründers unseres Instituts, Pater Pancrazio Nicola Gaudioso, gegründet. Sein Wunsch war es, eine gemeinnützige Einrichtung zu schaffen, die weltweit tätig sein könnte, um den schwächsten und bedürftigsten Teil der Gesellschaft zu unterstützen.',
+          pt: 'A Fondazione Betania ETS nasceu em 2007 por iniciativa do fundador do nosso Instituto, Padre Pancrazio Nicola Gaudioso. O seu desejo era constituir uma instituição sem fins lucrativos que pudesse operar em todo o mundo para dar apoio à parte mais fraca e necessitada da sociedade.',
+        })}
       </p>
       <p className="font-semibold text-[var(--deep-blue)] mb-2">
-        La Fondazione ha come scopo principale quello di fornire assistenza e formazione umana e spirituale ai
-        giovani in situazioni disagiate:
+        {t({
+          it: 'La Fondazione ha come scopo principale quello di fornire assistenza e formazione umana e spirituale ai giovani in situazioni disagiate:',
+          en: "The Foundation's main purpose is to provide human and spiritual assistance and formation to young people in disadvantaged situations:",
+          de: 'Der Hauptzweck der Stiftung ist es, jungen Menschen in schwierigen Lebenslagen menschliche und geistliche Unterstützung und Bildung zu bieten:',
+          pt: 'A Fundação tem como objetivo principal fornecer assistência e formação humana e espiritual aos jovens em situações de vulnerabilidade:',
+        })}
       </p>
       <ul className="text-gray-600 space-y-1 list-disc list-inside mb-12">
-        <li>Creare strutture per il sostentamento e la formazione culturale, professionale e spirituale</li>
-        <li>Migliorare le condizioni sanitarie dei bambini e dei giovani</li>
-        <li>Sviluppare la cultura cristiana del dono e dell'amore</li>
-        <li>Promuovere lo sviluppo dei valori cristiani della carità e della solidarietà</li>
-        <li>Sostenere istituzioni civili in crisi come la famiglia</li>
-        <li>Beneficenza e assistenza a distanza</li>
+        <li>
+          {t({
+            it: 'Creare strutture per il sostentamento e la formazione culturale, professionale e spirituale',
+            en: 'Create facilities for the support and cultural, professional and spiritual formation',
+            de: 'Einrichtungen für den Unterhalt sowie die kulturelle, berufliche und geistliche Bildung schaffen',
+            pt: 'Criar estruturas para o sustento e a formação cultural, profissional e espiritual',
+          })}
+        </li>
+        <li>
+          {t({
+            it: 'Migliorare le condizioni sanitarie dei bambini e dei giovani',
+            en: 'Improve the health conditions of children and young people',
+            de: 'Die gesundheitlichen Bedingungen von Kindern und Jugendlichen verbessern',
+            pt: 'Melhorar as condições sanitárias das crianças e dos jovens',
+          })}
+        </li>
+        <li>
+          {t({
+            it: "Sviluppare la cultura cristiana del dono e dell'amore",
+            en: 'Develop the Christian culture of giving and love',
+            de: 'Die christliche Kultur der Gabe und der Liebe entwickeln',
+            pt: 'Desenvolver a cultura cristã do dom e do amor',
+          })}
+        </li>
+        <li>
+          {t({
+            it: 'Promuovere lo sviluppo dei valori cristiani della carità e della solidarietà',
+            en: 'Promote the development of the Christian values of charity and solidarity',
+            de: 'Die Entwicklung der christlichen Werte Nächstenliebe und Solidarität fördern',
+            pt: 'Promover o desenvolvimento dos valores cristãos da caridade e da solidariedade',
+          })}
+        </li>
+        <li>
+          {t({
+            it: 'Sostenere istituzioni civili in crisi come la famiglia',
+            en: 'Support civil institutions in crisis, such as the family',
+            de: 'Zivile Institutionen in der Krise wie die Familie unterstützen',
+            pt: 'Apoiar instituições civis em crise como a família',
+          })}
+        </li>
+        <li>
+          {t({
+            it: 'Beneficenza e assistenza a distanza',
+            en: 'Charity and long-distance support',
+            de: 'Wohltätigkeit und Patenschaften',
+            pt: 'Beneficência e apadrinhamento à distância',
+          })}
+        </li>
       </ul>
 
       <div className="grid sm:grid-cols-2 gap-8 items-center mb-12">
         <img src={progettoBrasile} alt="Progetto Brasile" className="w-full h-56 object-cover rounded-2xl" />
         <div>
-          <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-2">Brasile</h2>
+          <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-2">
+            {t({ it: 'Brasile', en: 'Brazil', de: 'Brasilien', pt: 'Brasil' })}
+          </h2>
           <p className="text-gray-600 leading-relaxed">
-            Il progetto attualmente più importante della Fondazione riguarda la realizzazione di un villaggio per i
-            giovani a Salvador de Bahia. La Fondazione vi ha costruito un asilo e una scuola infantile per circa 120
-            bambini, un campo di calcio, un campetto polisportivo, e ha appena terminato il convento dove vivranno i
-            religiosi della Fraternità.{' '}
+            {t({
+              it: 'Il progetto attualmente più importante della Fondazione riguarda la realizzazione di un villaggio per i giovani a Salvador de Bahia. La Fondazione vi ha costruito un asilo e una scuola infantile per circa 120 bambini, un campo di calcio, un campetto polisportivo, e ha appena terminato il convento dove vivranno i religiosi della Fraternità.',
+              en: "The Foundation's currently most important project involves creating a village for young people in Salvador de Bahia. The Foundation has built a nursery and kindergarten there for about 120 children, a football pitch, a multi-sports court, and has just completed the convent where the religious of the Fraternity will live.",
+              de: 'Das derzeit wichtigste Projekt der Stiftung betrifft die Errichtung eines Dorfes für Jugendliche in Salvador de Bahia. Die Stiftung hat dort einen Kindergarten und eine Vorschule für etwa 120 Kinder, einen Fußballplatz und einen Mehrzweck-Sportplatz gebaut und hat gerade das Kloster fertiggestellt, in dem die Ordensleute der Fraternität leben werden.',
+              pt: 'O projeto atualmente mais importante da Fundação diz respeito à realização de uma aldeia para os jovens em Salvador da Bahia. A Fundação construiu ali uma creche e uma escola infantil para cerca de 120 crianças, um campo de futebol, uma quadra poliesportiva, e acabou de terminar o convento onde viverão os religiosos da Fraternidade.',
+            })}{' '}
             <Link to="/progetto-brasile" className="text-[var(--warm-orange)] font-semibold">
-              Scopri il progetto
+              {t({ it: 'Scopri il progetto', en: 'Discover the project', de: 'Entdecke das Projekt', pt: 'Conheça o projeto' })}
             </Link>
           </p>
         </div>
@@ -70,19 +137,26 @@ export function FondazionePage() {
           <img src={fondazioneItalia} alt="Fondazione Italia" className="w-full h-56 object-cover rounded-2xl" />
         </div>
         <div className="sm:order-1">
-          <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-2">Italia</h2>
+          <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-2">
+            {t({ it: 'Italia', en: 'Italy', de: 'Italien', pt: 'Itália' })}
+          </h2>
           <p className="text-gray-600 leading-relaxed">
-            In Italia la Fondazione si è impegnata a finanziare la costruzione di un centro di distribuzione
-            alimentare presso la Casa di Terlizzi, per raccogliere e distribuire generi alimentari alle persone e
-            famiglie che quotidianamente chiedono aiuto alla Fraternità.{' '}
+            {t({
+              it: 'In Italia la Fondazione si è impegnata a finanziare la costruzione di un centro di distribuzione alimentare presso la Casa di Terlizzi, per raccogliere e distribuire generi alimentari alle persone e famiglie che quotidianamente chiedono aiuto alla Fraternità.',
+              en: 'In Italy, the Foundation has committed to financing the construction of a food distribution center at the House of Terlizzi, to collect and distribute food to individuals and families who ask the Fraternity for help every day.',
+              de: 'In Italien hat sich die Stiftung verpflichtet, den Bau eines Lebensmittelverteilzentrums im Haus Terlizzi zu finanzieren, um Lebensmittel für Personen und Familien zu sammeln und zu verteilen, die täglich die Fraternität um Hilfe bitten.',
+              pt: 'Na Itália, a Fundação comprometeu-se a financiar a construção de um centro de distribuição alimentar junto à Casa de Terlizzi, para recolher e distribuir géneros alimentícios às pessoas e famílias que diariamente pedem ajuda à Fraternidade.',
+            })}{' '}
             <Link to="/cosa-facciamo" className="text-[var(--warm-orange)] font-semibold">
-              Scopri le attività
+              {t({ it: 'Scopri le attività', en: 'Discover the activities', de: 'Entdecke die Aktivitäten', pt: 'Conheça as atividades' })}
             </Link>
           </p>
         </div>
       </div>
 
-      <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-4">Trasparenza</h2>
+      <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-4">
+        {t({ it: 'Trasparenza', en: 'Transparency', de: 'Transparenz', pt: 'Transparência' })}
+      </h2>
       <div className="flex flex-wrap gap-3 mb-16">
         <a
           href={`${import.meta.env.BASE_URL}documenti/fondazione/bilancio-sociale-2019.pdf`}
@@ -90,7 +164,7 @@ export function FondazionePage() {
           rel="noopener noreferrer"
           className="px-4 py-2 rounded-xl border border-gray-100 text-sm text-gray-600 hover:border-[var(--warm-orange)] hover:text-[var(--warm-orange)] transition-colors"
         >
-          Bilancio Sociale 2019
+          {t({ it: 'Bilancio Sociale 2019', en: 'Social Report 2019', de: 'Sozialbilanz 2019', pt: 'Relatório Social 2019' })}
         </a>
         <a
           href={statutoPdf}
@@ -98,7 +172,7 @@ export function FondazionePage() {
           rel="noopener noreferrer"
           className="px-4 py-2 rounded-xl border border-gray-100 text-sm text-gray-600 hover:border-[var(--warm-orange)] hover:text-[var(--warm-orange)] transition-colors"
         >
-          Statuto
+          {t({ it: 'Statuto', en: 'Statute', de: 'Satzung', pt: 'Estatuto' })}
         </a>
         <a
           href={rendiconto2020}
@@ -106,7 +180,7 @@ export function FondazionePage() {
           rel="noopener noreferrer"
           className="px-4 py-2 rounded-xl border border-gray-100 text-sm text-gray-600 hover:border-[var(--warm-orange)] hover:text-[var(--warm-orange)] transition-colors"
         >
-          Rendiconto 5x1000 — 2020
+          {t({ it: 'Rendiconto 5x1000 — 2020', en: '5x1000 Report — 2020', de: '5x1000-Bericht — 2020', pt: 'Relatório 5x1000 — 2020' })}
         </a>
         <a
           href={rendiconto2021}
@@ -114,7 +188,7 @@ export function FondazionePage() {
           rel="noopener noreferrer"
           className="px-4 py-2 rounded-xl border border-gray-100 text-sm text-gray-600 hover:border-[var(--warm-orange)] hover:text-[var(--warm-orange)] transition-colors"
         >
-          Rendiconto 5x1000 — 2021
+          {t({ it: 'Rendiconto 5x1000 — 2021', en: '5x1000 Report — 2021', de: '5x1000-Bericht — 2021', pt: 'Relatório 5x1000 — 2021' })}
         </a>
         <a
           href={rendiconto2022}
@@ -122,7 +196,7 @@ export function FondazionePage() {
           rel="noopener noreferrer"
           className="px-4 py-2 rounded-xl border border-gray-100 text-sm text-gray-600 hover:border-[var(--warm-orange)] hover:text-[var(--warm-orange)] transition-colors"
         >
-          Rendiconto 5x1000 — 2022
+          {t({ it: 'Rendiconto 5x1000 — 2022', en: '5x1000 Report — 2022', de: '5x1000-Bericht — 2022', pt: 'Relatório 5x1000 — 2022' })}
         </a>
         <a
           href={rendiconto2023}
@@ -130,26 +204,33 @@ export function FondazionePage() {
           rel="noopener noreferrer"
           className="px-4 py-2 rounded-xl border border-gray-100 text-sm text-gray-600 hover:border-[var(--warm-orange)] hover:text-[var(--warm-orange)] transition-colors"
         >
-          Rendiconto 5x1000 — 2023
+          {t({ it: 'Rendiconto 5x1000 — 2023', en: '5x1000 Report — 2023', de: '5x1000-Bericht — 2023', pt: 'Relatório 5x1000 — 2023' })}
         </a>
       </div>
 
-      <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-4">Consiglio di Fondazione</h2>
+      <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-4">
+        {t({ it: 'Consiglio di Fondazione', en: 'Foundation Board', de: 'Stiftungsrat', pt: 'Conselho da Fundação' })}
+      </h2>
       <div className="grid sm:grid-cols-2 gap-3">
         {consiglio.map((c) => (
           <div key={c.nome} className="rounded-2xl border border-gray-100 p-4">
-            <p className="text-xs text-gray-400">{c.ruolo}</p>
+            <p className="text-xs text-gray-400">{t(c.ruolo)}</p>
             <p className="font-semibold text-[var(--deep-blue)]">{c.nome}</p>
           </div>
         ))}
       </div>
 
       <PageCta
-        title="Sostieni i progetti della Fondazione"
-        text="Con una donazione o il tuo 5x1000 contribuisci direttamente ai progetti in Brasile e in Italia."
-        primaryLabel="Dona ora"
+        title={t({ it: 'Sostieni i progetti della Fondazione', en: "Support the Foundation's projects", de: 'Unterstütze die Projekte der Stiftung', pt: 'Apoie os projetos da Fundação' })}
+        text={t({
+          it: 'Con una donazione o il tuo 5x1000 contribuisci direttamente ai progetti in Brasile e in Italia.',
+          en: 'With a donation or your 5x1000 you contribute directly to the projects in Brazil and Italy.',
+          de: 'Mit einer Spende oder deinem 5x1000 trägst du direkt zu den Projekten in Brasilien und Italien bei.',
+          pt: 'Com uma doação ou o seu 5x1000, você contribui diretamente para os projetos no Brasil e na Itália.',
+        })}
+        primaryLabel={t({ it: 'Dona ora', en: 'Donate now', de: 'Jetzt spenden', pt: 'Doe agora' })}
         primaryTo="/sostienici/dona-ora"
-        secondaryLabel="Destina il 5x1000"
+        secondaryLabel={t({ it: 'Destina il 5x1000', en: 'Designate your 5x1000', de: 'Bestimme dein 5x1000', pt: 'Destine o seu 5x1000' })}
         secondaryTo="/sostienici/5x1000"
       />
       </section>

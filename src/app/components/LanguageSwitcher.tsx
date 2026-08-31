@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react'
-import { useLanguage, type Lang } from '../context/LanguageContext'
+import { useLanguage, useT, type Lang } from '../context/LanguageContext'
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from './ui/dropdown-menu'
 
 const FLAG_STYLE = { width: '1.25rem', height: '0.9rem' }
@@ -26,6 +26,26 @@ function FlagGB({ className }: { className?: string }) {
   )
 }
 
+function FlagDE({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 90 60" style={FLAG_STYLE} className={className} role="img" aria-label="Deutsch">
+      <rect width="90" height="20" y="0" fill="#000000" />
+      <rect width="90" height="20" y="20" fill="#DD0000" />
+      <rect width="90" height="20" y="40" fill="#FFCE00" />
+    </svg>
+  )
+}
+
+function FlagBR({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 90 60" style={FLAG_STYLE} className={className} role="img" aria-label="Português (Brasil)">
+      <rect width="90" height="60" fill="#009739" />
+      <polygon points="45,8 82,30 45,52 8,30" fill="#FEDD00" />
+      <circle cx="45" cy="30" r="13" fill="#012169" />
+    </svg>
+  )
+}
+
 interface LangOption {
   code: Lang
   label: string
@@ -35,10 +55,13 @@ interface LangOption {
 const options: LangOption[] = [
   { code: 'it', label: 'Italiano', Flag: FlagIT },
   { code: 'en', label: 'English', Flag: FlagGB },
+  { code: 'de', label: 'Deutsch', Flag: FlagDE },
+  { code: 'pt', label: 'Português (BR)', Flag: FlagBR },
 ]
 
 export function LanguageSwitcher() {
   const { lang, setLang } = useLanguage()
+  const t = useT()
   const current = options.find((o) => o.code === lang) ?? options[0]
 
   return (
@@ -46,7 +69,7 @@ export function LanguageSwitcher() {
       <DropdownMenuTrigger asChild>
         <button
           type="button"
-          aria-label="Seleziona lingua"
+          aria-label={t({ it: 'Seleziona lingua', en: 'Select language', de: 'Sprache auswählen', pt: 'Selecionar idioma' })}
           className="flex items-center gap-1.5 pl-2 pr-1.5 py-1.5 rounded-lg border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-colors"
         >
           <current.Flag className="rounded-xs" />

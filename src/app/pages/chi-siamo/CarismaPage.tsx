@@ -3,95 +3,204 @@ import vitaFraterna from '../../../assets/chi-siamo/vita-fraterna-2026.png'
 import { YouTubeEmbed } from '../../components/YouTubeEmbed'
 import { PageHero } from '../../components/PageHero'
 import { PageCta } from '../../components/PageCta'
+import { useT } from '../../context/LanguageContext'
 
 export function CarismaPage() {
+  const t = useT()
   return (
     <>
       <PageHero
         image={convegnoGiubilare}
-        title="Carisma"
-        subtitle="Preghiera, accoglienza e vita fraterna: i tre pilastri della nostra spiritualità."
+        title={t({ it: 'Carisma', en: 'Charism', de: 'Charisma', pt: 'Carisma' })}
+        subtitle={t({
+          it: 'Preghiera, accoglienza e vita fraterna: i tre pilastri della nostra spiritualità.',
+          en: 'Prayer, hospitality and fraternal life: the three pillars of our spirituality.',
+          de: 'Gebet, Gastfreundschaft und brüderliches Leben: die drei Säulen unserer Spiritualität.',
+          pt: 'Oração, acolhimento e vida fraterna: os três pilares da nossa espiritualidade.',
+        })}
         imageAlt="Fraternità Francescana di Betania - Convegno Giubilare"
       />
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">Preghiera</h2>
+      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">
+        {t({ it: 'Preghiera', en: 'Prayer', de: 'Gebet', pt: 'Oração' })}
+      </h2>
       <p className="text-gray-600 leading-relaxed mb-4">
-        Le parole del nostro fondatore ci indicano che nell'intimo rapporto con Dio viviamo la nostra consacrazione e
-        generiamo la fraternità. Dedichiamo, quotidianamente, ampio tempo alla preghiera personale e a quella
-        comunitaria, arricchita da varie forme di preghiera cristiana.
+        {t({
+          it: "Le parole del nostro fondatore ci indicano che nell'intimo rapporto con Dio viviamo la nostra consacrazione e generiamo la fraternità. Dedichiamo, quotidianamente, ampio tempo alla preghiera personale e a quella comunitaria, arricchita da varie forme di preghiera cristiana.",
+          en: 'The words of our founder tell us that it is in an intimate relationship with God that we live our consecration and generate fraternity. Every day we dedicate ample time to personal and communal prayer, enriched by various forms of Christian prayer.',
+          de: 'Die Worte unseres Gründers zeigen uns, dass wir unsere Weihe in der innigen Beziehung zu Gott leben und daraus Fraternität entsteht. Wir widmen täglich viel Zeit dem persönlichen und gemeinschaftlichen Gebet, bereichert durch verschiedene Formen des christlichen Gebets.',
+          pt: 'As palavras do nosso fundador indicam-nos que é na relação íntima com Deus que vivemos a nossa consagração e geramos a fraternidade. Dedicamos, diariamente, amplo tempo à oração pessoal e comunitária, enriquecida por várias formas de oração cristã.',
+        })}
       </p>
       <blockquote className="border-l-4 border-[var(--warm-orange)] pl-4 italic text-gray-600 my-6">
-        "La preghiera è il primo pilastro del nostro carisma perché precede gli altri e in un certo senso li genera.
-        [...] è l'alimento indispensabile per mantenere vivo il fuoco dell'amore vero che ci rende capaci di
-        un'autentica vita fraterna e di una vera accoglienza." — Padre Pancrazio Gaudioso
+        {t({
+          it: '"La preghiera è il primo pilastro del nostro carisma perché precede gli altri e in un certo senso li genera. [...] è l\'alimento indispensabile per mantenere vivo il fuoco dell\'amore vero che ci rende capaci di un\'autentica vita fraterna e di una vera accoglienza." — Padre Pancrazio Gaudioso',
+          en: '"Prayer is the first pillar of our charism because it precedes the others and in a sense generates them. [...] it is the indispensable nourishment to keep alive the fire of true love that makes us capable of authentic fraternal life and true hospitality." — Father Pancrazio Gaudioso',
+          de: '„Das Gebet ist die erste Säule unseres Charismas, weil es den anderen vorausgeht und sie in gewissem Sinne hervorbringt. [...] es ist die unverzichtbare Nahrung, um das Feuer der wahren Liebe lebendig zu erhalten, die uns zu einem echten brüderlichen Leben und einer wahren Gastfreundschaft befähigt.“ — Pater Pancrazio Gaudioso',
+          pt: '"A oração é o primeiro pilar do nosso carisma porque precede os outros e, de certo modo, os gera. [...] é o alimento indispensável para manter vivo o fogo do amor verdadeiro que nos torna capazes de uma autêntica vida fraterna e de um verdadeiro acolhimento." — Padre Pancrazio Gaudioso',
+        })}
       </blockquote>
 
       <div className="grid sm:grid-cols-2 gap-6 mb-8">
         <div>
-          <h3 className="font-bold text-[var(--deep-blue)] mb-1">Celebrazione Eucaristica</h3>
+          <h3 className="font-bold text-[var(--deep-blue)] mb-1">
+            {t({ it: 'Celebrazione Eucaristica', en: 'Eucharistic Celebration', de: 'Eucharistiefeier', pt: 'Celebração Eucarística' })}
+          </h3>
           <p className="text-sm text-gray-600">
-            "Fonte e culmine di tutta la vita cristiana" (LG 11). Vertice della preghiera comunitaria, centro della
-            spiritualità di fede e fonte della nostra missione.
+            {t({
+              it: '"Fonte e culmine di tutta la vita cristiana" (LG 11). Vertice della preghiera comunitaria, centro della spiritualità di fede e fonte della nostra missione.',
+              en: '"Source and summit of the whole Christian life" (LG 11). The high point of communal prayer, center of the spirituality of faith and source of our mission.',
+              de: '„Quelle und Höhepunkt des ganzen christlichen Lebens“ (LG 11). Höhepunkt des Gemeinschaftsgebets, Zentrum der Glaubensspiritualität und Quelle unserer Sendung.',
+              pt: '"Fonte e cume de toda a vida cristã" (LG 11). Ápice da oração comunitária, centro da espiritualidade de fé e fonte da nossa missão.',
+            })}
           </p>
         </div>
         <div>
-          <h3 className="font-bold text-[var(--deep-blue)] mb-1">Liturgia delle Ore</h3>
+          <h3 className="font-bold text-[var(--deep-blue)] mb-1">
+            {t({ it: 'Liturgia delle Ore', en: 'Liturgy of the Hours', de: 'Stundengebet', pt: 'Liturgia das Horas' })}
+          </h3>
           <p className="text-sm text-gray-600">
-            Scandisce il ritmo della giornata: Ufficio delle letture, Lodi al mattino, Vespri la sera, Compieta.
+            {t({
+              it: 'Scandisce il ritmo della giornata: Ufficio delle letture, Lodi al mattino, Vespri la sera, Compieta.',
+              en: 'It marks the rhythm of the day: Office of Readings, Lauds in the morning, Vespers in the evening, Compline.',
+              de: 'Es gibt dem Tag seinen Rhythmus: Lesehore, morgens Laudes, abends Vesper, Komplet.',
+              pt: 'Marca o ritmo do dia: Ofício das Leituras, Laudes de manhã, Vésperas à noite, Completas.',
+            })}
           </p>
         </div>
         <div>
-          <h3 className="font-bold text-[var(--deep-blue)] mb-1">Preghiera notturna</h3>
+          <h3 className="font-bold text-[var(--deep-blue)] mb-1">
+            {t({ it: 'Preghiera notturna', en: 'Night prayer', de: 'Nächtliches Gebet', pt: 'Oração noturna' })}
+          </h3>
           <p className="text-sm text-gray-600">
-            Almeno tre volte alla settimana ci alziamo di notte a rendere lode al Signore, per crescere nella purezza
-            del cuore.
+            {t({
+              it: 'Almeno tre volte alla settimana ci alziamo di notte a rendere lode al Signore, per crescere nella purezza del cuore.',
+              en: 'At least three times a week we rise at night to praise the Lord, to grow in purity of heart.',
+              de: 'Mindestens dreimal pro Woche stehen wir nachts auf, um den Herrn zu loben und in der Reinheit des Herzens zu wachsen.',
+              pt: 'Pelo menos três vezes por semana levantamo-nos de noite para louvar o Senhor, para crescer na pureza do coração.',
+            })}
           </p>
         </div>
         <div>
-          <h3 className="font-bold text-[var(--deep-blue)] mb-1">Santo Rosario</h3>
+          <h3 className="font-bold text-[var(--deep-blue)] mb-1">
+            {t({ it: 'Santo Rosario', en: 'Holy Rosary', de: 'Heiliger Rosenkranz', pt: 'Santo Rosário' })}
+          </h3>
           <p className="text-sm text-gray-600">
-            Esprime il nostro culto speciale alla Vergine Madre di Dio, unendo meditazione e preghiera del cuore.
+            {t({
+              it: 'Esprime il nostro culto speciale alla Vergine Madre di Dio, unendo meditazione e preghiera del cuore.',
+              en: 'It expresses our special devotion to the Virgin Mother of God, uniting meditation and prayer of the heart.',
+              de: 'Er drückt unsere besondere Verehrung der Jungfrau, der Mutter Gottes, aus und verbindet Meditation mit dem Gebet des Herzens.',
+              pt: 'Exprime o nosso culto especial à Virgem Mãe de Deus, unindo meditação e oração do coração.',
+            })}
           </p>
         </div>
       </div>
       <p className="text-gray-600 leading-relaxed mb-12">
-        <strong>Altre forme di preghiera</strong> — L'Adorazione Eucaristica, la meditazione della Parola di Dio e la
-        Lode Spontanea sono altre forme presenti nella nostra vita di preghiera.
+        <strong>{t({ it: 'Altre forme di preghiera', en: 'Other forms of prayer', de: 'Weitere Gebetsformen', pt: 'Outras formas de oração' })}</strong>{' '}
+        —{' '}
+        {t({
+          it: "L'Adorazione Eucaristica, la meditazione della Parola di Dio e la Lode Spontanea sono altre forme presenti nella nostra vita di preghiera.",
+          en: 'Eucharistic Adoration, meditation on the Word of God and Spontaneous Praise are other forms present in our life of prayer.',
+          de: 'Eucharistische Anbetung, Meditation über das Wort Gottes und spontanes Lob sind weitere Formen unseres Gebetslebens.',
+          pt: 'A Adoração Eucarística, a meditação da Palavra de Deus e o Louvor Espontâneo são outras formas presentes na nossa vida de oração.',
+        })}
       </p>
 
-      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">Accoglienza</h2>
+      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">
+        {t({ it: 'Accoglienza', en: 'Hospitality', de: 'Gastfreundschaft', pt: 'Acolhimento' })}
+      </h2>
       <blockquote className="border-l-4 border-[var(--warm-orange)] pl-4 italic text-gray-600 my-6">
-        Cristo è per eccellenza il testimone di un Dio accogliente. Gesù a Betania è accolto come Signore e Maestro,
-        come un amico e come un fratello (cfr. Lc 10,38-42; Gv 11,1-44; 12,1-3).
+        {t({
+          it: 'Cristo è per eccellenza il testimone di un Dio accogliente. Gesù a Betania è accolto come Signore e Maestro, come un amico e come un fratello (cfr. Lc 10,38-42; Gv 11,1-44; 12,1-3).',
+          en: 'Christ is the witness par excellence of a welcoming God. In Bethany, Jesus is welcomed as Lord and Master, as a friend and as a brother (cf. Lk 10:38-42; Jn 11:1-44; 12:1-3).',
+          de: 'Christus ist der Zeuge schlechthin eines gastfreundlichen Gottes. Jesus wird in Betanien als Herr und Meister, als Freund und als Bruder aufgenommen (vgl. Lk 10,38-42; Joh 11,1-44; 12,1-3).',
+          pt: 'Cristo é por excelência a testemunha de um Deus acolhedor. Jesus em Betânia é acolhido como Senhor e Mestre, como amigo e como irmão (cf. Lc 10,38-42; Jo 11,1-44; 12,1-3).',
+        })}
       </blockquote>
       <p className="text-gray-600 leading-relaxed mb-4">
-        Condividendo i diversi momenti della nostra giornata, chi viene nelle nostre Case può trovare nella preghiera,
-        nei sacramenti e nella vita fraterna, un incontro vero e vivificante con Gesù.
+        {t({
+          it: 'Condividendo i diversi momenti della nostra giornata, chi viene nelle nostre Case può trovare nella preghiera, nei sacramenti e nella vita fraterna, un incontro vero e vivificante con Gesù.',
+          en: 'By sharing the different moments of our day, those who come to our Houses can find, in prayer, in the sacraments and in fraternal life, a true and life-giving encounter with Jesus.',
+          de: 'Durch das Teilen der verschiedenen Momente unseres Tages kann, wer in unsere Häuser kommt, im Gebet, in den Sakramenten und im brüderlichen Leben eine wahre und lebendig machende Begegnung mit Jesus finden.',
+          pt: 'Partilhando os diferentes momentos do nosso dia, quem vem às nossas Casas pode encontrar, na oração, nos sacramentos e na vida fraterna, um encontro verdadeiro e vivificante com Jesus.',
+        })}
       </p>
-      <p className="font-semibold text-[var(--deep-blue)] mb-2">La nostra accoglienza è rivolta a:</p>
+      <p className="font-semibold text-[var(--deep-blue)] mb-2">
+        {t({
+          it: 'La nostra accoglienza è rivolta a:',
+          en: 'Our hospitality is offered to:',
+          de: 'Unsere Gastfreundschaft richtet sich an:',
+          pt: 'O nosso acolhimento é dirigido a:',
+        })}
+      </p>
       <ul className="list-disc list-inside text-gray-600 space-y-1 mb-12">
-        <li>Chi cerca e vuole fare un'esperienza più profonda di Dio</li>
-        <li>Chi sta percorrendo un cammino di discernimento vocazionale</li>
-        <li>Sacerdoti e consacrati affaticati dagli impegni apostolici</li>
-        <li>Giovani disorientati e chi sente il bisogno di ritirarsi dalla frenesia quotidiana</li>
-        <li>Famiglie che intendono riscoprire la bellezza di questa vocazione</li>
+        <li>
+          {t({
+            it: "Chi cerca e vuole fare un'esperienza più profonda di Dio",
+            en: 'Those who seek and want a deeper experience of God',
+            de: 'Menschen, die eine tiefere Erfahrung Gottes suchen und machen möchten',
+            pt: 'Quem procura e quer fazer uma experiência mais profunda de Deus',
+          })}
+        </li>
+        <li>
+          {t({
+            it: 'Chi sta percorrendo un cammino di discernimento vocazionale',
+            en: 'Those who are on a journey of vocational discernment',
+            de: 'Menschen auf dem Weg der Berufungsunterscheidung',
+            pt: 'Quem está a percorrer um caminho de discernimento vocacional',
+          })}
+        </li>
+        <li>
+          {t({
+            it: 'Sacerdoti e consacrati affaticati dagli impegni apostolici',
+            en: 'Priests and consecrated persons weary from their apostolic commitments',
+            de: 'Priester und Geweihte, die von apostolischen Verpflichtungen erschöpft sind',
+            pt: 'Sacerdotes e consagrados cansados pelos compromissos apostólicos',
+          })}
+        </li>
+        <li>
+          {t({
+            it: 'Giovani disorientati e chi sente il bisogno di ritirarsi dalla frenesia quotidiana',
+            en: 'Disoriented young people and those who feel the need to withdraw from the frenzy of daily life',
+            de: 'Orientierungslose Jugendliche und alle, die sich dem Alltagsstress entziehen möchten',
+            pt: 'Jovens desorientados e quem sente a necessidade de se retirar da frenesia quotidiana',
+          })}
+        </li>
+        <li>
+          {t({
+            it: 'Famiglie che intendono riscoprire la bellezza di questa vocazione',
+            en: 'Families who wish to rediscover the beauty of this vocation',
+            de: 'Familien, die die Schönheit dieser Berufung wiederentdecken möchten',
+            pt: 'Famílias que pretendem redescobrir a beleza desta vocação',
+          })}
+        </li>
       </ul>
 
-      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">Vita Fraterna</h2>
+      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">
+        {t({ it: 'Vita Fraterna', en: 'Fraternal Life', de: 'Brüderliches Leben', pt: 'Vida Fraterna' })}
+      </h2>
       <p className="text-gray-600 leading-relaxed mb-4">
-        La Betania evangelica era la casa di Marta, Maria e Lazzaro: due sorelle e un fratello che godevano della
-        presenza di Gesù di Nazareth e della sua amicizia vissuta in un clima di famiglia. La nostra Betania è la casa
-        di fratelli e sorelle che condividono la stessa vita invocando ogni giorno la presenza di Cristo.
+        {t({
+          it: 'La Betania evangelica era la casa di Marta, Maria e Lazzaro: due sorelle e un fratello che godevano della presenza di Gesù di Nazareth e della sua amicizia vissuta in un clima di famiglia. La nostra Betania è la casa di fratelli e sorelle che condividono la stessa vita invocando ogni giorno la presenza di Cristo.',
+          en: 'The Gospel Bethany was the house of Martha, Mary and Lazarus: two sisters and a brother who enjoyed the presence of Jesus of Nazareth and his friendship, lived in a family atmosphere. Our Bethany is the house of brothers and sisters who share the same life, invoking the presence of Christ every day.',
+          de: 'Das biblische Betanien war das Haus von Marta, Maria und Lazarus: zwei Schwestern und ein Bruder, die die Gegenwart Jesu von Nazareth und seine in familiärer Atmosphäre gelebte Freundschaft genossen. Unser Betanien ist das Haus von Brüdern und Schwestern, die dasselbe Leben teilen und jeden Tag die Gegenwart Christi anrufen.',
+          pt: 'A Betânia evangélica era a casa de Marta, Maria e Lázaro: duas irmãs e um irmão que desfrutavam da presença de Jesus de Nazaré e da sua amizade vivida num clima de família. A nossa Betânia é a casa de irmãos e irmãs que partilham a mesma vida, invocando todos os dias a presença de Cristo.',
+        })}
       </p>
       <blockquote className="border-l-4 border-[var(--warm-orange)] pl-4 italic text-gray-600 mb-8">
-        "È meglio avere la sensazione di camminare poco insieme che l'illusione di camminare di più da soli, perché a
-        quell'«insieme» c'è Lui, Gesù, che ha garantito la sua presenza, senza la quale non possiamo fare nulla di
-        buono." — Padre Pancrazio Gaudioso
+        {t({
+          it: '"È meglio avere la sensazione di camminare poco insieme che l\'illusione di camminare di più da soli, perché a quell\'«insieme» c\'è Lui, Gesù, che ha garantito la sua presenza, senza la quale non possiamo fare nulla di buono." — Padre Pancrazio Gaudioso',
+          en: '"It is better to have the feeling of walking a little together than the illusion of walking further alone, because in that \'together\' there is Him, Jesus, who has guaranteed his presence, without which we can do nothing good." — Father Pancrazio Gaudioso',
+          de: '„Es ist besser, das Gefühl zu haben, ein Stück gemeinsam zu gehen, als die Illusion, allein weiter zu kommen, denn in diesem ‚Gemeinsam‘ ist Er, Jesus, der uns seine Gegenwart zugesichert hat, ohne die wir nichts Gutes tun können.“ — Pater Pancrazio Gaudioso',
+          pt: '"É melhor ter a sensação de caminhar pouco juntos do que a ilusão de caminhar mais sozinhos, porque naquele «juntos» está Ele, Jesus, que garantiu a sua presença, sem a qual não podemos fazer nada de bom." — Padre Pancrazio Gaudioso',
+        })}
       </blockquote>
 
       <img src={vitaFraterna} alt="Vita fraterna FFB" className="w-full max-h-80 object-cover rounded-2xl mb-16" />
 
-      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-6">Testimonianze</h2>
+      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-6">
+        {t({ it: 'Testimonianze', en: 'Testimonials', de: 'Zeugnisse', pt: 'Testemunhos' })}
+      </h2>
       <div className="grid sm:grid-cols-3 gap-4">
         <YouTubeEmbed videoId="FiqkY8PEkKk" title="Il nostro carisma - testimonianza 1" />
         <YouTubeEmbed videoId="axdMMA_Id1Q" title="Il nostro carisma - testimonianza 2" />
@@ -99,11 +208,16 @@ export function CarismaPage() {
       </div>
 
       <PageCta
-        title="Vivi la nostra spiritualità"
-        text="Attorno alla Fraternità è fiorita una grande famiglia spirituale: laici, giovani e coppie che condividono questo stesso carisma."
-        primaryLabel="Scopri la Famiglia di Betania"
+        title={t({ it: 'Vivi la nostra spiritualità', en: 'Live our spirituality', de: 'Lebe unsere Spiritualität', pt: 'Viva a nossa espiritualidade' })}
+        text={t({
+          it: 'Attorno alla Fraternità è fiorita una grande famiglia spirituale: laici, giovani e coppie che condividono questo stesso carisma.',
+          en: 'Around the Fraternity a great spiritual family has flourished: laypeople, young people and couples who share this same charism.',
+          de: 'Rund um die Fraternität ist eine große geistliche Familie gewachsen: Laien, Jugendliche und Paare, die dieses Charisma teilen.',
+          pt: 'Em torno da Fraternidade floresceu uma grande família espiritual: leigos, jovens e casais que partilham este mesmo carisma.',
+        })}
+        primaryLabel={t({ it: 'Scopri la Famiglia di Betania', en: 'Discover the Family of Betania', de: 'Entdecke die Familie von Betania', pt: 'Conheça a Família de Betânia' })}
         primaryTo="/famiglia-di-betania"
-        secondaryLabel="Vivi la tua vocazione"
+        secondaryLabel={t({ it: 'Vivi la tua vocazione', en: 'Live your vocation', de: 'Lebe deine Berufung', pt: 'Viva a sua vocação' })}
         secondaryTo="/famiglia-di-betania/vivi-la-tua-vocazione"
       />
       </section>

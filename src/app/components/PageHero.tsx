@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { Link } from 'react-router'
 import { motion } from 'motion/react'
 import { AnimatedSection } from './AnimatedSection'
+import { useT } from '../context/LanguageContext'
 
 interface PageHeroProps {
   image: string
@@ -11,6 +12,7 @@ interface PageHeroProps {
 }
 
 export function PageHero({ image, title, subtitle, imageAlt }: PageHeroProps) {
+  const t = useT()
   const sectionRef = useRef<HTMLElement>(null)
 
   const scrollToNext = () => {
@@ -48,13 +50,13 @@ export function PageHero({ image, title, subtitle, imageAlt }: PageHeroProps) {
               onClick={scrollToNext}
               className="px-8 py-3 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/40 text-white font-medium hover:bg-white/20 transition-all"
             >
-              Scopri di più
+              {t({ it: 'Scopri di più', en: 'Learn more', de: 'Mehr erfahren', pt: 'Saiba mais' })}
             </button>
             <Link
               to="/sostienici/dona-ora"
               className="px-8 py-3 rounded-2xl bg-gradient-to-br from-[#f5b942] via-[#f7c968] to-[#f5b942] text-white font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
             >
-              Dona ora
+              {t({ it: 'Dona ora', en: 'Donate now', de: 'Jetzt spenden', pt: 'Doe agora' })}
             </Link>
           </div>
         </AnimatedSection>

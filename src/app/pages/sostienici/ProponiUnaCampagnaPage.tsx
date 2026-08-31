@@ -1,45 +1,81 @@
+import { PageHero } from '../../components/PageHero'
+import { PageCta } from '../../components/PageCta'
+import { useT } from '../../context/LanguageContext'
+import sostegnoFamiglie from '../../../assets/cosa-facciamo/sostegno-alle-famiglie.jpg'
+
+interface LocalizedString {
+  it: string
+  en: string
+  de: string
+  pt: string
+}
+
 interface Passo {
   numero: number
-  titolo: string
-  descrizione: string
+  titolo: LocalizedString
+  descrizione: LocalizedString
 }
 
 const passi: Passo[] = [
   {
     numero: 1,
-    titolo: "Trova l'occasione giusta!",
-    descrizione: 'Un compleanno, una laurea, un evento etc. Ogni occasione è buona per avviare una raccolta fondi.',
+    titolo: { it: "Trova l'occasione giusta!", en: 'Find the right occasion!', de: 'Finde den richtigen Anlass!', pt: 'Encontre a ocasião certa!' },
+    descrizione: {
+      it: 'Un compleanno, una laurea, un evento etc. Ogni occasione è buona per avviare una raccolta fondi.',
+      en: 'A birthday, a graduation, an event, etc. Any occasion is good for starting a fundraiser.',
+      de: 'Ein Geburtstag, ein Abschluss, eine Veranstaltung usw. Jeder Anlass eignet sich, um eine Spendenaktion zu starten.',
+      pt: 'Um aniversário, uma formatura, um evento etc. Qualquer ocasião é boa para iniciar uma arrecadação de fundos.',
+    },
   },
   {
     numero: 2,
-    titolo: 'Crea la tua campagna',
-    descrizione:
-      'È facile: registrati e personalizza la tua pagina con foto e dettagli. Per qualsiasi cosa puoi sempre contare sul nostro aiuto.',
+    titolo: { it: 'Crea la tua campagna', en: 'Create your campaign', de: 'Erstelle deine Kampagne', pt: 'Crie a sua campanha' },
+    descrizione: {
+      it: 'È facile: registrati e personalizza la tua pagina con foto e dettagli. Per qualsiasi cosa puoi sempre contare sul nostro aiuto.',
+      en: "It's easy: register and personalize your page with photos and details. You can always count on our help for anything.",
+      de: 'Es ist einfach: Registriere dich und gestalte deine Seite mit Fotos und Details. Bei allem kannst du immer auf unsere Hilfe zählen.',
+      pt: 'É fácil: registe-se e personalize a sua página com fotos e detalhes. Para qualquer coisa, pode sempre contar com a nossa ajuda.',
+    },
   },
   {
     numero: 3,
-    titolo: 'Invita a donare i tuoi amici, familiari e colleghi',
-    descrizione: "Controlla l'andamento della raccolta e aggiornali.",
+    titolo: {
+      it: 'Invita a donare i tuoi amici, familiari e colleghi',
+      en: 'Invite your friends, family and colleagues to donate',
+      de: 'Lade deine Freunde, Familie und Kollegen zum Spenden ein',
+      pt: 'Convide os seus amigos, familiares e colegas a doar',
+    },
+    descrizione: {
+      it: "Controlla l'andamento della raccolta e aggiornali.",
+      en: 'Track the progress of the fundraiser and keep them updated.',
+      de: 'Verfolge den Fortschritt der Spendenaktion und halte sie auf dem Laufenden.',
+      pt: 'Acompanhe o andamento da arrecadação e mantenha-os atualizados.',
+    },
   },
 ]
 
-import { PageHero } from '../../components/PageHero'
-import { PageCta } from '../../components/PageCta'
-import sostegnoFamiglie from '../../../assets/cosa-facciamo/sostegno-alle-famiglie.jpg'
-
 export function ProponiUnaCampagnaPage() {
+  const t = useT()
   return (
     <>
       <PageHero
         image={sostegnoFamiglie}
-        title="Proponi la tua campagna"
-        subtitle="Fatti portavoce dei nostri progetti e crea la tua raccolta fondi personale."
+        title={t({ it: 'Proponi la tua campagna', en: 'Propose your campaign', de: 'Schlage deine Kampagne vor', pt: 'Proponha sua campanha' })}
+        subtitle={t({
+          it: 'Fatti portavoce dei nostri progetti e crea la tua raccolta fondi personale.',
+          en: 'Become a spokesperson for our projects and create your own personal fundraiser.',
+          de: 'Werde zum Botschafter unserer Projekte und starte deine eigene Spendenaktion.',
+          pt: 'Torne-se porta-voz dos nossos projetos e crie a sua arrecadação de fundos pessoal.',
+        })}
       />
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
       <p className="text-lg text-gray-600 leading-relaxed mb-12 max-w-2xl mx-auto">
-        Vuoi farti portavoce dei nostri progetti? Attivati in prima persona e crea la tua personale campagna di
-        raccolta fondi. Coinvolgi familiari, amici e colleghi e invitali a partecipare alla tua iniziativa a sostegno
-        di un progetto in cui credi.
+        {t({
+          it: 'Vuoi farti portavoce dei nostri progetti? Attivati in prima persona e crea la tua personale campagna di raccolta fondi. Coinvolgi familiari, amici e colleghi e invitali a partecipare alla tua iniziativa a sostegno di un progetto in cui credi.',
+          en: 'Do you want to become a spokesperson for our projects? Take action yourself and create your own personal fundraising campaign. Involve family, friends and colleagues and invite them to take part in your initiative in support of a project you believe in.',
+          de: 'Möchtest du zum Botschafter unserer Projekte werden? Werde selbst aktiv und starte deine eigene Spendenkampagne. Beteilige Familie, Freunde und Kollegen und lade sie ein, an deiner Initiative zur Unterstützung eines Projekts teilzunehmen, an das du glaubst.',
+          pt: 'Quer tornar-se porta-voz dos nossos projetos? Tome a iniciativa pessoalmente e crie a sua campanha pessoal de arrecadação de fundos. Envolva familiares, amigos e colegas e convide-os a participar da sua iniciativa em apoio a um projeto em que você acredita.',
+        })}
       </p>
 
       <div className="grid sm:grid-cols-3 gap-6 text-left">
@@ -48,18 +84,23 @@ export function ProponiUnaCampagnaPage() {
             <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[var(--warm-orange)] text-white font-bold text-sm mb-3">
               {p.numero}
             </span>
-            <h3 className="font-bold text-[var(--deep-blue)] mb-1">{p.titolo}</h3>
-            <p className="text-sm text-gray-500">{p.descrizione}</p>
+            <h3 className="font-bold text-[var(--deep-blue)] mb-1">{t(p.titolo)}</h3>
+            <p className="text-sm text-gray-500">{t(p.descrizione)}</p>
           </div>
         ))}
       </div>
 
       <PageCta
-        title="Pronto a iniziare?"
-        text="Nel frattempo puoi già dare il tuo contributo diretto o scoprire i progetti che stiamo portando avanti."
-        primaryLabel="Dona ora"
+        title={t({ it: 'Pronto a iniziare?', en: 'Ready to start?', de: 'Bereit anzufangen?', pt: 'Pronto para começar?' })}
+        text={t({
+          it: 'Nel frattempo puoi già dare il tuo contributo diretto o scoprire i progetti che stiamo portando avanti.',
+          en: 'In the meantime you can already give your direct contribution or discover the projects we are carrying forward.',
+          de: 'In der Zwischenzeit kannst du bereits deinen direkten Beitrag leisten oder die Projekte entdecken, die wir vorantreiben.',
+          pt: 'Enquanto isso, você já pode dar a sua contribuição direta ou conhecer os projetos que estamos a desenvolver.',
+        })}
+        primaryLabel={t({ it: 'Dona ora', en: 'Donate now', de: 'Jetzt spenden', pt: 'Doe agora' })}
         primaryTo="/sostienici/dona-ora"
-        secondaryLabel="I nostri progetti"
+        secondaryLabel={t({ it: 'I nostri progetti', en: 'Our projects', de: 'Unsere Projekte', pt: 'Nossos projetos' })}
         secondaryTo="/sostienici/progetti"
       />
       </section>

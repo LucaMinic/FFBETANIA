@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Link } from 'react-router'
 import { AnimatedSection } from '../AnimatedSection'
+import { useT } from '../../context/LanguageContext'
 import asilo from '../../../assets/progetto-brasile/creche-salvador-2024.png'
 import caseHero from '../../../assets/cosa-facciamo/case-di-fraternita-hero.jpg'
 import pancrazio from '../../../assets/padre-pancrazio/pancrazio-ffb.jpg'
@@ -11,18 +12,64 @@ import spiritualita from '../../../assets/sostienici/spiritualita-hero.jpg'
 interface Slide {
   src: string
   alt: string
-  caption: string
+  caption: { it: string; en: string; de: string; pt: string }
 }
 
 const slides: Slide[] = [
-  { src: pancrazio, alt: 'Padre Pancrazio con la comunità', caption: 'Un carisma nato dalla preghiera, vissuto in fraternità.' },
-  { src: asilo, alt: 'Bambini del Progetto Brasile', caption: "Ogni giorno costruiamo futuro, un bambino alla volta." },
-  { src: caseHero, alt: 'Casa Madre di Terlizzi', caption: 'Le nostre Case sono oasi spirituali aperte a tutti.' },
-  { src: famigliari, alt: 'Famiglia di Betania', caption: 'Una grande famiglia spirituale, in cammino insieme.' },
-  { src: spiritualita, alt: 'Preghiera e accoglienza', caption: 'Preghiera e accoglienza: i pilastri del nostro carisma.' },
+  {
+    src: pancrazio,
+    alt: 'Padre Pancrazio con la comunità',
+    caption: {
+      it: 'Un carisma nato dalla preghiera, vissuto in fraternità.',
+      en: 'A charism born from prayer, lived in fraternity.',
+      de: 'Ein Charisma, geboren aus dem Gebet, gelebt in Fraternität.',
+      pt: 'Um carisma nascido da oração, vivido em fraternidade.',
+    },
+  },
+  {
+    src: asilo,
+    alt: 'Bambini del Progetto Brasile',
+    caption: {
+      it: 'Ogni giorno costruiamo futuro, un bambino alla volta.',
+      en: 'Every day we build the future, one child at a time.',
+      de: 'Jeden Tag bauen wir Zukunft, ein Kind nach dem anderen.',
+      pt: 'Todos os dias construímos futuro, uma criança de cada vez.',
+    },
+  },
+  {
+    src: caseHero,
+    alt: 'Casa Madre di Terlizzi',
+    caption: {
+      it: 'Le nostre Case sono oasi spirituali aperte a tutti.',
+      en: 'Our Houses are spiritual oases open to everyone.',
+      de: 'Unsere Häuser sind geistliche Oasen, offen für alle.',
+      pt: 'Nossas Casas são oásis espirituais abertos a todos.',
+    },
+  },
+  {
+    src: famigliari,
+    alt: 'Famiglia di Betania',
+    caption: {
+      it: 'Una grande famiglia spirituale, in cammino insieme.',
+      en: 'A great spiritual family, journeying together.',
+      de: 'Eine große geistliche Familie, gemeinsam unterwegs.',
+      pt: 'Uma grande família espiritual, caminhando juntos.',
+    },
+  },
+  {
+    src: spiritualita,
+    alt: 'Preghiera e accoglienza',
+    caption: {
+      it: 'Preghiera e accoglienza: i pilastri del nostro carisma.',
+      en: 'Prayer and hospitality: the pillars of our charism.',
+      de: 'Gebet und Gastfreundschaft: die Säulen unseres Charismas.',
+      pt: 'Oração e acolhimento: os pilares do nosso carisma.',
+    },
+  },
 ]
 
 export function Hero() {
+  const t = useT()
   const [index, setIndex] = useState(0)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -71,7 +118,7 @@ export function Hero() {
               transition={{ duration: 0.6 }}
               className="text-lg sm:text-2xl text-white/90 max-w-2xl mb-8"
             >
-              {slides[index].caption}
+              {t(slides[index].caption)}
             </motion.p>
           </AnimatePresence>
         </AnimatedSection>
@@ -82,13 +129,13 @@ export function Hero() {
               onClick={scrollToNext}
               className="px-8 py-3 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/40 text-white font-medium hover:bg-white/20 transition-all"
             >
-              Scopri di più
+              {t({ it: 'Scopri di più', en: 'Learn more', de: 'Mehr erfahren', pt: 'Saiba mais' })}
             </button>
             <Link
               to="/sostienici/dona-ora"
               className="px-8 py-3 rounded-2xl bg-gradient-to-br from-[#f5b942] via-[#f7c968] to-[#f5b942] text-white font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
             >
-              Dona ora
+              {t({ it: 'Dona ora', en: 'Donate now', de: 'Jetzt spenden', pt: 'Doe agora' })}
             </Link>
           </div>
         </AnimatedSection>
@@ -99,7 +146,7 @@ export function Hero() {
           <button
             key={s.src}
             type="button"
-            aria-label={`Vai alla slide ${i + 1}`}
+            aria-label={`${t({ it: 'Vai alla slide', en: 'Go to slide', de: 'Zu Folie', pt: 'Ir para o slide' })} ${i + 1}`}
             onClick={() => setIndex(i)}
             className={`w-2 h-2 rounded-full transition-all ${i === index ? 'bg-white w-6' : 'bg-white/40'}`}
           />

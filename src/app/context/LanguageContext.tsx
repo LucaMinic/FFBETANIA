@@ -1,6 +1,8 @@
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react'
 
-export type Lang = 'it' | 'en'
+export type Lang = 'it' | 'en' | 'de' | 'pt'
+
+const SUPPORTED_LANGS: Lang[] = ['it', 'en', 'de', 'pt']
 
 interface LanguageContextType {
   lang: Lang
@@ -15,10 +17,10 @@ const LanguageContext = createContext<LanguageContextType>({
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>(() => {
     const saved = localStorage.getItem('lang')
-    if (saved === 'it' || saved === 'en') return saved
+    if (saved && SUPPORTED_LANGS.includes(saved as Lang)) return saved as Lang
 
     const browserLang = navigator.language.slice(0, 2)
-    return browserLang === 'en' ? 'en' : 'it'
+    return SUPPORTED_LANGS.includes(browserLang as Lang) ? (browserLang as Lang) : 'it'
   })
 
   const setLang = (newLang: Lang) => {
@@ -43,5 +45,5 @@ export function useLanguage() {
 
 export function useT() {
   const { lang } = useLanguage()
-  return (strings: { it: string; en: string }) => strings[lang]
+  return (strings: { it: string; en: string; de: string; pt: string }) => strings[lang]
 }

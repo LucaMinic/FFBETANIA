@@ -5,10 +5,12 @@ import { LanguageSwitcher } from './LanguageSwitcher'
 import { navItems } from './nav-items'
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from './ui/dropdown-menu'
 import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle } from './ui/sheet'
+import { useT } from '../context/LanguageContext'
 import logo from '../../assets/logo/logo-ffbetania-dark.svg'
 
 export function Header() {
   const { pathname } = useLocation()
+  const t = useT()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null)
 
@@ -32,17 +34,19 @@ export function Header() {
                       isActive(item.to) ? 'text-[var(--warm-orange)]' : 'text-[var(--deep-blue)] hover:bg-gray-50'
                     }`}
                   >
-                    {item.label}
+                    {t(item.label)}
                     <ChevronDown className="w-3.5 h-3.5" />
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start">
                   <DropdownMenuItem asChild>
-                    <Link to={item.to}>{item.label} (panoramica)</Link>
+                    <Link to={item.to}>
+                      {t(item.label)} ({t({ it: 'panoramica', en: 'overview', de: 'Übersicht', pt: 'visão geral' })})
+                    </Link>
                   </DropdownMenuItem>
                   {item.children.map((child) => (
                     <DropdownMenuItem key={child.to} asChild>
-                      <Link to={child.to}>{child.label}</Link>
+                      <Link to={child.to}>{t(child.label)}</Link>
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
@@ -55,7 +59,7 @@ export function Header() {
                   isActive(item.to) ? 'text-[var(--warm-orange)]' : 'text-[var(--deep-blue)] hover:bg-gray-50'
                 }`}
               >
-                {item.label}
+                {t(item.label)}
               </Link>
             ),
           )}
@@ -65,7 +69,7 @@ export function Header() {
           to="/sostienici/dona-ora"
           className="lg:hidden absolute left-1/2 -translate-x-1/2 whitespace-nowrap px-4 py-2 rounded-xl bg-gradient-to-br from-[#f5b942] via-[#f7c968] to-[#f5b942] text-white text-sm font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
         >
-          Dona ora
+          {t({ it: 'Dona ora', en: 'Donate now', de: 'Jetzt spenden', pt: 'Doe agora' })}
         </Link>
 
         <div className="flex items-center gap-2 sm:gap-3">
@@ -73,7 +77,7 @@ export function Header() {
             to="/sostienici/dona-ora"
             className="hidden lg:inline-flex whitespace-nowrap px-4 sm:px-5 py-2 rounded-xl bg-gradient-to-br from-[#f5b942] via-[#f7c968] to-[#f5b942] text-white text-sm font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
           >
-            Dona ora
+            {t({ it: 'Dona ora', en: 'Donate now', de: 'Jetzt spenden', pt: 'Doe agora' })}
           </Link>
 
           <LanguageSwitcher />
@@ -88,7 +92,7 @@ export function Header() {
             <SheetTrigger asChild>
               <button
                 type="button"
-                aria-label="Apri il menu"
+                aria-label={t({ it: 'Apri il menu', en: 'Open menu', de: 'Menü öffnen', pt: 'Abrir menu' })}
                 className="lg:hidden p-2 rounded-lg text-[var(--deep-blue)] hover:bg-gray-50"
               >
                 <Menu className="w-5 h-5" />
@@ -110,7 +114,7 @@ export function Header() {
                           isActive(item.to) ? 'text-[var(--warm-orange)]' : 'text-[var(--deep-blue)]'
                         }`}
                       >
-                        {item.label}
+                        {t(item.label)}
                         <ChevronDown
                           className={`w-4 h-4 transition-transform ${openMobileSubmenu === item.to ? 'rotate-180' : ''}`}
                         />
@@ -122,7 +126,7 @@ export function Header() {
                             onClick={() => setMobileOpen(false)}
                             className="block px-2 py-1.5 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-[var(--deep-blue)]"
                           >
-                            {item.label} (panoramica)
+                            {t(item.label)} ({t({ it: 'panoramica', en: 'overview', de: 'Übersicht', pt: 'visão geral' })})
                           </Link>
                           {item.children.map((child) => (
                             <Link
@@ -131,7 +135,7 @@ export function Header() {
                               onClick={() => setMobileOpen(false)}
                               className="block px-2 py-1.5 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-[var(--deep-blue)]"
                             >
-                              {child.label}
+                              {t(child.label)}
                             </Link>
                           ))}
                         </div>
@@ -146,7 +150,7 @@ export function Header() {
                         isActive(item.to) ? 'text-[var(--warm-orange)]' : 'text-[var(--deep-blue)]'
                       }`}
                     >
-                      {item.label}
+                      {t(item.label)}
                     </Link>
                   ),
                 )}

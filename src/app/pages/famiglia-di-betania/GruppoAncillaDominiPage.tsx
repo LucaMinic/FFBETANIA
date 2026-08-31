@@ -1,5 +1,6 @@
 import { PageHero } from '../../components/PageHero'
 import { PageCta } from '../../components/PageCta'
+import { useT } from '../../context/LanguageContext'
 import logoGad from '../../../assets/famiglia-di-betania/logo-gad.jpeg'
 import convegnoGiubilare from '../../../assets/famiglia-di-betania/convegno-giubilare-1794.jpg'
 
@@ -32,12 +33,18 @@ const gruppi: Gruppo[] = [
 ]
 
 export function GruppoAncillaDominiPage() {
+  const t = useT()
   return (
     <>
       <PageHero
         image={convegnoGiubilare}
-        title="Gruppi Ancilla Domini"
-        subtitle="18 gruppi di preghiera del Rinnovamento Carismatico Cattolico in tutta Italia."
+        title={t({ it: 'Gruppi Ancilla Domini', en: 'Ancilla Domini Groups', de: 'Ancilla-Domini-Gruppen', pt: 'Grupos Ancilla Domini' })}
+        subtitle={t({
+          it: '18 gruppi di preghiera del Rinnovamento Carismatico Cattolico in tutta Italia.',
+          en: '18 Catholic Charismatic Renewal prayer groups throughout Italy.',
+          de: '18 Gebetsgruppen der Katholischen Charismatischen Erneuerung in ganz Italien.',
+          pt: '18 grupos de oração da Renovação Carismática Católica por toda a Itália.',
+        })}
         imageAlt="Fraternità Francescana di Betania - Convegno Giubilare"
       />
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
@@ -45,43 +52,77 @@ export function GruppoAncillaDominiPage() {
         <img src={logoGad} alt="Logo GAD FFB" className="w-24 h-24 object-contain rounded-2xl" />
       </div>
 
-      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">Chi sono</h2>
+      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-3">
+        {t({ it: 'Chi sono', en: 'Who they are', de: 'Wer sie sind', pt: 'Quem são' })}
+      </h2>
       <p className="text-gray-600 leading-relaxed mb-4">
-        I GAD fanno parte del Rinnovamento Carismatico Cattolico (RCC) e sono innestati nella grande famiglia
-        spirituale della Fraternità Francescana di Betania (FFB). Padre Pancrazio aggiunse il santo Rosario alla
-        preghiera di lode carismatica tipica dei gruppi RCC, recitato all'inizio degli incontri. Viene data
-        attenzione speciale all'Eucaristia, anche attraverso quella modalità di adorazione che è chiamata Roveto
-        Ardente.
+        {t({
+          it: "I GAD fanno parte del Rinnovamento Carismatico Cattolico (RCC) e sono innestati nella grande famiglia spirituale della Fraternità Francescana di Betania (FFB). Padre Pancrazio aggiunse il santo Rosario alla preghiera di lode carismatica tipica dei gruppi RCC, recitato all'inizio degli incontri. Viene data attenzione speciale all'Eucaristia, anche attraverso quella modalità di adorazione che è chiamata Roveto Ardente.",
+          en: 'The GAD are part of the Catholic Charismatic Renewal (CCR) and are grafted into the great spiritual family of the Fraternità Francescana di Betania (FFB). Father Pancrazio added the holy Rosary, recited at the start of meetings, to the charismatic praise typical of CCR groups. Special attention is given to the Eucharist, also through the form of adoration called the Burning Bush.',
+          de: 'Die GAD sind Teil der Katholischen Charismatischen Erneuerung (KCE) und in die große geistliche Familie der Fraternità Francescana di Betania (FFB) eingebunden. Pater Pancrazio fügte dem für KCE-Gruppen typischen charismatischen Lobpreis den heiligen Rosenkranz hinzu, der zu Beginn der Treffen gebetet wird. Der Eucharistie wird besondere Aufmerksamkeit geschenkt, auch durch die Anbetungsform, die „Brennender Dornbusch“ genannt wird.',
+          pt: 'Os GAD fazem parte da Renovação Carismática Católica (RCC) e estão enxertados na grande família espiritual da Fraternità Francescana di Betania (FFB). O Padre Pancrazio acrescentou o santo Rosário à oração de louvor carismático típica dos grupos RCC, rezado no início dos encontros. É dada atenção especial à Eucaristia, também através daquela modalidade de adoração chamada Sarça Ardente.',
+        })}
       </p>
       <p className="text-gray-600 leading-relaxed mb-4">
-        L'origine risale all'esperienza del Battesimo nello Spirito Santo durante il primo ritiro estivo a Camaldoli
-        nel 1976. I figli spirituali di padre Pancrazio crearono diversi gruppi di preghiera sparsi in tutta Italia e
-        nel Ticino denominati Gruppi Ancilla Domini per l'accentuazione mariana legata alla Santa Casa di Loreto.
+        {t({
+          it: "L'origine risale all'esperienza del Battesimo nello Spirito Santo durante il primo ritiro estivo a Camaldoli nel 1976. I figli spirituali di padre Pancrazio crearono diversi gruppi di preghiera sparsi in tutta Italia e nel Ticino denominati Gruppi Ancilla Domini per l'accentuazione mariana legata alla Santa Casa di Loreto.",
+          en: 'Their origin dates back to the experience of Baptism in the Holy Spirit during the first summer retreat in Camaldoli in 1976. The spiritual children of Father Pancrazio created several prayer groups scattered throughout Italy and Ticino, called Ancilla Domini Groups because of the Marian emphasis linked to the Santa Casa of Loreto.',
+          de: 'Ihren Ursprung hat sie in der Erfahrung der Taufe im Heiligen Geist während der ersten Sommer-Exerzitien in Camaldoli 1976. Die geistlichen Kinder von Pater Pancrazio gründeten mehrere über Italien und das Tessin verstreute Gebetsgruppen, die wegen der marianischen Betonung im Zusammenhang mit der Santa Casa von Loreto Ancilla-Domini-Gruppen genannt wurden.',
+          pt: 'A origem remonta à experiência do Batismo no Espírito Santo durante o primeiro retiro de verão em Camaldoli em 1976. Os filhos espirituais do Padre Pancrazio criaram diversos grupos de oração espalhados por toda a Itália e pelo Ticino, denominados Grupos Ancilla Domini pela ênfase mariana ligada à Santa Casa de Loreto.',
+        })}
       </p>
       <p className="text-gray-600 leading-relaxed mb-4">
-        Nel 2007, al convegno dei Familiari della FFB a Loreto, i Gruppi Ancilla Domini sono stati riconosciuti parte
-        integrante della Fraternità Francescana di Betania e inseriti nello Statuto dei Familiari della FFB.
-        L'accompagnamento spirituale è affidato a fratelli e sorelle delegati dal Consiglio Generale della FFB.
+        {t({
+          it: 'Nel 2007, al convegno dei Familiari della FFB a Loreto, i Gruppi Ancilla Domini sono stati riconosciuti parte integrante della Fraternità Francescana di Betania e inseriti nello Statuto dei Familiari della FFB. L\'accompagnamento spirituale è affidato a fratelli e sorelle delegati dal Consiglio Generale della FFB.',
+          en: "In 2007, at the FFB Familiari convention in Loreto, the Ancilla Domini Groups were recognized as an integral part of the Fraternità Francescana di Betania and included in the FFB's Statute of the Familiari. Spiritual accompaniment is entrusted to brothers and sisters delegated by the FFB's General Council.",
+          de: 'Im Jahr 2007 wurden die Ancilla-Domini-Gruppen bei der Tagung der Familiari der FFB in Loreto als integraler Bestandteil der Fraternità Francescana di Betania anerkannt und in das Statut der Familiari der FFB aufgenommen. Die geistliche Begleitung obliegt Brüdern und Schwestern, die vom Generalrat der FFB beauftragt werden.',
+          pt: 'Em 2007, no encontro dos Familiares da FFB em Loreto, os Grupos Ancilla Domini foram reconhecidos como parte integrante da Fraternità Francescana di Betania e inseridos no Estatuto dos Familiares da FFB. O acompanhamento espiritual é confiado a irmãos e irmãs delegados pelo Conselho Geral da FFB.',
+        })}
       </p>
       <p className="text-gray-600 leading-relaxed mb-4">
-        La cura pastorale e l'assistenza spirituale dei GAD è affidata all'Équipe Generale GAD, formata sia da
-        consacrati della FFB che da laici. Dal 2022, i Gruppi Ancilla Domini sono registrati a CHARIS, l'Ufficio
-        creato nel 2019 da Papa Francesco a servizio del RCC mondiale.
+        {t({
+          it: "La cura pastorale e l'assistenza spirituale dei GAD è affidata all'Équipe Generale GAD, formata sia da consacrati della FFB che da laici. Dal 2022, i Gruppi Ancilla Domini sono registrati a CHARIS, l'Ufficio creato nel 2019 da Papa Francesco a servizio del RCC mondiale.",
+          en: "Pastoral care and spiritual assistance for the GAD is entrusted to the GAD General Team, made up of both FFB consecrated members and laypeople. Since 2022, the Ancilla Domini Groups have been registered with CHARIS, the office created in 2019 by Pope Francis to serve the worldwide CCR.",
+          de: 'Die seelsorgliche Betreuung und geistliche Begleitung der GAD obliegt dem GAD-Generalteam, das sich aus geweihten Mitgliedern der FFB und Laien zusammensetzt. Seit 2022 sind die Ancilla-Domini-Gruppen bei CHARIS registriert, dem 2019 von Papst Franziskus geschaffenen Amt im Dienst der weltweiten KCE.',
+          pt: 'O cuidado pastoral e a assistência espiritual dos GAD é confiado à Equipe Geral GAD, formada tanto por consagrados da FFB como por leigos. Desde 2022, os Grupos Ancilla Domini estão registados na CHARIS, o Ofício criado em 2019 pelo Papa Francisco a serviço da RCC mundial.',
+        })}
       </p>
       <p className="text-gray-500 text-sm mb-12">
-        Documenti di riferimento: Statuto dei Familiari FFB (2007) e Istruzione sulla vita dei GAD (revisionata nel
-        2025).
+        {t({
+          it: 'Documenti di riferimento: Statuto dei Familiari FFB (2007) e Istruzione sulla vita dei GAD (revisionata nel 2025).',
+          en: 'Reference documents: FFB Statute of the Familiari (2007) and Instruction on the life of the GAD (revised in 2025).',
+          de: 'Referenzdokumente: Statut der Familiari der FFB (2007) und Instruktion über das Leben der GAD (überarbeitet 2025).',
+          pt: 'Documentos de referência: Estatuto dos Familiares FFB (2007) e Instrução sobre a vida dos GAD (revista em 2025).',
+        })}
       </p>
 
-      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-4">Dove siamo — i nostri gruppi territoriali</h2>
+      <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-4">
+        {t({ it: 'Dove siamo — i nostri gruppi territoriali', en: 'Where we are — our local groups', de: 'Wo wir sind — unsere regionalen Gruppen', pt: 'Onde estamos — os nossos grupos territoriais' })}
+      </h2>
+      <p className="text-sm text-gray-500 mb-4">
+        {t({
+          it: 'Indirizzi e orari sono indicati in italiano, in quanto riferiti a incontri locali in Italia.',
+          en: 'Addresses and times are shown in Italian, as they refer to local meetings in Italy.',
+          de: 'Adressen und Zeiten sind auf Italienisch angegeben, da sie sich auf lokale Treffen in Italien beziehen.',
+          pt: 'Endereços e horários são indicados em italiano, por se referirem a encontros locais na Itália.',
+        })}
+      </p>
       <div className="overflow-x-auto">
         <table className="w-full text-sm border-collapse">
           <thead>
             <tr className="text-left border-b border-gray-200">
-              <th className="py-2 pr-4 font-semibold text-[var(--deep-blue)]">Gruppo</th>
-              <th className="py-2 pr-4 font-semibold text-[var(--deep-blue)]">Luogo di incontro</th>
-              <th className="py-2 pr-4 font-semibold text-[var(--deep-blue)]">Giorno/Ora</th>
-              <th className="py-2 font-semibold text-[var(--deep-blue)]">Referente</th>
+              <th className="py-2 pr-4 font-semibold text-[var(--deep-blue)]">
+                {t({ it: 'Gruppo', en: 'Group', de: 'Gruppe', pt: 'Grupo' })}
+              </th>
+              <th className="py-2 pr-4 font-semibold text-[var(--deep-blue)]">
+                {t({ it: 'Luogo di incontro', en: 'Meeting place', de: 'Treffpunkt', pt: 'Local de encontro' })}
+              </th>
+              <th className="py-2 pr-4 font-semibold text-[var(--deep-blue)]">
+                {t({ it: 'Giorno/Ora', en: 'Day/Time', de: 'Tag/Uhrzeit', pt: 'Dia/Hora' })}
+              </th>
+              <th className="py-2 font-semibold text-[var(--deep-blue)]">
+                {t({ it: 'Referente', en: 'Contact', de: 'Ansprechpartner', pt: 'Responsável' })}
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -98,11 +139,16 @@ export function GruppoAncillaDominiPage() {
       </div>
 
       <PageCta
-        title="Trova il tuo gruppo di preghiera"
-        text="Se non trovi un gruppo vicino a te, o vuoi saperne di più sulla Famiglia di Betania, siamo felici di aiutarti."
-        primaryLabel="Contattaci"
+        title={t({ it: 'Trova il tuo gruppo di preghiera', en: 'Find your prayer group', de: 'Finde deine Gebetsgruppe', pt: 'Encontre o seu grupo de oração' })}
+        text={t({
+          it: 'Se non trovi un gruppo vicino a te, o vuoi saperne di più sulla Famiglia di Betania, siamo felici di aiutarti.',
+          en: "If you can't find a group near you, or want to know more about the Family of Betania, we are happy to help.",
+          de: 'Wenn du in deiner Nähe keine Gruppe findest oder mehr über die Familie von Betania erfahren möchtest, helfen wir dir gerne weiter.',
+          pt: 'Se não encontrar um grupo perto de você, ou quiser saber mais sobre a Família de Betânia, teremos o prazer de ajudar.',
+        })}
+        primaryLabel={t({ it: 'Contattaci', en: 'Contact us', de: 'Kontaktiere uns', pt: 'Contate-nos' })}
         primaryTo="/contatti"
-        secondaryLabel="Famiglia di Betania"
+        secondaryLabel={t({ it: 'Famiglia di Betania', en: 'Family of Betania', de: 'Familie von Betania', pt: 'Família de Betânia' })}
         secondaryTo="/famiglia-di-betania"
       />
       </section>

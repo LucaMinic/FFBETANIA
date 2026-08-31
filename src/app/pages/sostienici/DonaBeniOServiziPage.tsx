@@ -1,44 +1,66 @@
 import { PageHero } from '../../components/PageHero'
 import { PageCta } from '../../components/PageCta'
+import { useT } from '../../context/LanguageContext'
 import donaBeni from '../../../assets/sostienici/dona-beni-servizi.jpg'
 
 export function DonaBeniOServiziPage() {
+  const t = useT()
   return (
     <>
       <PageHero
         image={donaBeni}
-        title="Dona beni o servizi"
-        subtitle="Aziende e professionisti possono sostenerci donando prodotti o competenze."
+        title={t({ it: 'Dona beni o servizi', en: 'Donate goods or services', de: 'Sachspenden oder Dienstleistungen', pt: 'Doe bens ou serviços' })}
+        subtitle={t({
+          it: 'Aziende e professionisti possono sostenerci donando prodotti o competenze.',
+          en: 'Companies and professionals can support us by donating products or expertise.',
+          de: 'Unternehmen und Fachleute können uns unterstützen, indem sie Produkte oder Know-how spenden.',
+          pt: 'Empresas e profissionais podem apoiar-nos doando produtos ou competências.',
+        })}
       />
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <p className="text-gray-600 leading-relaxed mb-4">
-        Sei un'azienda o un professionista? Scegli di sostenere il nostro servizio di solidarietà anche donando i
-        tuoi prodotti o offrendo beni e servizi.
+        {t({
+          it: "Sei un'azienda o un professionista? Scegli di sostenere il nostro servizio di solidarietà anche donando i tuoi prodotti o offrendo beni e servizi.",
+          en: 'Are you a company or a professional? Choose to support our solidarity service by also donating your products or offering goods and services.',
+          de: 'Bist du ein Unternehmen oder Freiberufler? Unterstütze unseren karitativen Dienst, indem du auch deine Produkte spendest oder Sachwerte und Dienstleistungen anbietest.',
+          pt: 'É uma empresa ou profissional? Escolha apoiar o nosso serviço de solidariedade também doando os seus produtos ou oferecendo bens e serviços.',
+        })}
       </p>
       <p className="text-gray-600 leading-relaxed mb-4">
-        Puoi offrire prodotti di prima necessità da destinare direttamente a chi assistiamo quotidianamente nelle
-        nostre Fraternità, oppure mezzi che potrebbero esserci utili per svolgere al meglio le nostre attività
-        benefiche (attrezzature, mezzi tecnologici, arredamenti, ecc.).
+        {t({
+          it: 'Puoi offrire prodotti di prima necessità da destinare direttamente a chi assistiamo quotidianamente nelle nostre Fraternità, oppure mezzi che potrebbero esserci utili per svolgere al meglio le nostre attività benefiche (attrezzature, mezzi tecnologici, arredamenti, ecc.).',
+          en: 'You can offer basic necessities to be given directly to those we assist daily in our Fraternities, or resources that could help us carry out our charitable activities better (equipment, technology, furnishings, etc.).',
+          de: 'Du kannst Güter des täglichen Bedarfs anbieten, die direkt an die von uns täglich betreuten Menschen in unseren Fraternitäten weitergegeben werden, oder Mittel, die uns helfen könnten, unsere karitativen Aktivitäten besser durchzuführen (Ausrüstung, Technik, Möbel usw.).',
+          pt: 'Pode oferecer produtos de primeira necessidade a serem destinados diretamente a quem assistimos diariamente nas nossas Fraternidades, ou meios que poderiam ser-nos úteis para realizar melhor as nossas atividades beneficentes (equipamentos, meios tecnológicos, mobiliário, etc.).',
+        })}
       </p>
       <p className="text-gray-600 leading-relaxed mb-10">
-        Oltre ai beni è possibile donare dei servizi, come consulenze professionali (legali, tecniche o
-        amministrative) o prestazioni d'opera a titolo gratuito. È un modo alternativo ma molto importante per
-        aiutarci a cambiare la vita di molti fratelli e sorelle bisognosi.
+        {t({
+          it: "Oltre ai beni è possibile donare dei servizi, come consulenze professionali (legali, tecniche o amministrative) o prestazioni d'opera a titolo gratuito. È un modo alternativo ma molto importante per aiutarci a cambiare la vita di molti fratelli e sorelle bisognosi.",
+          en: "In addition to goods, it is possible to donate services, such as professional consultancy (legal, technical or administrative) or work performed free of charge. It is an alternative but very important way to help us change the lives of many brothers and sisters in need.",
+          de: 'Neben Sachwerten können auch Dienstleistungen gespendet werden, wie professionelle Beratung (rechtlich, technisch oder administrativ) oder unentgeltliche Arbeitsleistungen. Das ist eine alternative, aber sehr wichtige Möglichkeit, uns zu helfen, das Leben vieler bedürftiger Brüder und Schwestern zu verändern.',
+          pt: 'Além dos bens, é possível doar serviços, como consultorias profissionais (jurídicas, técnicas ou administrativas) ou prestações de trabalho a título gratuito. É uma forma alternativa mas muito importante de nos ajudar a mudar a vida de muitos irmãos e irmãs necessitados.',
+        })}
       </p>
 
       <p className="text-center text-gray-500">
-        Contattaci a{' '}
+        {t({ it: 'Contattaci a', en: 'Contact us at', de: 'Kontaktiere uns unter', pt: 'Contate-nos em' })}{' '}
         <a href="mailto:fondazione@ffbetania.net" className="text-[var(--warm-orange)] font-semibold">
           fondazione@ffbetania.net
         </a>
       </p>
 
       <PageCta
-        title="Preferisci un contributo economico?"
-        text="Scopri gli altri modi per sostenerci: dalla donazione diretta al 5x1000, fino ai lasciti solidali."
-        primaryLabel="Dona ora"
+        title={t({ it: 'Preferisci un contributo economico?', en: 'Prefer a financial contribution?', de: 'Bevorzugst du einen finanziellen Beitrag?', pt: 'Prefere uma contribuição financeira?' })}
+        text={t({
+          it: 'Scopri gli altri modi per sostenerci: dalla donazione diretta al 5x1000, fino ai lasciti solidali.',
+          en: 'Discover the other ways to support us: from direct donations to the 5x1000, to legacy gifts.',
+          de: 'Entdecke die anderen Möglichkeiten, uns zu unterstützen: von der Direktspende über das 5x1000 bis hin zu Vermächtnissen.',
+          pt: 'Descubra as outras formas de nos apoiar: da doação direta ao 5x1000, até os legados solidários.',
+        })}
+        primaryLabel={t({ it: 'Dona ora', en: 'Donate now', de: 'Jetzt spenden', pt: 'Doe agora' })}
         primaryTo="/sostienici/dona-ora"
-        secondaryLabel="Tutti i modi per aiutare"
+        secondaryLabel={t({ it: 'Tutti i modi per aiutare', en: 'All the ways to help', de: 'Alle Möglichkeiten zu helfen', pt: 'Todas as formas de ajudar' })}
         secondaryTo="/sostienici"
       />
       </section>

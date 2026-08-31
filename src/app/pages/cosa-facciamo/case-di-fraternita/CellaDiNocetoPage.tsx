@@ -1,4 +1,5 @@
 import { CasaLayout } from '../../../components/CasaLayout'
+import { useT } from '../../../context/LanguageContext'
 import hero from '../../../../assets/case-di-fraternita/cella-di-noceto/casa-cella-di-noceto-esterno.jpeg'
 import chiesa from '../../../../assets/case-di-fraternita/cella-di-noceto/chiesa-annunciazione.jpg'
 import chiostro from '../../../../assets/case-di-fraternita/cella-di-noceto/chiostro-superiore.jpg'
@@ -7,12 +8,18 @@ import vitaFraterna1 from '../../../../assets/case-di-fraternita/cella-di-noceto
 import vitaFraterna2 from '../../../../assets/case-di-fraternita/cella-di-noceto/vita-fraterna-2.jpg'
 
 export function CellaDiNocetoPage() {
+  const t = useT()
   return (
     <CasaLayout
       nome="Cella di Noceto"
-      luogo="Cella di Noceto (PR), Italia"
+      luogo={t({ it: 'Cella di Noceto (PR), Italia', en: 'Cella di Noceto (PR), Italy', de: 'Cella di Noceto (PR), Italien', pt: 'Cella di Noceto (PR), Itália' })}
       anno="2004"
-      note="unico edificio costruito interamente dalla Fraternità"
+      note={t({
+        it: "unico edificio costruito interamente dalla Fraternità",
+        en: 'the only building constructed entirely by the Fraternity',
+        de: 'einziges Gebäude, das vollständig von der Fraternität errichtet wurde',
+        pt: 'único edifício construído inteiramente pela Fraternidade',
+      })}
       indirizzo="Via S. Pio da Pietrelcina 3, 43015 Cella di Noceto PR"
       email="cella.noceto@ffbetania.net"
       telefono="0521 624 052"
@@ -21,19 +28,39 @@ export function CellaDiNocetoPage() {
       heroImage={hero}
       heroAlt="Casa di Cella di Noceto"
       paragrafi={[
-        'La fraternità di Cella si trova in provincia di Parma ed è stata fondata il 19 settembre 2004. È l\'unico edificio costruito interamente dalla Fraternità e ha una particolare pianta a forma di "Tau". La struttura centrale ospita la chiesa dell\'Annunciazione, dove circa duecento persone partecipano alla messa domenicale; il complesso include refettorio, sale d\'incontro, un salone e circa trenta camere per ospiti.',
-        'La casa è oggi un "polo di spiritualità per la diocesi di Parma" e luogo di ritiri per gruppi e singoli. Dopo essere stata per vent\'anni casa di noviziato, dal settembre 2023 ospita la tappa di formazione dell\'aspirandato/postulato: vi risiedono circa 30 persone consacrate e formande, oltre a una famiglia oblata interna.',
+        t({
+          it: 'La fraternità di Cella si trova in provincia di Parma ed è stata fondata il 19 settembre 2004. È l\'unico edificio costruito interamente dalla Fraternità e ha una particolare pianta a forma di "Tau". La struttura centrale ospita la chiesa dell\'Annunciazione, dove circa duecento persone partecipano alla messa domenicale; il complesso include refettorio, sale d\'incontro, un salone e circa trenta camere per ospiti.',
+          en: 'The fraternity of Cella is located in the province of Parma and was founded on 19 September 2004. It is the only building constructed entirely by the Fraternity and has a distinctive floor plan shaped like a "Tau". The central structure houses the Church of the Annunciation, where about two hundred people attend Sunday Mass; the complex includes a refectory, meeting rooms, a hall and about thirty guest rooms.',
+          de: 'Die Fraternität von Cella liegt in der Provinz Parma und wurde am 19. September 2004 gegründet. Sie ist das einzige Gebäude, das vollständig von der Fraternität errichtet wurde, und hat einen besonderen Grundriss in Form eines „Tau“. Der zentrale Bau beherbergt die Verkündigungskirche, in der rund zweihundert Menschen an der Sonntagsmesse teilnehmen; der Komplex umfasst Refektorium, Versammlungsräume, einen Saal und rund dreißig Gästezimmer.',
+          pt: 'A fraternidade de Cella situa-se na província de Parma e foi fundada em 19 de setembro de 2004. É o único edifício construído inteiramente pela Fraternidade e tem uma planta particular em forma de "Tau". A estrutura central abriga a igreja da Anunciação, onde cerca de duzentas pessoas participam da missa dominical; o complexo inclui refeitório, salas de encontro, um salão e cerca de trinta quartos para hóspedes.',
+        }),
+        t({
+          it: 'La casa è oggi un "polo di spiritualità per la diocesi di Parma" e luogo di ritiri per gruppi e singoli. Dopo essere stata per vent\'anni casa di noviziato, dal settembre 2023 ospita la tappa di formazione dell\'aspirandato/postulato: vi risiedono circa 30 persone consacrate e formande, oltre a una famiglia oblata interna.',
+          en: 'The house is today a "hub of spirituality for the diocese of Parma" and a place of retreat for groups and individuals. After being a novitiate house for twenty years, since September 2023 it has hosted the aspirancy/postulancy formation stage: about 30 consecrated and formation members reside there, along with a resident oblate family.',
+          de: 'Das Haus ist heute ein „Zentrum der Spiritualität für die Diözese Parma“ und ein Ort der Exerzitien für Gruppen und Einzelpersonen. Nachdem es zwanzig Jahre lang Noviziatshaus war, beherbergt es seit September 2023 die Ausbildungsstufe des Aspirats/Postulats: Dort leben etwa 30 geweihte Personen und Ausbildungskandidaten sowie eine dort ansässige Oblatenfamilie.',
+          pt: 'A casa é hoje um "polo de espiritualidade para a diocese de Parma" e local de retiros para grupos e indivíduos. Depois de ter sido por vinte anos casa de noviciado, desde setembro de 2023 acolhe a etapa de formação do aspirantado/postulantado: ali residem cerca de 30 pessoas consagradas e em formação, além de uma família oblata interna.',
+        }),
       ]}
       galleria={[
-        { src: chiesa, alt: 'Chiesa dell\'Annunciazione, Cella di Noceto' },
+        { src: chiesa, alt: "Chiesa dell'Annunciazione, Cella di Noceto" },
         { src: chiostro, alt: 'Chiostro superiore della Casa di Cella di Noceto' },
         { src: sanPio, alt: 'Statua di San Pio nella Casa di Cella di Noceto' },
         { src: vitaFraterna1, alt: 'Momento di vita fraterna nella Casa di Cella di Noceto' },
         { src: vitaFraterna2, alt: 'Momento di vita fraterna nella Casa di Cella di Noceto' },
       ]}
       orari={[
-        'Santa Messa domenicale — con la partecipazione di circa 200 persone',
-        'Ritiri spirituali per gruppi e singoli, su richiesta',
+        t({
+          it: 'Santa Messa domenicale — con la partecipazione di circa 200 persone',
+          en: 'Sunday Holy Mass — attended by about 200 people',
+          de: 'Sonntägliche Heilige Messe — mit rund 200 Teilnehmern',
+          pt: 'Santa Missa dominical — com a participação de cerca de 200 pessoas',
+        }),
+        t({
+          it: 'Ritiri spirituali per gruppi e singoli, su richiesta',
+          en: 'Spiritual retreats for groups and individuals, on request',
+          de: 'Geistliche Exerzitien für Gruppen und Einzelpersonen, auf Anfrage',
+          pt: 'Retiros espirituais para grupos e indivíduos, mediante pedido',
+        }),
       ]}
     />
   )

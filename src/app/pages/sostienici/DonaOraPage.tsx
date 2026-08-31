@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { Copy, Check } from 'lucide-react'
 import { PlaceholderForm } from '../../components/PlaceholderForm'
 import { PageHero } from '../../components/PageHero'
+import { useT } from '../../context/LanguageContext'
 import famigliari from '../../../assets/famiglia-di-betania/famigliari.jpg'
 
 interface Bonifico {
@@ -18,13 +19,14 @@ const bonifici: Bonifico[] = [
     iban: 'IT48O0306909606100000106797',
   },
   {
-    banca: 'Banca Popolare dell\'Emilia Romagna — filiale di Molfetta',
+    banca: "Banca Popolare dell'Emilia Romagna — filiale di Molfetta",
     beneficiario: 'Fraternità Francescana di Betania Fondazione ETS',
     iban: 'IT75F0538741562000002260111',
   },
 ]
 
 export function DonaOraPage() {
+  const t = useT()
   const [copiedIban, setCopiedIban] = useState<string | null>(null)
 
   const copy = (iban: string) => {
@@ -37,31 +39,50 @@ export function DonaOraPage() {
     <>
       <PageHero
         image={famigliari}
-        title="Dona ora"
-        subtitle="Sostienici nel nostro servizio di solidarietà in Italia e all'estero."
+        title={t({ it: 'Dona ora', en: 'Donate now', de: 'Jetzt spenden', pt: 'Doe agora' })}
+        subtitle={t({
+          it: "Sostienici nel nostro servizio di solidarietà in Italia e all'estero.",
+          en: 'Support us in our service of solidarity in Italy and abroad.',
+          de: 'Unterstütze uns in unserem karitativen Dienst in Italien und im Ausland.',
+          pt: 'Apoie-nos no nosso serviço de solidariedade na Itália e no exterior.',
+        })}
       />
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
       <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto">
-        "Insieme, con l'aiuto di Dio, possiamo fare molto per chi ha bisogno." Sostieni le attività della Fraternità
-        Francescana di Betania e della Fondazione Betania ETS con una donazione libera.
+        {t({
+          it: '"Insieme, con l\'aiuto di Dio, possiamo fare molto per chi ha bisogno." Sostieni le attività della Fraternità Francescana di Betania e della Fondazione Betania ETS con una donazione libera.',
+          en: '"Together, with God\'s help, we can do so much for those in need." Support the activities of the Fraternità Francescana di Betania and the Fondazione Betania ETS with a free donation.',
+          de: '„Gemeinsam, mit Gottes Hilfe, können wir viel für die Bedürftigen tun.“ Unterstütze die Aktivitäten der Fraternità Francescana di Betania und der Fondazione Betania ETS mit einer freien Spende.',
+          pt: '"Juntos, com a ajuda de Deus, podemos fazer muito por quem precisa." Apoie as atividades da Fraternità Francescana di Betania e da Fondazione Betania ETS com uma doação livre.',
+        })}
       </p>
 
       <div className="rounded-2xl border border-dashed border-gray-300 bg-gray-50 p-6 max-w-md mx-auto mb-10">
         <p className="text-gray-500 text-sm">
-          Il modulo di pagamento (carta di credito, PayPal, bonifico SEPA) sarà attivo a breve, collegato al nostro
-          nuovo gestionale.
+          {t({
+            it: 'Il modulo di pagamento (carta di credito, PayPal, bonifico SEPA) sarà attivo a breve, collegato al nostro nuovo gestionale.',
+            en: 'The payment form (credit card, PayPal, SEPA transfer) will be active soon, connected to our new management system.',
+            de: 'Das Zahlungsformular (Kreditkarte, PayPal, SEPA-Überweisung) wird in Kürze aktiv sein, verbunden mit unserem neuen Verwaltungssystem.',
+            pt: 'O formulário de pagamento (cartão de crédito, PayPal, transferência SEPA) estará ativo em breve, ligado ao nosso novo sistema de gestão.',
+          })}
         </p>
       </div>
 
-      <PlaceholderForm submitLabel="Voglio essere avvisato" contactEmail="info@ffbetania.net" withMessage={false} />
+      <PlaceholderForm
+        submitLabel={t({ it: 'Voglio essere avvisato', en: 'Notify me', de: 'Ich möchte benachrichtigt werden', pt: 'Quero ser avisado' })}
+        contactEmail="info@ffbetania.net"
+        withMessage={false}
+      />
 
-      <h2 className="text-xl font-bold text-[var(--deep-blue)] mt-16 mb-6">Nel frattempo, puoi donare con bonifico</h2>
+      <h2 className="text-xl font-bold text-[var(--deep-blue)] mt-16 mb-6">
+        {t({ it: 'Nel frattempo, puoi donare con bonifico', en: 'In the meantime, you can donate by bank transfer', de: 'In der Zwischenzeit kannst du per Überweisung spenden', pt: 'Enquanto isso, você pode doar por transferência bancária' })}
+      </h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-16 text-left">
         {bonifici.map((b) => (
           <div key={b.iban} className="rounded-2xl border-l-4 border-[var(--deep-blue)] bg-white p-6 shadow-sm">
-            <p className="text-sm text-gray-500 mb-1">Banca</p>
+            <p className="text-sm text-gray-500 mb-1">{t({ it: 'Banca', en: 'Bank', de: 'Bank', pt: 'Banco' })}</p>
             <p className="text-sm font-medium text-[var(--deep-blue)] mb-3">{b.banca}</p>
-            <p className="text-sm text-gray-500 mb-1">Beneficiario</p>
+            <p className="text-sm text-gray-500 mb-1">{t({ it: 'Beneficiario', en: 'Beneficiary', de: 'Empfänger', pt: 'Beneficiário' })}</p>
             <p className="text-sm font-semibold text-[var(--deep-blue)] mb-3">{b.beneficiario}</p>
             <p className="text-sm text-gray-500 mb-1">IBAN</p>
             <div className="flex items-center gap-2">
@@ -69,7 +90,7 @@ export function DonaOraPage() {
               <button
                 type="button"
                 onClick={() => copy(b.iban)}
-                aria-label="Copia IBAN"
+                aria-label={t({ it: 'Copia IBAN', en: 'Copy IBAN', de: 'IBAN kopieren', pt: 'Copiar IBAN' })}
                 className="p-2 rounded-lg bg-[var(--deep-blue)] text-white hover:brightness-90 transition-all shrink-0"
               >
                 {copiedIban === b.iban ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
@@ -79,31 +100,50 @@ export function DonaOraPage() {
         ))}
       </div>
 
-      <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-6">Vantaggi fiscali</h2>
+      <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-6">
+        {t({ it: 'Vantaggi fiscali', en: 'Tax benefits', de: 'Steuervorteile', pt: 'Benefícios fiscais' })}
+      </h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-6 text-left">
         <div className="rounded-2xl border border-gray-100 p-5">
-          <h3 className="font-bold text-[var(--deep-blue)] mb-2">Persone fisiche</h3>
+          <h3 className="font-bold text-[var(--deep-blue)] mb-2">
+            {t({ it: 'Persone fisiche', en: 'Individuals', de: 'Privatpersonen', pt: 'Pessoas físicas' })}
+          </h3>
           <p className="text-sm text-gray-600 leading-relaxed">
-            Le donazioni in denaro o in beni sono deducibili al 30%, fino a un massimo di 30.000 € per periodo
-            d'imposta, oppure, in alternativa, deducibili fino al 10% del reddito complessivo dichiarato.
+            {t({
+              it: "Le donazioni in denaro o in beni sono deducibili al 30%, fino a un massimo di 30.000 € per periodo d'imposta, oppure, in alternativa, deducibili fino al 10% del reddito complessivo dichiarato.",
+              en: 'Cash or in-kind donations are 30% deductible, up to a maximum of €30,000 per tax period, or alternatively, deductible up to 10% of total declared income (under Italian tax law).',
+              de: 'Geld- oder Sachspenden sind zu 30 % absetzbar, bis zu einem Höchstbetrag von 30.000 € pro Steuerzeitraum, oder alternativ bis zu 10 % des gesamten erklärten Einkommens absetzbar (nach italienischem Steuerrecht).',
+              pt: 'As doações em dinheiro ou em bens são dedutíveis em 30%, até um máximo de 30.000 € por período fiscal, ou, em alternativa, dedutíveis até 10% do rendimento total declarado (segundo a legislação fiscal italiana).',
+            })}
           </p>
         </div>
         <div className="rounded-2xl border border-gray-100 p-5">
-          <h3 className="font-bold text-[var(--deep-blue)] mb-2">Aziende ed enti</h3>
+          <h3 className="font-bold text-[var(--deep-blue)] mb-2">
+            {t({ it: 'Aziende ed enti', en: 'Companies and organizations', de: 'Unternehmen und Organisationen', pt: 'Empresas e entidades' })}
+          </h3>
           <p className="text-sm text-gray-600 leading-relaxed">
-            Le donazioni sono deducibili fino al 10% del reddito complessivo netto dichiarato (senza il precedente
-            limite di 70.000 €). L'eccedenza è riportabile nei quattro periodi d'imposta successivi.
+            {t({
+              it: "Le donazioni sono deducibili fino al 10% del reddito complessivo netto dichiarato (senza il precedente limite di 70.000 €). L'eccedenza è riportabile nei quattro periodi d'imposta successivi.",
+              en: 'Donations are deductible up to 10% of total declared net income (without the previous €70,000 limit). The excess can be carried forward for the following four tax periods.',
+              de: 'Spenden sind bis zu 10 % des gesamten erklärten Nettoeinkommens absetzbar (ohne die frühere Obergrenze von 70.000 €). Der übersteigende Betrag kann auf die folgenden vier Steuerzeiträume vorgetragen werden.',
+              pt: 'As doações são dedutíveis até 10% do rendimento líquido total declarado (sem o limite anterior de 70.000 €). O excedente pode ser reportado nos quatro períodos fiscais seguintes.',
+            })}
           </p>
         </div>
       </div>
       <p className="text-xs text-gray-400 mb-16">
-        Disposizioni contenute nel Codice del Terzo Settore, applicabili dal 1° gennaio 2018.
+        {t({
+          it: "Disposizioni contenute nel Codice del Terzo Settore, applicabili dal 1° gennaio 2018.",
+          en: 'Provisions contained in the Italian Third Sector Code, applicable from 1 January 2018.',
+          de: 'Bestimmungen aus dem italienischen Kodex des Dritten Sektors, anwendbar ab dem 1. Januar 2018.',
+          pt: 'Disposições contidas no Código do Terceiro Setor italiano, aplicáveis a partir de 1º de janeiro de 2018.',
+        })}
       </p>
 
       <p className="text-gray-500">
-        Vuoi sostenerci senza spendere nulla?{' '}
+        {t({ it: 'Vuoi sostenerci senza spendere nulla?', en: 'Want to support us without spending anything?', de: 'Möchtest du uns unterstützen, ohne etwas auszugeben?', pt: 'Quer nos apoiar sem gastar nada?' })}{' '}
         <Link to="/sostienici/5x1000" className="text-[var(--warm-orange)] font-semibold">
-          Scopri il 5x1000
+          {t({ it: 'Scopri il 5x1000', en: 'Discover the 5x1000', de: 'Entdecke das 5x1000', pt: 'Conheça o 5x1000' })}
         </Link>
       </p>
       </section>

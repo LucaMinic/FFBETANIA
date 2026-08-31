@@ -1,30 +1,47 @@
 import { Link } from 'react-router'
 import { PageHero } from '../../components/PageHero'
+import { useT } from '../../context/LanguageContext'
 import famigliari from '../../../assets/famiglia-di-betania/famigliari.jpg'
 
 export function FamigliaDiBetaniaPage() {
+  const t = useT()
   return (
     <>
       <PageHero
         image={famigliari}
-        title="Famiglia di Betania"
-        subtitle="Una grande famiglia spirituale che vive il nostro carisma nel mondo."
+        title={t({ it: 'Famiglia di Betania', en: 'Family of Betania', de: 'Familie von Betania', pt: 'Família de Betânia' })}
+        subtitle={t({
+          it: 'Una grande famiglia spirituale che vive il nostro carisma nel mondo.',
+          en: 'A great spiritual family that lives our charism in the world.',
+          de: 'Eine große geistliche Familie, die unser Charisma in der Welt lebt.',
+          pt: 'Uma grande família espiritual que vive o nosso carisma no mundo.',
+        })}
       />
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <blockquote className="border-l-4 border-[var(--warm-orange)] pl-4 italic text-gray-600 mb-6">
-        "Portatori di pace, unità, gioia e speranza, secondo lo stile della Fraternità, nella società e nella Chiesa
-        dove sono chiamati a fiorire." — dallo Statuto dei Familiari
+        {t({
+          it: '"Portatori di pace, unità, gioia e speranza, secondo lo stile della Fraternità, nella società e nella Chiesa dove sono chiamati a fiorire." — dallo Statuto dei Familiari',
+          en: '"Bearers of peace, unity, joy and hope, in the style of the Fraternity, in the society and in the Church where they are called to flourish." — from the Statute of the Familiari',
+          de: '„Träger von Frieden, Einheit, Freude und Hoffnung, im Stil der Fraternität, in der Gesellschaft und in der Kirche, in der sie berufen sind, zu blühen.“ — aus dem Statut der Familiari',
+          pt: '"Portadores de paz, unidade, alegria e esperança, segundo o estilo da Fraternidade, na sociedade e na Igreja onde são chamados a florescer." — do Estatuto dos Familiares',
+        })}
       </blockquote>
 
       <p className="text-gray-600 leading-relaxed mb-4">
-        Insieme alla Fraternità Francescana di Betania, come Istituto di vita consacrata, è fiorita negli anni una
-        grande famiglia spirituale. Sono i Familiari della Fraternità che, a diverso titolo e con modalità ed impegni
-        differenti, partecipano alla vita dell'Istituto e al suo carisma.
+        {t({
+          it: "Insieme alla Fraternità Francescana di Betania, come Istituto di vita consacrata, è fiorita negli anni una grande famiglia spirituale. Sono i Familiari della Fraternità che, a diverso titolo e con modalità ed impegni differenti, partecipano alla vita dell'Istituto e al suo carisma.",
+          en: 'Alongside the Fraternità Francescana di Betania, as an Institute of Consecrated Life, a great spiritual family has flourished over the years. These are the Familiari of the Fraternity who, in various capacities and with different forms and commitments, take part in the life of the Institute and its charism.',
+          de: 'Neben der Fraternità Francescana di Betania als Institut des geweihten Lebens ist über die Jahre eine große geistliche Familie gewachsen. Es sind die Familiari der Fraternität, die in unterschiedlicher Weise und mit verschiedenen Formen und Verpflichtungen am Leben des Instituts und seinem Charisma teilhaben.',
+          pt: 'Junto com a Fraternità Francescana di Betania, como Instituto de vida consagrada, floresceu ao longo dos anos uma grande família espiritual. São os Familiares da Fraternidade que, a diverso título e com modalidades e compromissos diferentes, participam da vida do Instituto e do seu carisma.',
+        })}
       </p>
       <p className="text-gray-600 leading-relaxed mb-10">
-        Essi vivono pienamente la realtà sociale ed ecclesiale in cui sono inseriti, attenti alle molteplici nuove
-        povertà dell'uomo contemporaneo, impegnandosi a portare pace, unità e gioia nella famiglia, nel luogo di
-        lavoro, nella società e nella Chiesa.
+        {t({
+          it: "Essi vivono pienamente la realtà sociale ed ecclesiale in cui sono inseriti, attenti alle molteplici nuove povertà dell'uomo contemporaneo, impegnandosi a portare pace, unità e gioia nella famiglia, nel luogo di lavoro, nella società e nella Chiesa.",
+          en: 'They fully live the social and ecclesial reality in which they are situated, attentive to the many new forms of poverty of contemporary humanity, committing themselves to bringing peace, unity and joy into the family, the workplace, society and the Church.',
+          de: 'Sie leben voll und ganz in der sozialen und kirchlichen Wirklichkeit, in die sie eingebunden sind, aufmerksam gegenüber den vielfältigen neuen Formen von Armut des heutigen Menschen, und engagieren sich, Frieden, Einheit und Freude in Familie, Arbeitsplatz, Gesellschaft und Kirche zu bringen.',
+          pt: 'Vivem plenamente a realidade social e eclesial em que estão inseridos, atentos às múltiplas novas pobrezas do homem contemporâneo, empenhando-se em levar paz, unidade e alegria à família, ao local de trabalho, à sociedade e à Igreja.',
+        })}
       </p>
 
       <div className="grid sm:grid-cols-3 gap-4 mb-12">
@@ -32,52 +49,83 @@ export function FamigliaDiBetaniaPage() {
           to="/famiglia-di-betania/giovani-di-betania"
           className="rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all"
         >
-          <h3 className="font-bold text-[var(--deep-blue)] mb-1">Giovani di Betania</h3>
-          <p className="text-sm text-gray-500">Ragazzi e ragazze dagli 11 ai 26 anni.</p>
+          <h3 className="font-bold text-[var(--deep-blue)] mb-1">
+            {t({ it: 'Giovani di Betania', en: 'Youth of Betania', de: 'Jugend von Betania', pt: 'Jovens de Betânia' })}
+          </h3>
+          <p className="text-sm text-gray-500">
+            {t({ it: 'Ragazzi e ragazze dagli 11 ai 26 anni.', en: 'Young people aged 11 to 26.', de: 'Jugendliche im Alter von 11 bis 26 Jahren.', pt: 'Rapazes e raparigas dos 11 aos 26 anos.' })}
+          </p>
         </Link>
         <Link
           to="/famiglia-di-betania/gruppo-ancilla-domini"
           className="rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all"
         >
-          <h3 className="font-bold text-[var(--deep-blue)] mb-1">Gruppi Ancilla Domini</h3>
-          <p className="text-sm text-gray-500">18 gruppi di preghiera in tutta Italia.</p>
+          <h3 className="font-bold text-[var(--deep-blue)] mb-1">
+            {t({ it: 'Gruppi Ancilla Domini', en: 'Ancilla Domini Groups', de: 'Ancilla-Domini-Gruppen', pt: 'Grupos Ancilla Domini' })}
+          </h3>
+          <p className="text-sm text-gray-500">
+            {t({ it: '18 gruppi di preghiera in tutta Italia.', en: '18 prayer groups throughout Italy.', de: '18 Gebetsgruppen in ganz Italien.', pt: '18 grupos de oração por toda a Itália.' })}
+          </p>
         </Link>
         <Link
           to="/famiglia-di-betania/oblati"
           className="rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all"
         >
-          <h3 className="font-bold text-[var(--deep-blue)] mb-1">Oblati</h3>
-          <p className="text-sm text-gray-500">Laici che condividono il nostro carisma.</p>
+          <h3 className="font-bold text-[var(--deep-blue)] mb-1">
+            {t({ it: 'Oblati', en: 'Oblates', de: 'Oblaten', pt: 'Oblatos' })}
+          </h3>
+          <p className="text-sm text-gray-500">
+            {t({ it: 'Laici che condividono il nostro carisma.', en: 'Laypeople who share our charism.', de: 'Laien, die unser Charisma teilen.', pt: 'Leigos que partilham o nosso carisma.' })}
+          </p>
         </Link>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-8 mb-12">
         <div>
-          <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-2">Gruppo Nazareth</h2>
+          <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-2">
+            {t({ it: 'Gruppo Nazareth', en: 'Nazareth Group', de: 'Gruppe Nazareth', pt: 'Grupo Nazaré' })}
+          </h2>
           <p className="text-gray-600 leading-relaxed">
-            Rivolto ai giovani adulti dai 25/26 ai 40 anni desiderosi di approfondire la conoscenza della loro fede,
-            secondo lo stile della Fraternità Francescana di Betania. Si incontrano periodicamente per pregare
-            insieme, vivere momenti di catechesi, riflessione e condivisione.
+            {t({
+              it: 'Rivolto ai giovani adulti dai 25/26 ai 40 anni desiderosi di approfondire la conoscenza della loro fede, secondo lo stile della Fraternità Francescana di Betania. Si incontrano periodicamente per pregare insieme, vivere momenti di catechesi, riflessione e condivisione.',
+              en: 'Aimed at young adults from 25/26 to 40 years old who wish to deepen their knowledge of the faith, in the style of the Fraternità Francescana di Betania. They meet periodically to pray together and share moments of catechesis, reflection and sharing.',
+              de: 'Richtet sich an junge Erwachsene von 25/26 bis 40 Jahren, die im Stil der Fraternità Francescana di Betania ihren Glauben vertiefen möchten. Sie treffen sich regelmäßig, um gemeinsam zu beten und Momente der Katechese, Reflexion und des Austauschs zu erleben.',
+              pt: 'Voltado para jovens adultos dos 25/26 aos 40 anos desejosos de aprofundar o conhecimento da sua fé, segundo o estilo da Fraternità Francescana di Betania. Encontram-se periodicamente para rezar juntos, viver momentos de catequese, reflexão e partilha.',
+            })}
           </p>
         </div>
         <div>
-          <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-2">Gruppi di famiglie</h2>
+          <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-2">
+            {t({ it: 'Gruppi di famiglie', en: 'Family groups', de: 'Familiengruppen', pt: 'Grupos de famílias' })}
+          </h2>
           <p className="text-gray-600 leading-relaxed">
-            La nostra accoglienza specifica, unita alla preghiera e alla vita fraterna, aiuta a rigenerare singoli e
-            famiglie. Si propongono progetti tematici per un percorso di formazione che aiuti i coniugi a crescere
-            nella fede, come famiglia e come coppia.
+            {t({
+              it: 'La nostra accoglienza specifica, unita alla preghiera e alla vita fraterna, aiuta a rigenerare singoli e famiglie. Si propongono progetti tematici per un percorso di formazione che aiuti i coniugi a crescere nella fede, come famiglia e come coppia.',
+              en: 'Our specific hospitality, combined with prayer and fraternal life, helps to renew individuals and families. Thematic projects are proposed for a formation path that helps spouses grow in faith, as a family and as a couple.',
+              de: 'Unsere spezifische Gastfreundschaft, verbunden mit Gebet und brüderlichem Leben, hilft, Einzelne und Familien zu erneuern. Es werden thematische Projekte für einen Bildungsweg angeboten, der Ehepaaren hilft, im Glauben zu wachsen, als Familie und als Paar.',
+              pt: 'O nosso acolhimento específico, unido à oração e à vida fraterna, ajuda a regenerar indivíduos e famílias. Propõem-se projetos temáticos para um percurso de formação que ajude os cônjuges a crescer na fé, como família e como casal.',
+            })}
           </p>
         </div>
       </div>
 
       <div className="text-center border-t border-gray-100 pt-10">
-        <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-2">Senti una chiamata più grande?</h2>
-        <p className="text-gray-500 mb-4">Scopri il percorso di discernimento vocazionale nel nostro Istituto.</p>
+        <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-2">
+          {t({ it: 'Senti una chiamata più grande?', en: 'Do you feel a greater calling?', de: 'Fühlst du einen größeren Ruf?', pt: 'Sente um chamado maior?' })}
+        </h2>
+        <p className="text-gray-500 mb-4">
+          {t({
+            it: 'Scopri il percorso di discernimento vocazionale nel nostro Istituto.',
+            en: 'Discover the path of vocational discernment in our Institute.',
+            de: 'Entdecke den Weg der Berufungsunterscheidung in unserem Institut.',
+            pt: 'Conheça o percurso de discernimento vocacional no nosso Instituto.',
+          })}
+        </p>
         <Link
           to="/famiglia-di-betania/vivi-la-tua-vocazione"
           className="inline-block px-6 py-2.5 rounded-xl bg-[var(--deep-blue)] text-white font-medium shadow-md hover:shadow-lg transition-all"
         >
-          Vivi la tua vocazione
+          {t({ it: 'Vivi la tua vocazione', en: 'Live your vocation', de: 'Lebe deine Berufung', pt: 'Viva a sua vocação' })}
         </Link>
       </div>
       </section>
