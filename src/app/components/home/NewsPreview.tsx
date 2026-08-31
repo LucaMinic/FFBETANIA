@@ -45,19 +45,23 @@ export function NewsPreview() {
           </p>
         </AnimatedSection>
 
-        <div className="grid sm:grid-cols-3 gap-6 mb-6">
+        <div className="grid sm:grid-cols-3 gap-8 mb-8">
           {news.map((n, i) => (
             <AnimatedSection key={n.titolo} delay={i * 0.1}>
-              <article className="rounded-[1.5rem] overflow-hidden border border-gray-100 shadow-sm h-full">
-                <div className="h-40 overflow-hidden">
-                  <img src={n.immagine} alt={n.titolo} className="w-full h-full object-cover" />
-                </div>
-                <div className="p-5">
-                  <p className="text-xs font-semibold text-[var(--warm-orange)] uppercase tracking-wide mb-2">
+              <article className="group relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-[0_12px_40px_-16px_rgba(93,74,58,0.35)] hover:shadow-[0_28px_60px_-16px_rgba(212,151,108,0.5)] hover:-translate-y-2 hover:rotate-[-0.5deg] transition-all duration-500 ease-out h-full">
+                <img
+                  src={n.immagine}
+                  alt={n.titolo}
+                  className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-125 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--deep-blue)]/95 via-[var(--deep-blue)]/25 to-transparent group-hover:from-[var(--deep-blue)]/95 group-hover:via-[var(--deep-blue)]/40 transition-all duration-500" />
+
+                <div className="absolute inset-x-0 bottom-0 p-7">
+                  <p className="text-xs font-semibold text-[var(--warm-orange-light)] uppercase tracking-wide mb-2">
                     {n.data}
                   </p>
-                  <h3 className="font-bold text-[var(--deep-blue)] mb-2">{n.titolo}</h3>
-                  <p className="text-sm text-gray-500">{n.estratto}</p>
+                  <h3 className="text-lg font-bold text-white mb-2 leading-snug drop-shadow-sm">{n.titolo}</h3>
+                  <p className="text-sm text-white/85 leading-relaxed line-clamp-3">{n.estratto}</p>
                 </div>
               </article>
             </AnimatedSection>

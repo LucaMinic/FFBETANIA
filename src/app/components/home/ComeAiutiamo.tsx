@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import { ArrowRight } from 'lucide-react'
 import { AnimatedSection } from '../AnimatedSection'
 import mensaPoveri from '../../../assets/cosa-facciamo/mensa-poveri.jpg'
 import sostegnoFamiglie from '../../../assets/cosa-facciamo/sostegno-alle-famiglie.jpg'
@@ -47,25 +48,27 @@ export function ComeAiutiamo() {
           </p>
         </AnimatedSection>
 
-        <div className="grid sm:grid-cols-3 gap-6 mb-8">
+        <div className="grid sm:grid-cols-3 gap-8 mb-10">
           {attivita.map((a, i) => (
             <AnimatedSection key={a.to} delay={i * 0.1}>
               <Link
                 to={a.to}
-                className="group block rounded-[1.5rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full"
+                className="group relative block aspect-[3/4] rounded-[2rem] overflow-hidden shadow-[0_12px_40px_-16px_rgba(93,74,58,0.35)] hover:shadow-[0_28px_60px_-16px_rgba(212,151,108,0.5)] hover:-translate-y-2 hover:rotate-[0.5deg] transition-all duration-500 ease-out"
               >
-                <div className="h-44 overflow-hidden">
-                  <img
-                    src={a.immagine}
-                    alt={a.titolo}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-bold text-[var(--deep-blue)] mb-1 group-hover:text-[var(--warm-orange)] transition-colors">
-                    {a.titolo}
-                  </h3>
-                  <p className="text-sm text-gray-500">{a.descrizione}</p>
+                <img
+                  src={a.immagine}
+                  alt={a.titolo}
+                  className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-125 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--deep-blue)]/95 via-[var(--deep-blue)]/25 to-transparent group-hover:from-[var(--deep-blue)]/95 group-hover:via-[var(--deep-blue)]/40 transition-all duration-500" />
+
+                <div className="absolute inset-x-0 bottom-0 p-7">
+                  <h3 className="text-xl font-bold text-white mb-2 drop-shadow-sm">{a.titolo}</h3>
+                  <p className="text-sm text-white/85 leading-relaxed mb-4 max-w-[95%]">{a.descrizione}</p>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--warm-orange-light)] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                    Scopri di più
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
                 </div>
               </Link>
             </AnimatedSection>

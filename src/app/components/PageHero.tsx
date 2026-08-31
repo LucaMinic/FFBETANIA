@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { Link } from 'react-router'
+import { motion } from 'motion/react'
 import { AnimatedSection } from './AnimatedSection'
 
 interface PageHeroProps {
@@ -19,12 +20,19 @@ export function PageHero({ image, title, subtitle, imageAlt }: PageHeroProps) {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full aspect-[4/3] min-h-[520px] md:aspect-auto md:h-[85vh] md:min-h-[600px] overflow-hidden bg-[var(--deep-blue)]"
+      className="relative w-full min-h-[420px] h-[60vh] md:h-[65vh] md:min-h-[480px] overflow-hidden bg-[var(--deep-blue)]"
     >
-      <img src={image} alt={imageAlt ?? title} className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[var(--deep-blue)]/85 via-[var(--deep-blue)]/45 to-[var(--deep-blue)]/10" />
+      <motion.img
+        src={image}
+        alt={imageAlt ?? title}
+        initial={{ scale: 1 }}
+        animate={{ scale: 1.08 }}
+        transition={{ duration: 14, ease: 'linear' }}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[var(--deep-blue)]/80 via-[var(--deep-blue)]/40 to-[var(--deep-blue)]/20" />
 
-      <div className="relative z-10 h-full flex flex-col items-center justify-end text-center px-4 pb-16 sm:pb-20">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
         <AnimatedSection immediate>
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white drop-shadow-lg mb-4 max-w-3xl">{title}</h1>
         </AnimatedSection>

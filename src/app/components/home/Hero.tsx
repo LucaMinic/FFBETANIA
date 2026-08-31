@@ -38,24 +38,24 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full aspect-[4/3] min-h-[520px] md:aspect-auto md:h-[85vh] md:min-h-[600px] overflow-hidden bg-[var(--deep-blue)]"
+      className="relative w-full min-h-[420px] h-[60vh] md:h-[65vh] md:min-h-[480px] overflow-hidden bg-[var(--deep-blue)]"
     >
       <AnimatePresence mode="sync">
         <motion.img
           key={index}
           src={slides[index].src}
           alt={slides[index].alt}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: 1, scale: 1.08 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: 'easeInOut' }}
+          transition={{ opacity: { duration: 1.2, ease: 'easeInOut' }, scale: { duration: 5, ease: 'linear' } }}
           className="absolute inset-0 w-full h-full object-cover"
         />
       </AnimatePresence>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-black/15" />
 
-      <div className="relative z-10 h-full flex flex-col items-center justify-end text-center px-4 pb-16 sm:pb-20">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
         <AnimatedSection immediate>
           <h1 className="text-3xl sm:text-5xl font-bold text-white drop-shadow-lg mb-4 max-w-3xl">
             Fraternità Francescana di Betania

@@ -39,17 +39,19 @@ export function RiconoscimentiIstituzionali() {
           </p>
         </AnimatedSection>
 
-        <div className="grid sm:grid-cols-3 gap-6 mb-14">
+        <div className="grid sm:grid-cols-3 gap-8 mb-16">
           {riconoscimenti.map((r, i) => {
             const content = (
               <>
-                <r.icon className="w-8 h-8 text-[var(--warm-orange)] mb-3" />
-                <h3 className="font-bold text-[var(--deep-blue)] mb-1.5">{r.titolo}</h3>
+                <span className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-sm mb-5 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 ease-out">
+                  <r.icon className="w-7 h-7 text-[var(--warm-orange)]" />
+                </span>
+                <h3 className="text-lg font-bold text-[var(--deep-blue)] mb-2">{r.titolo}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{r.testo}</p>
                 {r.href && (
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--warm-orange)] mt-3">
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--warm-orange)] mt-4">
                     Scopri la Fondazione
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </span>
                 )}
               </>
@@ -59,12 +61,14 @@ export function RiconoscimentiIstituzionali() {
                 {r.href ? (
                   <Link
                     to={r.href}
-                    className="block h-full rounded-[1.5rem] bg-[var(--beige)] p-6 hover:bg-[var(--beige)]/70 transition-colors"
+                    className="group block h-full rounded-[2rem] bg-gradient-to-br from-[var(--beige)] to-[var(--beige-dark)]/60 p-8 shadow-[0_12px_36px_-18px_rgba(93,74,58,0.35)] hover:shadow-[0_20px_48px_-16px_rgba(212,151,108,0.4)] hover:-translate-y-2 hover:rotate-[-0.5deg] transition-all duration-500 ease-out"
                   >
                     {content}
                   </Link>
                 ) : (
-                  <div className="h-full rounded-[1.5rem] bg-[var(--beige)] p-6">{content}</div>
+                  <div className="group h-full rounded-[2rem] bg-gradient-to-br from-[var(--beige)] to-[var(--beige-dark)]/60 p-8 shadow-[0_12px_36px_-18px_rgba(93,74,58,0.35)]">
+                    {content}
+                  </div>
                 )}
               </AnimatedSection>
             )
