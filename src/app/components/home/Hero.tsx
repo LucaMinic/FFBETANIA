@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Link } from 'react-router'
+import { Pause, Play } from 'lucide-react'
 import { AnimatedSection } from '../AnimatedSection'
 import { useT } from '../../context/LanguageContext'
 import asilo from '../../../assets/progetto-brasile/creche-salvador-2024.png'
@@ -71,12 +72,19 @@ const slides: Slide[] = [
 export function Hero() {
   const t = useT()
   const [index, setIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (query.matches) setPaused(true)
+  }, [])
+
+  useEffect(() => {
+    if (paused) return
     const id = setInterval(() => setIndex((i) => (i + 1) % slides.length), 5000)
     return () => clearInterval(id)
-  }, [])
+  }, [paused])
 
   const scrollToNext = () => {
     sectionRef.current?.nextElementSibling?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -141,16 +149,30 @@ export function Hero() {
         </AnimatedSection>
       </div>
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-        {slides.map((s, i) => (
-          <button
-            key={s.src}
-            type="button"
-            aria-label={`${t({ it: 'Vai alla slide', en: 'Go to slide', de: 'Zu Folie', pt: 'Ir para o slide' })} ${i + 1}`}
-            onClick={() => setIndex(i)}
-            className={`w-2 h-2 rounded-full transition-all ${i === index ? 'bg-white w-6' : 'bg-white/40'}`}
-          />
-        ))}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex items-center gap-3">
+        <div className="flex gap-2">
+          {slides.map((s, i) => (
+            <button
+              key={s.src}
+              type="button"
+              aria-label={`${t({ it: 'Vai alla slide', en: 'Go to slide', de: 'Zu Folie', pt: 'Ir para o slide' })} ${i + 1}`}
+              onClick={() => setIndex(i)}
+              className={`w-2 h-2 rounded-full transition-all ${i === index ? 'bg-white w-6' : 'bg-white/40'}`}
+            />
+          ))}
+        </div>
+        <button
+          type="button"
+          onClick={() => setPaused((p) => !p)}
+          aria-label={
+            paused
+              ? t({ it: 'Riprendi presentazione', en: 'Resume slideshow', de: 'Diashow fortsetzen', pt: 'Retomar apresentação' })
+              : t({ it: 'Metti in pausa presentazione', en: 'Pause slideshow', de: 'Diashow pausieren', pt: 'Pausar apresentação' })
+          }
+          className="w-6 h-6 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/40 text-white hover:bg-white/20 transition-all"
+        >
+          {paused ? <Play className="w-3 h-3" /> : <Pause className="w-3 h-3" />}
+        </button>
       </div>
     </section>
   )

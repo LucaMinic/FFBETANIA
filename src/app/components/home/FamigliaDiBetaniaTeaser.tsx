@@ -75,6 +75,7 @@ export function FamigliaDiBetaniaTeaser() {
           </div>
         </div>
       </section>
+      <WaveDivider fill="var(--beige)" flip />
     </>
   )
 }

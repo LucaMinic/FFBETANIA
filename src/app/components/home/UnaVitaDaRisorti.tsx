@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { HandHeart, DoorOpen, Users } from 'lucide-react'
-import { AnimatedImage, AnimatedSection } from '../AnimatedSection'
+import { AnimatedSection } from '../AnimatedSection'
 import { YouTubeEmbed } from '../YouTubeEmbed'
 import { useT } from '../../context/LanguageContext'
 import preghiera from '../../../assets/case-di-fraternita/salvador-de-bahia/momento-preghiera-salvador.jpg'
@@ -60,7 +60,7 @@ export function UnaVitaDaRisorti() {
               pt: 'Os três pilares do carisma',
             })}
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] text-center mb-4">
             {t({
               it: 'Una vita da risorti',
               en: 'A risen life',
@@ -68,65 +68,56 @@ export function UnaVitaDaRisorti() {
               pt: 'Uma vida de ressuscitados',
             })}
           </h2>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto leading-relaxed mb-14 sm:mb-16">
+            {t({
+              it: "Con la nostra consacrazione rispondiamo all'Amore di Dio che ci ha chiamato, vivendo ogni giorno i tre pilastri del carisma della Fraternità: la preghiera, l'accoglienza e la vita fraterna.",
+              en: "With our consecration we respond to the Love of God who called us, living out every day the three pillars of the Fraternity's charism: prayer, hospitality and fraternal life.",
+              de: 'Mit unserer Weihe antworten wir auf die Liebe Gottes, der uns berufen hat, und leben jeden Tag die drei Säulen des Charismas der Fraternität: Gebet, Gastfreundschaft und brüderliches Leben.',
+              pt: 'Com a nossa consagração respondemos ao Amor de Deus que nos chamou, vivendo todos os dias os três pilares do carisma da Fraternidade: a oração, o acolhimento e a vida fraterna.',
+            })}
+          </p>
         </AnimatedSection>
 
-        <div className="grid sm:grid-cols-2 gap-12 items-center mb-16 sm:mb-20">
-          <AnimatedImage>
-            <div className="shadow-xl rounded-[2rem] overflow-hidden">
+        <div className="grid sm:grid-cols-3 gap-x-8 gap-y-12 mb-16 sm:mb-20">
+          {pilastri.map((p, i) => (
+            <AnimatedSection key={i} delay={i * 0.1}>
+              <div
+                className={`group aspect-[4/3] rounded-[2rem] overflow-hidden shadow-[0_12px_40px_-16px_rgba(93,74,58,0.35)] hover:shadow-[0_28px_60px_-16px_rgba(212,151,108,0.5)] hover:-translate-y-2 transition-all duration-500 ease-out ${i % 2 === 0 ? 'hover:rotate-[0.5deg]' : 'hover:rotate-[-0.5deg]'}`}
+              >
+                <img
+                  src={p.immagine}
+                  alt={t(p.titolo)}
+                  className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
+                />
+              </div>
+              <div className="flex items-center gap-3 mt-6 mb-3">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[var(--beige)] shrink-0">
+                  <p.icon className="w-5 h-5 text-[var(--warm-orange)]" />
+                </span>
+                <h3 className="text-2xl font-bold text-[var(--deep-blue)]">{t(p.titolo)}</h3>
+              </div>
+              <span className="block text-4xl leading-none text-[var(--warm-orange-light)] font-serif mb-1" aria-hidden="true">
+                &ldquo;
+              </span>
+              <p className="text-lg text-[var(--deep-blue)]/90 italic leading-snug -mt-3 mb-2">{t(p.citazione)}</p>
+              <p className="text-gray-400 text-xs">{p.riferimento}</p>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        <AnimatedSection>
+          <div className="max-w-xl mx-auto text-center">
+            <div className="rounded-[2rem] overflow-hidden shadow-lg mb-6">
               <YouTubeEmbed videoId="DoXUvPcTUwY" title="Fraternità Francescana di Betania - Una vita da risorti" />
             </div>
-          </AnimatedImage>
-          <AnimatedSection direction="right" delay={0.15}>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              {t({
-                it: "Con la nostra consacrazione rispondiamo all'Amore di Dio che ci ha chiamato, incarnandolo nel nostro oggi attraverso i tre pilastri del carisma della Fraternità: la preghiera, l'accoglienza e la vita fraterna.",
-                en: 'With our consecration we respond to the Love of God who called us, embodying it in our today through the three pillars of the Fraternity’s charism: prayer, hospitality and fraternal life.',
-                de: 'Mit unserer Weihe antworten wir auf die Liebe Gottes, der uns berufen hat, und leben sie heute durch die drei Säulen des Charismas der Fraternität: Gebet, Gastfreundschaft und brüderliches Leben.',
-                pt: 'Com a nossa consagração respondemos ao Amor de Deus que nos chamou, encarnando-o hoje através dos três pilares do carisma da Fraternidade: a oração, o acolhimento e a vida fraterna.',
-              })}
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              {t({
-                it: "Vivere insieme come una famiglia nel Signore dà senso alla nostra vita, con la preghiera che ci spinge a donarci e ad essere tutti Suoi e l'accoglienza che ci apre al mondo.",
-                en: 'Living together as a family in the Lord gives meaning to our life, with prayer urging us to give ourselves and to be all His, and hospitality opening us to the world.',
-                de: 'Das gemeinsame Leben als Familie im Herrn gibt unserem Leben Sinn: Das Gebet treibt uns an, uns hinzugeben und ganz Sein zu sein, und die Gastfreundschaft öffnet uns der Welt.',
-                pt: 'Viver juntos como uma família no Senhor dá sentido à nossa vida, com a oração que nos impulsiona a nos doar e a sermos todos Seus, e o acolhimento que nos abre ao mundo.',
-              })}
-            </p>
             <Link
               to="/chi-siamo/carisma"
               className="inline-block px-6 py-2.5 rounded-xl bg-[var(--deep-blue)] text-white font-medium shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
             >
               {t({ it: 'Scopri di più', en: 'Learn more', de: 'Mehr erfahren', pt: 'Saiba mais' })}
             </Link>
-          </AnimatedSection>
-        </div>
-
-        <div className="grid sm:grid-cols-3 gap-8">
-          {pilastri.map((p, i) => (
-            <AnimatedSection key={i} delay={i * 0.1}>
-              <div
-                className={`group relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-[0_12px_40px_-16px_rgba(0,0,0,0.5)] hover:shadow-[0_28px_60px_-16px_rgba(212,151,108,0.5)] hover:-translate-y-2 transition-all duration-500 ease-out ${i % 2 === 0 ? 'hover:rotate-[0.5deg]' : 'hover:rotate-[-0.5deg]'}`}
-              >
-                <img
-                  src={p.immagine}
-                  alt={t(p.titolo)}
-                  className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-125 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--deep-blue)] via-[var(--deep-blue)]/50 to-[var(--deep-blue)]/10 group-hover:via-[var(--deep-blue)]/65 transition-all duration-500" />
-
-                <div className="absolute inset-x-0 bottom-0 p-7">
-                  <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 ease-out">
-                    <p.icon className="w-5 h-5 text-[var(--warm-orange-light)]" />
-                  </span>
-                  <h3 className="text-lg font-bold text-white mb-2">{t(p.titolo)}</h3>
-                  <p className="text-white/85 italic text-sm leading-relaxed">&ldquo;{t(p.citazione)}&rdquo;</p>
-                  <p className="text-white/50 text-xs mt-2">{p.riferimento}</p>
-                </div>
-              </div>
-            </AnimatedSection>
-          ))}
-        </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   )
