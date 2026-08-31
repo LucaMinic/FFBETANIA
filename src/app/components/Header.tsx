@@ -20,7 +20,7 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <div className="relative max-w-6xl mx-auto flex items-center justify-between gap-4 px-4 sm:px-6 py-3">
         <Link to="/" className="flex items-center gap-2 whitespace-nowrap">
-          <img src={logo} alt="FFBetania" className="h-11 lg:h-12 w-auto" />
+          <img src={logo} alt="FFBetania" className="h-12 lg:h-14 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

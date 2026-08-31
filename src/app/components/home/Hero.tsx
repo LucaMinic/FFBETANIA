@@ -93,7 +93,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[420px] h-[60vh] md:h-[65vh] md:min-h-[480px] overflow-hidden bg-[var(--deep-blue)]"
+      className="relative w-full min-h-[340px] h-[48vh] md:h-[65vh] md:min-h-[480px] overflow-hidden bg-[var(--deep-blue)]"
     >
       <AnimatePresence mode="sync">
         <motion.img

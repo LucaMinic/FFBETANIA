@@ -11,7 +11,7 @@ export function ChiSiamoIntro() {
       <WaveDivider fill="var(--beige)" />
       <section className="py-16 sm:py-20 bg-[var(--beige)]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <AnimatedSection>
+          <AnimatedSection immediate>
             <p className="text-center text-lg sm:text-xl text-[var(--deep-blue)] italic leading-relaxed max-w-2xl mx-auto mb-12 sm:mb-16">
               {t({
                 it: 'Se sei arrivato fin qui, forse stai cercando qualcosa: un luogo dove pregare, una famiglia che ti ascolti, o semplicemente un motivo per credere che la generosità esista ancora. Ti diamo il benvenuto.',

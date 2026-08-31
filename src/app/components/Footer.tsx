@@ -23,7 +23,7 @@ export function Footer() {
               080 351 77 12
             </a>
           </p>
-          <p className="text-sm text-white/70 mt-3">Fraternità Francescana di Betania Fondazione ETS</p>
+          <p className="font-bold mt-3">Fraternità Francescana di Betania Fondazione ETS</p>
           <p className="text-sm text-white/70">CF 93346130722</p>
           <p className="text-sm text-white/70">
             <a href="mailto:fondazione@ffbetania.net" className="hover:text-[var(--warm-orange-light)]">

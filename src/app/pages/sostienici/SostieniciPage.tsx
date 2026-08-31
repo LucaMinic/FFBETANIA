@@ -173,46 +173,58 @@ export function SostieniciPage() {
         imageAlt="Fraternità Francescana di Betania"
       />
       <section className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <p className="text-lg text-gray-600 leading-relaxed text-center mb-16">
-        {t({
-          it: 'Ci sono molti modi per stare al nostro fianco: scegli quello più adatto a te.',
-          en: 'There are many ways to stand by us: choose the one that suits you best.',
-          de: 'Es gibt viele Möglichkeiten, an unserer Seite zu stehen: wähle die, die am besten zu dir passt.',
-          pt: 'Há muitas formas de estar ao nosso lado: escolha a que mais combina com você.',
-        })}
-      </p>
+        <p className="text-lg text-gray-600 leading-relaxed text-center max-w-2xl mx-auto mb-16">
+          {t({
+            it: "Ogni giorno, in Italia e in Brasile, apriamo le porte a chi ha bisogno di un pasto, di un ascolto, di una casa. Lo facciamo grazie a chi sceglie di starci accanto — in tanti modi diversi. Trova il tuo.",
+            en: 'Every day, in Italy and in Brazil, we open our doors to those who need a meal, a listening ear, a home. We do it thanks to those who choose to stand by us — in many different ways. Find yours.',
+            de: 'Jeden Tag, in Italien und in Brasilien, öffnen wir unsere Türen für alle, die eine Mahlzeit, ein offenes Ohr oder ein Zuhause brauchen. Wir schaffen das dank derer, die sich entscheiden, an unserer Seite zu stehen — auf viele verschiedene Arten. Finde deine.',
+            pt: 'Todos os dias, na Itália e no Brasil, abrimos as portas a quem precisa de uma refeição, de uma escuta, de uma casa. Conseguimos fazê-lo graças a quem escolhe estar ao nosso lado — de muitas formas diferentes. Encontre a sua.',
+          })}
+        </p>
 
-      {sezioni.map((s, i) => (
-        <div key={i} className={i < sezioni.length - 1 ? 'mb-14' : ''}>
-          <h2 className="text-xl font-bold text-[var(--deep-blue)] mb-1">{t(s.titolo)}</h2>
-          <p className="text-sm text-gray-500 mb-5">{t(s.descrizione)}</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {s.voci.map((v) => (
-              <Link
-                key={v.to}
-                to={v.to}
-                className="group rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="h-36 overflow-hidden">
-                  <img
-                    src={v.immagine}
-                    alt={t(v.titolo)}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-5">
-                  <v.icon className="w-6 h-6 text-[var(--warm-orange)] mb-2" />
-                  <h3 className="flex items-center gap-1.5 font-bold text-[var(--deep-blue)] mb-1">
-                    {t(v.titolo)}
-                    <ArrowRight className="w-3.5 h-3.5 text-[var(--warm-orange)] transition-transform group-hover:translate-x-0.5" />
-                  </h3>
-                  <p className="text-sm text-gray-500">{t(v.descrizione)}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      ))}
+        {sezioni.map((s, i) => {
+          const isPrimary = i === 0
+          return (
+            <div
+              key={i}
+              className={`${i < sezioni.length - 1 ? 'mb-10' : ''} ${
+                isPrimary
+                  ? 'rounded-[2.5rem] bg-gradient-to-br from-[var(--beige)] to-[var(--beige-dark)]/60 p-6 sm:p-10'
+                  : ''
+              }`}
+            >
+              <h2 className={`font-bold text-[var(--deep-blue)] mb-1 ${isPrimary ? 'text-2xl sm:text-3xl' : 'text-xl'}`}>
+                {t(s.titolo)}
+              </h2>
+              <p className={`text-gray-500 mb-5 ${isPrimary ? '' : 'text-sm'}`}>{t(s.descrizione)}</p>
+              <div className={`grid sm:grid-cols-2 gap-5 ${isPrimary ? '' : 'lg:grid-cols-3'}`}>
+                {s.voci.map((v) => (
+                  <Link
+                    key={v.to}
+                    to={v.to}
+                    className="group rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  >
+                    <div className={`overflow-hidden ${isPrimary ? 'h-48' : 'h-36'}`}>
+                      <img
+                        src={v.immagine}
+                        alt={t(v.titolo)}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className={isPrimary ? 'p-6' : 'p-5'}>
+                      <v.icon className="w-6 h-6 text-[var(--warm-orange)] mb-2" />
+                      <h3 className={`flex items-center gap-1.5 font-bold text-[var(--deep-blue)] mb-1 ${isPrimary ? 'text-lg' : ''}`}>
+                        {t(v.titolo)}
+                        <ArrowRight className="w-3.5 h-3.5 text-[var(--warm-orange)] transition-transform group-hover:translate-x-0.5" />
+                      </h3>
+                      <p className="text-sm text-gray-500">{t(v.descrizione)}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )
+        })}
       </section>
     </>
   )
