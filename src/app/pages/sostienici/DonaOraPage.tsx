@@ -1,29 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { Copy, Check } from 'lucide-react'
-import { PlaceholderForm } from '../../components/PlaceholderForm'
+import { DonationForm } from '../../components/DonationForm'
 import { PageHero } from '../../components/PageHero'
 import { useT } from '../../context/LanguageContext'
+import { bonifici } from '../../data/bonifici'
 import famigliari from '../../../assets/famiglia-di-betania/famigliari.jpg'
-
-interface Bonifico {
-  banca: string
-  beneficiario: string
-  iban: string
-}
-
-const bonifici: Bonifico[] = [
-  {
-    banca: 'Intesa Sanpaolo S.P.A',
-    beneficiario: 'Fraternità Francescana di Betania Fondazione ETS',
-    iban: 'IT48O0306909606100000106797',
-  },
-  {
-    banca: "Banca Popolare dell'Emilia Romagna — filiale di Molfetta",
-    beneficiario: 'Fraternità Francescana di Betania Fondazione ETS',
-    iban: 'IT75F0538741562000002260111',
-  },
-]
 
 export function DonaOraPage() {
   const t = useT()
@@ -57,25 +39,15 @@ export function DonaOraPage() {
         })}
       </p>
 
-      <div className="rounded-2xl border border-dashed border-gray-300 bg-gray-50 p-6 max-w-md mx-auto mb-10">
-        <p className="text-gray-500 text-sm">
-          {t({
-            it: 'Il modulo di pagamento (carta di credito, PayPal, bonifico SEPA) sarà attivo a breve, collegato al nostro nuovo gestionale.',
-            en: 'The payment form (credit card, PayPal, SEPA transfer) will be active soon, connected to our new management system.',
-            de: 'Das Zahlungsformular (Kreditkarte, PayPal, SEPA-Überweisung) wird in Kürze aktiv sein, verbunden mit unserem neuen Verwaltungssystem.',
-            pt: 'O formulário de pagamento (cartão de crédito, PayPal, transferência SEPA) estará ativo em breve, ligado ao nosso novo sistema de gestão.',
-          })}
-        </p>
-      </div>
-
-      <PlaceholderForm
-        submitLabel={t({ it: 'Voglio essere avvisato', en: 'Notify me', de: 'Ich möchte benachrichtigt werden', pt: 'Quero ser avisado' })}
-        contactEmail="info@ffbetania.net"
-        withMessage={false}
-      />
+      <DonationForm />
 
       <h2 className="text-xl font-bold text-[var(--deep-blue)] mt-16 mb-6">
-        {t({ it: 'Nel frattempo, puoi donare con bonifico', en: 'In the meantime, you can donate by bank transfer', de: 'In der Zwischenzeit kannst du per Überweisung spenden', pt: 'Enquanto isso, você pode doar por transferência bancária' })}
+        {t({
+          it: 'Preferisci un bonifico diretto senza compilare il modulo?',
+          en: 'Prefer a direct bank transfer without filling out the form?',
+          de: 'Bevorzugst du eine direkte Überweisung ohne das Formular auszufüllen?',
+          pt: 'Prefere uma transferência bancária direta sem preencher o formulário?',
+        })}
       </h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-16 text-left">
         {bonifici.map((b) => (
