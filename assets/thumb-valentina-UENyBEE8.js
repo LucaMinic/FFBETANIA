@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/thumb-valentina-DDNRHZKu.png`;export{e as t};

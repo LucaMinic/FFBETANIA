@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/thumb-progetto-brasile-Bpo0QPIR.png`;export{e as t};

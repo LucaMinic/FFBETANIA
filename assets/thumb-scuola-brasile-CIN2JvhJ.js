@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/thumb-scuola-brasile-C1pf4ZdN.png`;export{e as t};

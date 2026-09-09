@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/thumb-giubileo-gdb-Chn7Kk0_.png`;export{e as t};

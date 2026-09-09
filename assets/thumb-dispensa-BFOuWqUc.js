@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/thumb-dispensa-CUJuuV6O.png`;export{e as t};
