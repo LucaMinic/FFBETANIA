@@ -1,0 +1,44 @@
+import { CampagnaLayout } from '../../../components/CampagnaLayout'
+import { useT } from '../../../context/LanguageContext'
+import thumb from '../../../../assets/sostienici/thumb-giubileo-gdb.png'
+
+export function GiubileoGdbPage() {
+  const t = useT()
+  return (
+    <CampagnaLayout
+      titolo={t({
+        it: 'I GdB di Salvador hanno un sogno',
+        en: 'The GdB of Salvador have a dream',
+        de: 'Die GdB von Salvador haben einen Traum',
+        pt: 'Os GdB de Salvador têm um sonho',
+      })}
+      immagine={thumb}
+      heroAlt="Giubileo giovani 2024, Giovani di Betania di Salvador de Bahia"
+      raccolti="€ 18.238"
+      obiettivo="€ 18.000"
+      conclusa
+      paragrafi={[
+        t({
+          it: 'I Giovani di Betania (GdB) di Salvador de Bahia desideravano partecipare al Giubileo 2025 a Roma, dal 28 luglio al 3 agosto, per incontrare Papa Francesco e migliaia di giovani da tutto il mondo. La distanza e gli alti costi di viaggio rendevano questo evento inaccessibile per molti di loro.',
+          en: 'The Young People of Betania (GdB) from Salvador de Bahia wished to take part in the 2025 Jubilee in Rome, from 28 July to 3 August, to meet Pope Francis and thousands of young people from all over the world. The distance and the high travel costs made this event inaccessible to many of them.',
+          de: 'Die Jugend von Betania (GdB) aus Salvador de Bahia wollte am Jubiläum 2025 in Rom teilnehmen, vom 28. Juli bis 3. August, um Papst Franziskus und Tausende junger Menschen aus aller Welt zu treffen. Die Entfernung und die hohen Reisekosten machten dieses Ereignis für viele von ihnen unerreichbar.',
+          pt: 'Os Jovens de Betânia (GdB) de Salvador da Bahia desejavam participar no Jubileu de 2025 em Roma, de 28 de julho a 3 de agosto, para encontrar o Papa Francisco e milhares de jovens de todo o mundo. A distância e os elevados custos de viagem tornavam este evento inacessível para muitos deles.',
+        }),
+        t({
+          it: 'Il gruppo aveva già organizzato raccolte fondi locali, ma non riusciva da solo a coprire i circa 18.000 euro necessari per i voli. Il Giubileo rappresentava un\'opportunità di un\'esperienza di fede profonda e indimenticabile, per costruire amicizie durature con giovani da tutto il mondo.',
+          en: 'The group had already organized local fundraisers, but could not cover on its own the roughly €18,000 needed for the flights. The Jubilee represented an opportunity for a deep and unforgettable experience of faith, and to build lasting friendships with young people from all over the world.',
+          de: 'Die Gruppe hatte bereits lokale Spendensammlungen organisiert, konnte die rund 18.000 Euro für die Flüge aber nicht allein aufbringen. Das Jubiläum bot die Gelegenheit zu einer tiefen und unvergesslichen Glaubenserfahrung und zum Aufbau dauerhafter Freundschaften mit jungen Menschen aus aller Welt.',
+          pt: 'O grupo já tinha organizado angariações de fundos locais, mas não conseguia sozinho cobrir os cerca de 18.000 euros necessários para os voos. O Jubileu representava a oportunidade de viver uma experiência de fé profunda e inesquecível, construindo amizades duradouras com jovens de todo o mundo.',
+        }),
+        t({
+          it: 'Grazie al sostegno di tanti donatori, la campagna si è conclusa superando l\'obiettivo: i Giovani di Betania di Salvador hanno potuto vivere il Giubileo a Roma.',
+          en: 'Thanks to the support of many donors, the campaign closed by exceeding its goal: the Young People of Betania from Salvador were able to experience the Jubilee in Rome.',
+          de: 'Dank der Unterstützung vieler Spender wurde die Kampagne mit einer Übererfüllung des Ziels abgeschlossen: Die Jugend von Betania aus Salvador konnte das Jubiläum in Rom erleben.',
+          pt: 'Graças ao apoio de muitos doadores, a campanha encerrou-se superando o objetivo: os Jovens de Betânia de Salvador puderam viver o Jubileu em Roma.',
+        }),
+      ]}
+      relatedLabel={t({ it: 'Giovani di Betania', en: 'Young People of Betania', de: 'Jugend von Betania', pt: 'Jovens de Betânia' })}
+      relatedTo="/famiglia-di-betania/giovani-di-betania"
+    />
+  )
+}

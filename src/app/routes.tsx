@@ -185,6 +185,37 @@ export const router = createBrowserRouter(
           lazy: () => import('./pages/sostienici/ProgettiPage').then((m) => ({ Component: m.ProgettiPage })),
         },
         {
+          path: 'sostienici/progetti/insieme-costruiamo-una-scuola-e-un-futuro',
+          lazy: () =>
+            import('./pages/sostienici/progetti/ScuolaBrasilePage').then((m) => ({ Component: m.ScuolaBrasilePage })),
+        },
+        {
+          path: 'sostienici/progetti/i-gdb-di-salvador-hanno-un-sogno',
+          lazy: () =>
+            import('./pages/sostienici/progetti/GiubileoGdbPage').then((m) => ({ Component: m.GiubileoGdbPage })),
+        },
+        {
+          path: 'sostienici/progetti/accoglienza-in-dispensa-ffb-terlizzi',
+          lazy: () =>
+            import('./pages/sostienici/progetti/AccoglienzaInDispensaPage').then((m) => ({
+              Component: m.AccoglienzaInDispensaPage,
+            })),
+        },
+        {
+          path: 'sostienici/progetti/aiutiamo-valentina-salvador-de-bahia',
+          lazy: () =>
+            import('./pages/sostienici/progetti/AiutiamoValentinaPage').then((m) => ({
+              Component: m.AiutiamoValentinaPage,
+            })),
+        },
+        {
+          path: 'sostienici/progetti/progetto-brasile-salvador-de-bahia',
+          lazy: () =>
+            import('./pages/sostienici/progetti/ProgettoBrasileSalvadorPage').then((m) => ({
+              Component: m.ProgettoBrasileSalvadorPage,
+            })),
+        },
+        {
           path: 'sostienici/sostegno-a-distanza',
           lazy: () =>
             import('./pages/sostienici/SostegnoADistanzaPage').then((m) => ({ Component: m.SostegnoADistanzaPage })),
