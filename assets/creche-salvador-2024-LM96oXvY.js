@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/cimg93731-BsNb2b2g.jpeg`,t=`/FFBETANIA/assets/creche-salvador-2024-DIjdKyAd.png`;export{e as n,t};

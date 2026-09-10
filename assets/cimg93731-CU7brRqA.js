@@ -1,1 +1,0 @@
-var e=`/FFBETANIA/assets/cimg93731-BsNb2b2g.jpeg`;export{e as t};
