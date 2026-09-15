@@ -1,0 +1,1 @@
+var e=`/FFBETANIA/assets/camaldoli-1976-D__20EGV.jpg`,t=`/FFBETANIA/assets/pentecoste-1982-inaugurazione-By8S-lF_.jpg`;export{e as n,t};

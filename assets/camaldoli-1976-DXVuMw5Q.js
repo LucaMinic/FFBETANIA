@@ -1,1 +1,0 @@
-var e=`/FFBETANIA/assets/camaldoli-1976-D__20EGV.jpg`;export{e as t};
