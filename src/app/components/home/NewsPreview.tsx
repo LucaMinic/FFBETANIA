@@ -1,9 +1,10 @@
+import { Link } from 'react-router'
 import { AnimatedSection } from '../AnimatedSection'
 import { WaveDivider } from '../WaveDivider'
 import { useT } from '../../context/LanguageContext'
-import scuola from '../../../assets/progetto-brasile/progetto-scuola.jpg'
+import scuola from '../../../assets/news/scuola-inizio-lavori-2026.jpg'
 import ritiro from '../../../assets/news/ritiro-vacanze-2026.jpeg'
-import fondazione from '../../../assets/padre-pancrazio/pentecoste-1982-inaugurazione.jpg'
+import libroPadrePancrazio from '../../../assets/news/libro-padre-pancrazio-2026.jpg'
 
 interface LocalizedString {
   it: string
@@ -13,6 +14,7 @@ interface LocalizedString {
 }
 
 interface NewsItem {
+  slug: string
   data: LocalizedString
   titolo: LocalizedString
   estratto: LocalizedString
@@ -21,6 +23,7 @@ interface NewsItem {
 
 const news: NewsItem[] = [
   {
+    slug: 'la-scuola-prende-forma-i-lavori-sono-iniziati',
     data: { it: 'Luglio 2026', en: 'July 2026', de: 'Juli 2026', pt: 'Julho de 2026' },
     titolo: {
       it: 'La scuola prende forma: i lavori sono iniziati!',
@@ -37,6 +40,7 @@ const news: NewsItem[] = [
     immagine: scuola,
   },
   {
+    slug: 'ritiro-vacanza-familiari-2026',
     data: { it: 'Aprile 2026', en: 'April 2026', de: 'April 2026', pt: 'Abril de 2026' },
     titolo: {
       it: 'Ritiro-vacanza familiari 2026',
@@ -53,20 +57,21 @@ const news: NewsItem[] = [
     immagine: ritiro,
   },
   {
-    data: { it: '30 maggio', en: 'May 30', de: '30. Mai', pt: '30 de maio' },
+    slug: 'padre-pancrazio-vita-di-un-uomo-di-dio-fratello-e-padre',
+    data: { it: 'Marzo 2026', en: 'March 2026', de: 'März 2026', pt: 'Março de 2026' },
     titolo: {
-      it: '38 anni fa nasceva Casa Betania',
-      en: 'Casa Betania was born 38 years ago',
-      de: 'Vor 38 Jahren entstand Casa Betania',
-      pt: 'Há 38 anos nascia a Casa Betânia',
+      it: 'Padre Pancrazio. Vita di un uomo di Dio, fratello e padre',
+      en: 'Padre Pancrazio. Life of a man of God, brother and father',
+      de: 'Pater Pancrazio. Leben eines Mannes Gottes, Bruder und Vater',
+      pt: 'Padre Pancrazio. Vida de um homem de Deus, irmão e pai',
     },
     estratto: {
-      it: 'Il 30 maggio 1982 Padre Pancrazio arrivò a Terlizzi con quattro sorelle per dare vita a "Casa Betania": l\'inizio della nostra storia.',
-      en: 'On 30 May 1982, Father Pancrazio arrived in Terlizzi with four sisters to bring "Casa Betania" to life: the beginning of our history.',
-      de: 'Am 30. Mai 1982 kam Pater Pancrazio mit vier Schwestern nach Terlizzi, um „Casa Betania“ ins Leben zu rufen: der Beginn unserer Geschichte.',
-      pt: 'Em 30 de maio de 1982, o Padre Pancrazio chegou a Terlizzi com quatro irmãs para dar vida à "Casa Betânia": o início da nossa história.',
+      it: 'È stato pubblicato il nuovo libro dedicato a Padre Pancrazio, fondatore della Fraternità: un\'occasione per conoscere più da vicino la sua storia e la sua eredità spirituale.',
+      en: 'The new book dedicated to Padre Pancrazio, founder of the Fraternity, has been published: a chance to discover his story and spiritual legacy more closely.',
+      de: 'Das neue Buch über Pater Pancrazio, den Gründer der Fraternität, ist erschienen: eine Gelegenheit, seine Geschichte und sein geistliches Erbe näher kennenzulernen.',
+      pt: 'Foi publicado o novo livro dedicado ao Padre Pancrazio, fundador da Fraternidade: uma ocasião para conhecer mais de perto a sua história e o seu legado espiritual.',
     },
-    immagine: fondazione,
+    immagine: libroPadrePancrazio,
   },
 ]
 
@@ -78,6 +83,9 @@ export function NewsPreview() {
       <section className="py-16 sm:py-24 bg-[var(--beige)]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <AnimatedSection>
+            <p className="text-sm font-semibold text-[var(--warm-orange)] uppercase tracking-wide text-center mb-2">
+              {t({ it: 'Notizie', en: 'News', de: 'Nachrichten', pt: 'Notícias' })}
+            </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-[var(--deep-blue)] text-center mb-3">
               {t({
                 it: 'La nostra vita, giorno per giorno',
@@ -98,30 +106,38 @@ export function NewsPreview() {
 
           <div className="space-y-8 mb-10">
             {news.map((n, i) => (
-              <AnimatedSection key={i} delay={i * 0.1}>
-                <article className="flex flex-col sm:flex-row gap-5 sm:gap-6 items-start border-l-2 border-[var(--warm-orange-light)] pl-5 sm:pl-6 py-1">
+              <AnimatedSection key={n.slug} delay={i * 0.1}>
+                <Link
+                  to={`/news/${n.slug}`}
+                  className="flex flex-col sm:flex-row gap-5 sm:gap-6 items-start border-l-2 border-[var(--warm-orange-light)] pl-5 sm:pl-6 py-1 group"
+                >
                   <img
                     src={n.immagine}
                     alt={t(n.titolo)}
+                    loading="lazy"
                     className="w-full sm:w-32 h-40 sm:h-32 rounded-2xl object-cover shrink-0 shadow-md"
                   />
                   <div>
                     <p className="text-xs font-semibold text-[var(--warm-orange)] uppercase tracking-wide mb-1.5">{t(n.data)}</p>
-                    <h3 className="text-lg sm:text-xl font-bold text-[var(--deep-blue)] mb-2 leading-snug">{t(n.titolo)}</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-[var(--deep-blue)] mb-2 leading-snug group-hover:underline">
+                      {t(n.titolo)}
+                    </h3>
                     <p className="text-sm text-gray-600 leading-relaxed">{t(n.estratto)}</p>
                   </div>
-                </article>
+                </Link>
               </AnimatedSection>
             ))}
           </div>
 
-          <p className="text-center text-sm text-gray-400">
-            {t({
-              it: "L'archivio completo delle notizie sarà presto disponibile.",
-              en: 'The full news archive will be available soon.',
-              de: 'Das vollständige Nachrichtenarchiv wird bald verfügbar sein.',
-              pt: 'O arquivo completo de notícias estará disponível em breve.',
-            })}
+          <p className="text-center text-sm">
+            <Link to="/news" className="font-semibold text-[var(--warm-orange)] hover:text-[var(--warm-orange-light)] underline">
+              {t({
+                it: 'Vedi tutte le notizie',
+                en: 'See all news',
+                de: 'Alle Nachrichten ansehen',
+                pt: 'Ver todas as notícias',
+              })}
+            </Link>
           </p>
         </div>
       </section>

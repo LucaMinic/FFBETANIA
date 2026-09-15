@@ -48,6 +48,14 @@ export function Footer() {
           <Link to="/contatti" className="text-sm font-semibold text-white/90 hover:text-[var(--warm-orange-light)] transition-colors">
             {t({ it: 'Contatti', en: 'Contact', de: 'Kontakt', pt: 'Contato' })}
           </Link>
+          <a
+            href="https://ancill.app/it"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold text-white/90 hover:text-[var(--warm-orange-light)] transition-colors"
+          >
+            AncillApp
+          </a>
         </nav>
 
         <div className="flex flex-col gap-3">

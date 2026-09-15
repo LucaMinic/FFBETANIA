@@ -73,5 +73,6 @@ export const navItems: NavItem[] = [
     to: '/fondazione',
     children: [{ label: { it: 'Media', en: 'Media', de: 'Medien', pt: 'Mídia' }, to: '/media' }],
   },
+  { label: { it: 'Notizie', en: 'News', de: 'Nachrichten', pt: 'Notícias' }, to: '/news' },
   { label: { it: 'Contatti', en: 'Contact', de: 'Kontakt', pt: 'Contato' }, to: '/contatti' },
 ]

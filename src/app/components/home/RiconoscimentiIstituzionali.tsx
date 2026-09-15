@@ -1,8 +1,8 @@
 import { Landmark, HeartHandshake, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router'
 import { AnimatedSection } from '../AnimatedSection'
-import { YouTubeEmbed } from '../YouTubeEmbed'
 import { useT } from '../../context/LanguageContext'
+import mattarellaCover from '../../../assets/news/mattarella-visita-2024-cover.jpg'
 
 const riconoscimenti = [
   {
@@ -102,11 +102,17 @@ export function RiconoscimentiIstituzionali() {
         </div>
 
         <AnimatedSection delay={0.15}>
-          <div className="max-w-3xl mx-auto rounded-[2.5rem] bg-[var(--beige)]/60 p-3 sm:p-4">
-            <div className="rounded-[2rem] overflow-hidden shadow-lg mb-6">
-              <YouTubeEmbed videoId="CzXoQBaOHis" title="Visita del Presidente della Repubblica Italiana" />
-            </div>
-            <div className="px-4 pb-4 sm:px-6 sm:pb-6">
+          <Link
+            to="/news/visita-del-presidente-mattarella-alla-nostra-fraternita-in-brasile"
+            className="group flex flex-col sm:flex-row items-stretch gap-0 max-w-3xl mx-auto rounded-[2rem] overflow-hidden bg-[var(--beige)]/60 shadow-[0_12px_36px_-18px_rgba(93,74,58,0.35)] hover:shadow-[0_20px_48px_-16px_rgba(212,151,108,0.4)] hover:-translate-y-1 transition-all duration-500 ease-out"
+          >
+            <img
+              src={mattarellaCover}
+              alt="Il Presidente Mattarella in visita alla Fraternità FFB Salvador de Bahia"
+              loading="lazy"
+              className="w-full sm:w-64 h-48 sm:h-auto object-cover shrink-0"
+            />
+            <div className="p-6 sm:p-8 flex flex-col justify-center">
               <p className="text-xs font-semibold text-[var(--warm-orange)] uppercase tracking-wide mb-2">
                 {t({ it: '19 luglio 2024', en: '19 July 2024', de: '19. Juli 2024', pt: '19 de julho de 2024' })}
               </p>
@@ -118,16 +124,20 @@ export function RiconoscimentiIstituzionali() {
                   pt: 'Visita do Presidente da República',
                 })}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 {t({
-                  it: 'Il Presidente Sergio Mattarella ha voluto conoscere da vicino il nostro asilo di Salvador de Bahia e i bambini che ogni giorno accogliamo. La raccontiamo con gratitudine, perché aiuta a far conoscere una missione che va avanti soprattutto grazie a chi ci sostiene.',
-                  en: 'President Sergio Mattarella wanted to see firsthand our nursery school in Salvador de Bahia and the children we welcome every day. We share it with gratitude, because it helps make known a mission that carries on above all thanks to those who support us.',
-                  de: 'Präsident Sergio Mattarella wollte unseren Kindergarten in Salvador de Bahia und die Kinder, die wir jeden Tag aufnehmen, aus der Nähe kennenlernen. Wir erzählen es mit Dankbarkeit, weil es hilft, eine Mission bekannt zu machen, die vor allem dank unserer Unterstützer weitergeht.',
-                  pt: 'O Presidente Sergio Mattarella quis conhecer de perto a nossa creche em Salvador da Bahia e as crianças que acolhemos todos os dias. Contamos isso com gratidão, porque ajuda a dar a conhecer uma missão que segue em frente sobretudo graças a quem nos apoia.',
+                  it: 'Il Presidente Sergio Mattarella ha voluto conoscere da vicino il nostro asilo di Salvador de Bahia e i bambini che ogni giorno accogliamo.',
+                  en: 'President Sergio Mattarella wanted to see firsthand our nursery school in Salvador de Bahia and the children we welcome every day.',
+                  de: 'Präsident Sergio Mattarella wollte unseren Kindergarten in Salvador de Bahia und die Kinder, die wir jeden Tag aufnehmen, aus der Nähe kennenlernen.',
+                  pt: 'O Presidente Sergio Mattarella quis conhecer de perto a nossa creche em Salvador da Bahia e as crianças que acolhemos todos os dias.',
                 })}
               </p>
+              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--warm-orange)]">
+                {t({ it: 'Leggi la storia e guarda il video', en: 'Read the story and watch the video', de: 'Geschichte lesen und Video ansehen', pt: 'Leia a história e veja o vídeo' })}
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              </span>
             </div>
-          </div>
+          </Link>
         </AnimatedSection>
       </div>
     </section>

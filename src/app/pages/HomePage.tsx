@@ -18,11 +18,11 @@ export function HomePage() {
       <UnaVitaDaRisorti />
       <FamigliaDiBetaniaTeaser />
       <NumberStats />
+      <NewsPreview />
       <ComeAiutiamo />
       <DoveSiamoTeaser />
       <BrasileSpotlight />
       <RiconoscimentiIstituzionali />
-      <NewsPreview />
       <SostieniciCta />
     </>
   )

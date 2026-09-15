@@ -1,3 +1,5 @@
+import { Link } from 'react-router'
+import { ArrowRight } from 'lucide-react'
 import { YouTubeEmbed } from '../components/YouTubeEmbed'
 import { PageHero } from '../components/PageHero'
 import { PageCta } from '../components/PageCta'
@@ -67,6 +69,26 @@ export function MediaPage() {
         })}
       />
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <Link
+        to="/news"
+        className="flex items-center justify-between rounded-2xl border border-gray-100 px-5 py-4 mb-16 hover:shadow-md hover:-translate-y-0.5 transition-all"
+      >
+        <div>
+          <h2 className="font-bold text-[var(--deep-blue)]">
+            {t({ it: 'Notizie', en: 'News', de: 'Nachrichten', pt: 'Notícias' })}
+          </h2>
+          <p className="text-sm text-gray-500">
+            {t({
+              it: 'Racconti ed eventi della vita della Fraternità.',
+              en: 'Stories and events from the life of the Fraternity.',
+              de: 'Erzählungen und Ereignisse aus dem Leben der Fraternität.',
+              pt: 'Histórias e eventos da vida da Fraternidade.',
+            })}
+          </p>
+        </div>
+        <ArrowRight className="w-5 h-5 text-[var(--warm-orange)] shrink-0" />
+      </Link>
+
       <h2 className="text-2xl font-bold text-[var(--deep-blue)] mb-6">Video</h2>
       <div className="grid sm:grid-cols-3 gap-4 mb-16">
         {videoIds.map((id, i) => (

@@ -242,6 +242,14 @@ export const router = createBrowserRouter(
           lazy: () => import('./pages/MediaPage').then((m) => ({ Component: m.MediaPage })),
         },
         {
+          path: 'news',
+          lazy: () => import('./pages/NewsPage').then((m) => ({ Component: m.NewsPage })),
+        },
+        {
+          path: 'news/:slug',
+          lazy: () => import('./pages/NewsArticlePage').then((m) => ({ Component: m.NewsArticlePage })),
+        },
+        {
           path: 'fondazione',
           lazy: () => import('./pages/FondazionePage').then((m) => ({ Component: m.FondazionePage })),
         },
