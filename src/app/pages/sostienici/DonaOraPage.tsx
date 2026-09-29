@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router'
+import { Link, useSearchParams } from 'react-router'
 import { Copy, Check } from 'lucide-react'
 import { DonationForm } from '../../components/DonationForm'
 import { PageHero } from '../../components/PageHero'
@@ -9,6 +9,9 @@ import famigliari from '../../../assets/famiglia-di-betania/famigliari.jpg'
 
 export function DonaOraPage() {
   const t = useT()
+  const [searchParams] = useSearchParams()
+  const progetto = searchParams.get('progetto') ?? undefined
+  const nomeCampagna = searchParams.get('nome')
   const [copiedIban, setCopiedIban] = useState<string | null>(null)
 
   const copy = (iban: string) => {
@@ -39,7 +42,14 @@ export function DonaOraPage() {
         })}
       </p>
 
-      <DonationForm />
+      {nomeCampagna && (
+        <div className="max-w-md mx-auto mb-6 rounded-2xl bg-[var(--beige)] px-5 py-3 text-sm text-[var(--deep-blue)]">
+          {t({ it: 'Stai donando per: ', en: 'You are donating for: ', de: 'Du spendest für: ', pt: 'Você está doando para: ' })}
+          <span className="font-semibold">{nomeCampagna}</span>
+        </div>
+      )}
+
+      <DonationForm progetto={progetto} />
 
       <h2 className="text-xl font-bold text-[var(--deep-blue)] mt-16 mb-6">
         {t({

@@ -7,6 +7,7 @@ export function AccoglienzaInDispensaPage() {
   return (
     <CampagnaLayout
       titolo="Accoglienza in Dispensa – FFB Terlizzi"
+      slug="accoglienza-in-dispensa-ffb-terlizzi"
       immagine={thumb}
       heroAlt="Accoglienza in Dispensa, FFB Terlizzi"
       raccolti="€ 322"

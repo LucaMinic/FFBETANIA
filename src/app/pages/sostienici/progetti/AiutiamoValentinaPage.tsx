@@ -12,6 +12,7 @@ export function AiutiamoValentinaPage() {
         de: 'Helfen wir Valentina – Salvador de Bahia',
         pt: 'Vamos ajudar Valentina – Salvador da Bahia',
       })}
+      slug="aiutiamo-valentina-salvador-de-bahia"
       immagine={thumb}
       heroAlt="Aiutiamo Valentina, Salvador de Bahia"
       raccolti="€ 1.770"

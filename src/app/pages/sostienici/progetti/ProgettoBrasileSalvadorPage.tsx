@@ -12,6 +12,7 @@ export function ProgettoBrasileSalvadorPage() {
         de: 'Brasilien-Projekt – Salvador de Bahia',
         pt: 'Projeto Brasil – Salvador da Bahia',
       })}
+      slug="progetto-brasile-salvador-de-bahia"
       immagine={thumb}
       heroAlt="Progetto Brasile FFB, Salvador de Bahia"
       raccolti="€ 4.302"

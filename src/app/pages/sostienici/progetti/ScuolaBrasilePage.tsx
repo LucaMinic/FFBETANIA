@@ -12,6 +12,7 @@ export function ScuolaBrasilePage() {
         de: 'Gemeinsam bauen wir eine Schule und eine Zukunft',
         pt: 'Juntos construímos uma escola e um futuro',
       })}
+      slug="insieme-costruiamo-una-scuola-e-un-futuro"
       immagine={thumb}
       heroAlt="Progetto scuola Brasile Betania"
       raccolti="€ 11.720"

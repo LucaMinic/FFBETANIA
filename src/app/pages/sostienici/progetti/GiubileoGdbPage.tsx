@@ -12,6 +12,7 @@ export function GiubileoGdbPage() {
         de: 'Die GdB von Salvador haben einen Traum',
         pt: 'Os GdB de Salvador têm um sonho',
       })}
+      slug="i-gdb-di-salvador-hanno-un-sogno"
       immagine={thumb}
       heroAlt="Giubileo giovani 2024, Giovani di Betania di Salvador de Bahia"
       raccolti="€ 18.238"

@@ -7,6 +7,7 @@ import { useT } from '../context/LanguageContext'
 
 interface CampagnaLayoutProps {
   titolo: string
+  slug: string
   immagine: string
   heroAlt?: string
   raccolti: string
@@ -19,6 +20,7 @@ interface CampagnaLayoutProps {
 
 export function CampagnaLayout({
   titolo,
+  slug,
   immagine,
   heroAlt,
   raccolti,
@@ -29,6 +31,7 @@ export function CampagnaLayout({
   relatedTo,
 }: CampagnaLayoutProps) {
   const t = useT()
+  const donaOraTo = `/sostienici/dona-ora?progetto=${encodeURIComponent(slug)}&nome=${encodeURIComponent(titolo)}`
 
   return (
     <>
@@ -126,7 +129,7 @@ export function CampagnaLayout({
               pt: 'Cada doação, mesmo pequena, aproxima este projeto do seu objetivo.',
             })}
             primaryLabel={t({ it: 'Dona ora', en: 'Donate now', de: 'Jetzt spenden', pt: 'Doe agora' })}
-            primaryTo="/sostienici/dona-ora"
+            primaryTo={donaOraTo}
             secondaryLabel={t({ it: 'Tutti i progetti', en: 'All projects', de: 'Alle Projekte', pt: 'Todos os projetos' })}
             secondaryTo="/sostienici/progetti"
           />
